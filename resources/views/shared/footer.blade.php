@@ -75,22 +75,20 @@
                 <a class="text-dark float-right ml-1 mr-1" href="/register"><i class="fas fa-signature"></i>Register</a>
         @endguest
         @auth
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#!" data-toggle="dropdown">
+            <a class="text-dark float-right ml-1 mr-1 dropdown-toggle" href="#!" data-toggle="dropdown">
                     {{ auth()->user()->name }} <span class="caret"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="/user/profile"><i class="fas fa-user-cog"></i>Update Profile</a>
                     <a class="dropdown-item" href="/user/password"><i class="fas fa-key"></i>New Password</a>
-                    <a class="dropdown-item" href="/user/history"><i class="fas fa-box-open"></i>Order history</a>
+{{--                    <a class="dropdown-item" href="/user/history"><i class="fas fa-box-open"></i>Order history</a>--}}
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i>Logout</a>
                     @if(auth()->user()->admin)
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/admin/records"><i class="fas fa-compact-disc"></i>Records</a>
+                        <a class="dropdown-item" href="/admin/records"><i class="fas fa-database"></i>CMS</a>
                     @endif
                 </div>
-            </li>
         @endauth
 
     </div>
