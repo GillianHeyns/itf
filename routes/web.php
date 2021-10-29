@@ -41,9 +41,8 @@ Route::middleware(['auth'])->prefix('user')->group(function () {
 
 //PAGINA's ITF WEBSITE
 //contact formulier
-Route::get('contact', [ContactController::class, 'show']);
-Route::post('contact', [ContactController::class, 'sendEmail']);
-//Route::view('contact', 'contact');
+Route::get('contact', 'ContactController@show');
+Route::post('contact', 'ContactController@sendEmail');
 
 Route::view('admin/records', 'admin.records.index');
 Route::view('admin/content-management','admin/content-management');

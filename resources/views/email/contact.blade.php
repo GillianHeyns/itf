@@ -16,3 +16,4 @@
     {{ env('APP_NAME') }}
     </body>
 @endcomponent
+
