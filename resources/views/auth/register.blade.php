@@ -1,7 +1,8 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
+@extends('layouts.template')
+@include('shared.icons')
+@section('title', 'IT Factory | Register')
+@section('main')
+<div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
