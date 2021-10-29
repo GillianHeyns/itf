@@ -1,0 +1,125 @@
+#hero {
+width: 100%;
+height: 80vh;
+background: linear-gradient(to bottom, rgba(22, 22, 22, .3) 0, rgba(22, 22, 22, .7) 75%, #161616 100%), url("/assets/img/hero-bg.jpg");
+background-size: cover;
+position: relative;
+}
+
+@media (min-width: 1024px) {
+#hero {
+background-attachment: fixed;
+}
+}
+
+#hero h1 {
+margin: 0;
+font-size: 48px;
+font-weight: 700;
+line-height: 56px;
+color: $white;
+font-family: $font-poppins;
+}
+
+#hero h2 {
+color: $white-broken;
+margin: 10px 0 0 0;
+font-size: 24px;
+}
+
+h1, h2, h3, h4 {
+font-family: $font-raleway;
+}
+
+#hero .btn-get-started {
+font-family: $font-raleway;
+font-weight: 500;
+font-size: 15px;
+letter-spacing: 1px;
+display: inline-block;
+padding: 10px 35px;
+border-radius: 50px;
+transition: 0.5s;
+margin-top: 30px;
+border: 2px solid $white;
+color: $white;
+background-color: rgba(0, 0, 0, 0.25);
+}
+
+#hero a {
+text-decoration: none;
+}
+
+.btn-get-started:hover {
+background-color: $orange;
+color: $orange !important;
+border: 2px solid $orange !important;
+}
+
+.section-title {
+padding-bottom: 10px;
+}
+
+.section-title h2::after {
+content: "";
+width: 120px;
+height: 1px;
+display: inline-block;
+background: $orange;
+margin: 4px 10px;
+}
+
+section {
+padding: 50px 0;
+overflow: hidden;
+}
+
+.section-title h2 {
+color: $lightgrey;
+font: $font-poppins;
+font-size: 14px;
+font-weight: 500;
+text-transform: uppercase;
+}
+
+.section-title p {
+font-size: 36px;
+font: $font-poppins;
+color: $lightblack;
+font-weight: 700;
+text-transform: uppercase;
+}
+
+.content h3 {
+font-weight: 400;
+font-size: 26px;
+}
+
+.fa-check-circle {
+color: $orange;
+}
+
+.content li {
+list-style: none;
+}
+
+.learn-more-btn {
+background: $orange;
+color: $white;
+border-radius: 50px;
+padding: 8px 25px 9px 25px;
+white-space: nowrap;
+transition: 0.3s;
+font-size: 14px;
+display: inline-block;
+}
+
+.learn-more-btn a {
+text-decoration: none;
+}
+
+.learn-more-btn:hover {
+text-decoration: none;
+background: $lightgreen;
+color: white;
+}

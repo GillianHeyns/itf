@@ -14,6 +14,6 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .browserSync({
-        proxy: 'vinyl_shop.test',
+        proxy: 'itf.test',
         port: 3000
     });

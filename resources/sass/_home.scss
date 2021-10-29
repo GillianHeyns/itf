@@ -1,0 +1,573 @@
+.content {
+    position: relative;
+    width: 100%;
+    //max-width: 550px;
+    margin: auto;
+    overflow: hidden;
+}
+
+//Responsive img
+.responsive {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+#discord {
+    border: 2px solid #fff;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+//contactform
+textarea {
+    width: 100%;
+}
+
+.counts {
+    padding: 30px 0;
+}
+
+.section-bg {
+    background-color: darken($superlightgrey, 5%);
+}
+
+.counters span {
+    font-size: 40px;
+    display: block;
+    color: $orange;
+    font-weight: 700;
+}
+
+.counters p {
+    font-family: $font-raleway;
+    font-size: 15px;
+    font-weight: 500;
+    color: $darkgrey;
+}
+
+.groot_scherm {
+    border: 2px solid $lightgrey;
+    border-radius: 20px;
+}
+
+.itfactory_foto {
+    position: relative;
+    width: 100%;
+}
+
+.itfactory_foto img {
+    width: 100%;
+    height: auto;
+}
+
+.itfactory_foto .app {
+    position: absolute;
+    top: 2%;
+    left: 9%;
+    cursor: pointer;
+}
+
+.itfactory_foto .ccs {
+    position: absolute;
+    top: 3%;
+    left: 69%;
+    cursor: pointer;
+}
+
+.itfactory_foto .ai {
+    position: absolute;
+    top: 57%;
+    left: 7%;
+    cursor: pointer;
+}
+
+.itfactory_foto .di {
+    position: absolute;
+    top: 48%;
+    left: 41%;
+    cursor: pointer;
+}
+
+.itfactory_foto .iot {
+    position: absolute;
+    top: 56%;
+    left: 73%;
+    cursor: pointer;
+}
+
+.itfactory_foto .groot:hover {
+    transform: scale(1.1);
+    transition-duration: 0.8s;
+}
+
+.itfactory_foto .klein_scherm {
+    display: none;
+}
+
+
+//testimonials
+.bg-darkblue {
+    background-color: $white;
+}
+
+//.bg-darkblue {
+//    background-color:$white;
+//}
+
+.col-md-offset-2 {
+    margin-left: 16.66666667%;
+}
+
+.carousel-inner {
+    color: $black;
+}
+
+.img-fluid {
+    display: block;
+}
+
+#quote-carousel {
+    padding: 0 10px 30px 10px;
+    margin-top: 60px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background: none;
+    color: $black;
+    font-size: 2.3em;
+    text-shadow: none;
+    margin-top: 30px;
+}
+
+#quote-carousel .carousel-indicators {
+    position: relative;
+    right: 50%;
+    top: auto;
+    bottom: 0px;
+    margin-top: 20px;
+}
+
+#quote-carousel .carousel-indicators li {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    opacity: 0.4;
+    overflow: hidden;
+    transition: all .4s ease-in;
+    vertical-align: middle;
+}
+
+#quote-carousel .carousel-indicators .active {
+    margin: 0;
+    width: 128px;
+    height: 128px;
+    opacity: 1;
+    transition: all .2s;
+}
+
+.carousel-item .blockquote {
+    border-left: none;
+    margin: 0;
+}
+
+.carousel-item .blockquote p:before {
+    content: "\f10d";
+    font-family: $font-poppins;
+    float: left;
+    margin-right: 10px;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    background-color: $orange;
+    height: 50px;
+    width: 50px;
+}
+
+.line-orange {
+    content: "";
+    width: 250px;
+    height: 3px;
+    display: inline-block;
+    background: #f04e25;
+    margin: 4px 10px;
+}
+
+// kaart projecten
+
+.kaart_foto img {
+    width: 100%;
+    margin-top: 25px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.kaart_titel {
+    font-size: 17px !important;
+    color: #fff !important;
+}
+
+.kaart_tekst p {
+    font-size: 14px;
+    color: #91918d;
+    margin-top: 5px !important;
+}
+
+.kaart_knop {
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+    border: 0px;
+    color: black;
+}
+
+.kaart_tekst {
+    height: 200px;
+    background-color: #2c2c32;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: 10px;
+}
+
+.kaart_foto {
+    height: 190px;
+    overflow: hidden;
+}
+
+// studiewijzer
+.box {
+    position: relative;
+    text-align: center;
+    color: black;
+}
+
+/* Centered text */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    padding-bottom: 10%;
+}
+
+.studiewijzer {
+    background: linear-gradient(180deg, $orange 0%, transparent 2%),
+    linear-gradient(180deg, transparent 98%, $orange 100%);
+}
+
+
+// kaart projecten
+
+// feed
+.feed {
+    background-color: black;
+    border: 20px solid black;
+}
+
+
+.centerYoutube {
+    position: relative;
+}
+
+.discordButton {
+    background-color: $discordGrey;
+    color: $white;
+}
+
+.facebookButton {
+    background-color: $facebookBlue;
+    color: $white;
+}
+
+.socialButton {
+    border: none;
+    padding: 15px 32px;
+    //text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    width: 320px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    padding-left: 60px;
+}
+
+.socialButton .fab {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: $white;
+}
+
+
+// Studiewijzer quiz css
+.question {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.answers {
+    margin-bottom: 20px;
+    text-align: left;
+    display: inline-block;
+}
+
+.answers label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    background-color: $bluetm;
+    color: #fff;
+    border: 0px;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 5px;
+
+    width: 20vw;
+}
+
+button:hover {
+    background-color: #38a;
+}
+
+//studiekiezer
+.slider {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.active-slide {
+    opacity: 1;
+    z-index: 2;
+}
+
+//.quiz-container {
+//    position: relative;
+//    height: 50vh;
+//    margin-top: 40px;
+//}
+
+//.content .content-overlay {
+//    background: $orange;
+//    position: absolute;
+//    height: 100%;
+//    width: 100%;
+//    left: 0;
+//    top: 0;
+//    bottom: 0;
+//    right: 0;
+//    opacity: 0;
+//    -webkit-transition: all 1s ease-in-out 0s;
+//    -moz-transition: all 1s ease-in-out 0s;
+//    transition: all 1s ease-in-out 0s;
+//}
+//
+//.content:hover .content-overlay {
+//    opacity: 1;
+//}
+//
+//.content-image {
+//    width: 100%;
+//}
+//
+//.content-details {
+//    position: absolute;
+//    text-align: center;
+//    padding-left: 1em;
+//    padding-right: 1em;
+//    width: 100%;
+//    top: 50%;
+//    left: 50%;
+//    opacity: 0;
+//    -webkit-transform: translate(-50%, -50%);
+//    -moz-transform: translate(-50%, -50%);
+//    transform: translate(-50%, -50%);
+//    -webkit-transition: all 0.3s ease-in-out 0s;
+//    -moz-transition: all 0.3s ease-in-out 0s;
+//    transition: all 0.3s ease-in-out 0s;
+//}
+//
+//.content:hover .content-details {
+//    top: 50%;
+//    left: 50%;
+//    opacity: 1;
+//}
+//
+//.content-details h3 {
+//    color: #fff;
+//    font-weight: 500;
+//    letter-spacing: 0.15em;
+//    margin-bottom: 0.5em;
+//    text-transform: uppercase;
+//    font-size: 3em;
+//}
+//
+//.content-details a {
+//    color: #fff;
+//    font-size: 1.5em;
+//    border: 2px solid white;
+//}
+//
+//@media screen and (min-width: 1200px) {
+//    .fadeIn-bottom {
+//        top: 80%;
+//    }
+//}
+//
+//.nopadding {
+//    padding: 0;
+//    margin: 0;
+//}
+//
+//@media screen and (max-width: 1200px) {
+//    .content-details {
+//        opacity: 1;
+//    }
+//}
+
+// thomasbot
+#thomasbot {
+    display: none;
+
+    max-width: 600px;
+    max-height: 520px;
+    width: auto;
+    height: auto
+}
+
+#mobielestudiewijzer {
+    padding-top: 40vh;
+}
+
+
+// tekstballon
+@media (min-width: 1200px) {
+    #mobielestudiewijzer {
+        padding-top: 0;
+    }
+
+    .box {
+        width: 300px;
+        margin: 50px auto;
+        background: $bluetm;
+        padding: 20px;
+        text-align: center;
+        font-weight: 900;
+        color: #fff;
+        font-family: arial;
+        position: relative;
+    }
+
+    .sb1:before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        border-left: 10px solid $bluetm;
+        border-right: 10px solid transparent;
+        border-top: 10px solid $bluetm;
+        border-bottom: 10px solid transparent;
+        right: -19px;
+        top: 6px;
+    }
+
+    #thomasbot {
+        display: block;
+    }
+}
+
+.opleiding_testi {
+    background-color: $lightgrey_back;
+}
+
+.onderkant {
+    padding-bottom: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .opleidingKlein {
+        display: none;
+    }
+}
+
+#verzenden:hover {
+    background-color: $green;
+}
+
+
+// sort module
+
+#sort ul {
+    list-style-type: none;
+}
+
+#sort li {
+    float: left;
+
+
+    display: inline-block;
+    padding: 0.3em 1.2em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 2em;
+    box-sizing: border-box;
+    font-weight: 300;
+    color: $white;
+    background-color: $orange;
+    transition: all 0.2s;
+    text-align: center;
+    text-decoration: none;
+}
+
+#sort li:hover {
+    background-color: $gray-900;
+}
+
+// snelle fix voor modals
+@media (max-width: 576px) {
+    .text-uppercase {
+        font-weight: bold;
+        font-size: 1rem !important;
+    }
+}
+
+// portfolcio cards
+
+.portfolio-caption-heading {
+    height: 125px !important;
+}
+
+.frame {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+#overlay {
+    position: absolute;
+    width: 100%;
+    height: 465px;
+    left: -2px;
+    cursor: pointer;
+}
+
+.hoogte {
+    height: 500px;
+}
