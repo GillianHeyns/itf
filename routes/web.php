@@ -22,6 +22,10 @@ Route::get('contact', function () {
     return 'Contact info';
 });
 
+Route::get('admin/cms', function (){
+    return view('admin.content-management');
+});
+
 Route::get('admin/records', function (){
     return view('admin.records.index');
 });
@@ -64,3 +68,8 @@ Route::view('dagopleiding/iot', 'opleidingen.bachelor.keuzerichting.iot');
 Route::view('wes/app', 'opleidingen.werkenEnStuderen.keuzerichting.app');
 Route::view('wes/ccs', 'opleidingen.werkenEnStuderen.keuzerichting.ccs');
 Route::view('facilities', 'faciliteiten_acs');
+
+
+//CONTROLLERS
+Route::get('admin/cms', 'ProjectController@index');
+Route::get('admin/cms/{id}', 'ProjectController@show');
