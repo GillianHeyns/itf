@@ -1,0 +1,17 @@
+#new-project input[type=checkbox]{
+    border-radius: 50%;
+}
+
+#new-project input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#new-project #text{
+    height: 250px;
+}

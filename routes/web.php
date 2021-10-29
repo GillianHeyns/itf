@@ -38,3 +38,29 @@ Route::middleware(['auth'])->prefix('user')->group(function () {
     Route::get('password', 'User\PasswordController@edit');
     Route::post('password', 'User\PasswordController@update');
 });
+
+//PAGINA's ITF WEBSITE
+//contact formulier
+Route::get('contact', [ContactController::class, 'show']);
+Route::post('contact', [ContactController::class, 'sendEmail']);
+//Route::view('contact', 'contact');
+
+Route::view('admin/records', 'admin.records.index');
+Route::view('admin/content-management','admin/content-management');
+Route::view('admin/project','admin/project');
+Route::view('faciliteiten', 'faciliteiten');
+Route::view('projecten', 'projecten');
+Route::view('dagopleiding', 'dagopleiding');
+Route::view('wes', 'wes');
+Route::view('acs', 'acs');
+
+//Routes naar verschillende keuzerichtingen binnen de bachelor opleiding
+Route::view('dagopleiding/app', 'opleidingen.bachelor.keuzerichting.app');
+Route::view('dagopleiding/ai', 'opleidingen.bachelor.keuzerichting.ai');
+Route::view('dagopleiding/ccs', 'opleidingen.bachelor.keuzerichting.ccs');
+Route::view('dagopleiding/di', 'opleidingen.bachelor.keuzerichting.di');
+Route::view('dagopleiding/iot', 'opleidingen.bachelor.keuzerichting.iot');
+
+Route::view('wes/app', 'opleidingen.werkenEnStuderen.keuzerichting.app');
+Route::view('wes/ccs', 'opleidingen.werkenEnStuderen.keuzerichting.ccs');
+Route::view('facilities', 'faciliteiten_acs');

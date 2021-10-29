@@ -1,0 +1,12 @@
+footer {
+    color: black;
+}
+
+.fab {
+    color: $orange;
+}
+
+footer .text-dark:hover {
+    transition: 350ms;
+    color: $orange !important;
+}
