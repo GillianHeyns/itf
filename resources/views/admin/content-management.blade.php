@@ -1,9 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.template')
 
-<title>@yield('title', 'IT Factory | Admin Panel')</title>
+@include('shared.icons')
 
-@section('content')
-    <div class="container">
+@section('title', 'IT Factory | CMS')
+
+@section('main')
+    <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
             <div class="col-md-11">
                 <div class="card p-0">
@@ -41,103 +43,103 @@
                         </span>
                     </div>
 
-                    <!-- voorbeeld tekst -->
-                    <div class="card-body border-top pt-2 pb-2 bg-gray">
-                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">
-                        <a href="">Stuvo </a>
-                        <span class="float-right">
-                            <a href=""><i class="fas fa-pen pr-2"></i></a>
-                            <a href=""><i class="fas fa-times "></i></a>
-                        </span>
-                    </div>
-                    <div class="card-body border-top pt-2 pb-2">
-                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">
-                        <a href="">Atomos </a>
-                        <span class="float-right">
-                            <a href=""><i class="fas fa-pen pr-2"></i></a>
-                            <a href=""><i class="fas fa-times "></i></a>
-                        </span>
-                    </div>
-                    <div class="card-body border-top pt-2 pb-2 bg-gray">
-                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">
-                        <a href="">CCS </a>
-                        <span class="float-right">
-                            <a href=""><i class="fas fa-pen pr-2"></i></a>
-                            <a href=""><i class="fas fa-times "></i></a>
-                        </span>
-                    </div>
-                    <div class="card-body border-top pt-2 pb-2">
-                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">
-                        <a href="">App </a>
-                        <span class="float-right">
-                            <a href=""><i class="fas fa-pen pr-2"></i></a>
-                            <a href=""><i class="fas fa-times "></i></a>
-                        </span>
-                    </div>
-                    <div class="card-body border-top pt-2 pb-2 bg-gray">
-                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">
-                        <a href="">Digital innovation </a>
-                        <span class="float-right">
-                            <a href=""><i class="fas fa-pen pr-2"></i></a>
-                            <a href=""><i class="fas fa-times "></i></a>
-                        </span>
-                    </div>
-                    <div class="card-body border-top pt-2 pb-2">
-                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">
-                        <a href="">Infotekst </a>
-                        <span class="float-right">
-                            <a href=""><i class="fas fa-pen pr-2"></i></a>
-                            <a href=""><i class="fas fa-times "></i></a>
-                        </span>
-                    </div>
-                    <div class="card-body border-top pt-2 pb-2 bg-gray">
-                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">
-                        <a href="">Opendeurdag </a>
-                        <span class="float-right">
-                            <a href=""><i class="fas fa-pen pr-2"></i></a>
-                            <a href=""><i class="fas fa-times "></i></a>
-                        </span>
-                    </div>
-                    <div class="card-body border-top pt-2 pb-2">
-                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">
-                        <a href="">Campus </a>
-                        <span class="float-right">
-                            <a href=""><i class="fas fa-pen pr-2"></i></a>
-                            <a href=""><i class="fas fa-times "></i></a>
-                        </span>
-                    </div>
-                    <div class="card-body border-top pt-2 pb-2 bg-gray">
-                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">
-                        <a href="">Hackaton </a>
-                        <span class="float-right">
-                            <a href=""><i class="fas fa-pen pr-2"></i></a>
-                            <a href=""><i class="fas fa-times "></i></a>
-                        </span>
-                    </div>
-                    <div class="card-body border-top pt-2 pb-2">
-                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">
-                        <a href="">Discord </a>
-                        <span class="float-right">
-                            <a href=""><i class="fas fa-pen pr-2"></i></a>
-                            <a href=""><i class="fas fa-times "></i></a>
-                        </span>
-                    </div>
-                    <div class="card-body border-top pt-2 pb-2 bg-gray">
-                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">
-                        <a href="">Teams </a>
-                        <span class="float-right">
-                            <a href=""><i class="fas fa-pen pr-2"></i></a>
-                            <a href=""><i class="fas fa-times "></i></a>
-                        </span>
-                    </div>
-                    <div class="card-body border-top pt-2 pb-2">
-                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">
-                        <a href="">Fietsen </a>
-                        <span class="float-right">
-                            <a href=""><i class="fas fa-pen pr-2"></i></a>
-                            <a href=""><i class="fas fa-times "></i></a>
-                        </span>
-                    </div>
+{{--                    <!-- voorbeeld tekst -->--}}
+{{--                    <div class="card-body border-top pt-2 pb-2 bg-gray">--}}
+{{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
+{{--                        <a href="">Stuvo </a>--}}
+{{--                        <span class="float-right">--}}
+{{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
+{{--                            <a href=""><i class="fas fa-times "></i></a>--}}
+{{--                        </span>--}}
+{{--                    </div>--}}
+{{--                    <div class="card-body border-top pt-2 pb-2">--}}
+{{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
+{{--                        <a href="">Atomos </a>--}}
+{{--                        <span class="float-right">--}}
+{{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
+{{--                            <a href=""><i class="fas fa-times "></i></a>--}}
+{{--                        </span>--}}
+{{--                    </div>--}}
+{{--                    <div class="card-body border-top pt-2 pb-2 bg-gray">--}}
+{{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
+{{--                        <a href="">CCS </a>--}}
+{{--                        <span class="float-right">--}}
+{{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
+{{--                            <a href=""><i class="fas fa-times "></i></a>--}}
+{{--                        </span>--}}
+{{--                    </div>--}}
+{{--                    <div class="card-body border-top pt-2 pb-2">--}}
+{{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
+{{--                        <a href="">App </a>--}}
+{{--                        <span class="float-right">--}}
+{{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
+{{--                            <a href=""><i class="fas fa-times "></i></a>--}}
+{{--                        </span>--}}
+{{--                    </div>--}}
+{{--                    <div class="card-body border-top pt-2 pb-2 bg-gray">--}}
+{{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
+{{--                        <a href="">Digital innovation </a>--}}
+{{--                        <span class="float-right">--}}
+{{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
+{{--                            <a href=""><i class="fas fa-times "></i></a>--}}
+{{--                        </span>--}}
+{{--                    </div>--}}
+{{--                    <div class="card-body border-top pt-2 pb-2">--}}
+{{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
+{{--                        <a href="">Infotekst </a>--}}
+{{--                        <span class="float-right">--}}
+{{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
+{{--                            <a href=""><i class="fas fa-times "></i></a>--}}
+{{--                        </span>--}}
+{{--                    </div>--}}
+{{--                    <div class="card-body border-top pt-2 pb-2 bg-gray">--}}
+{{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
+{{--                        <a href="">Opendeurdag </a>--}}
+{{--                        <span class="float-right">--}}
+{{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
+{{--                            <a href=""><i class="fas fa-times "></i></a>--}}
+{{--                        </span>--}}
+{{--                    </div>--}}
+{{--                    <div class="card-body border-top pt-2 pb-2">--}}
+{{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
+{{--                        <a href="">Campus </a>--}}
+{{--                        <span class="float-right">--}}
+{{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
+{{--                            <a href=""><i class="fas fa-times "></i></a>--}}
+{{--                        </span>--}}
+{{--                    </div>--}}
+{{--                    <div class="card-body border-top pt-2 pb-2 bg-gray">--}}
+{{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
+{{--                        <a href="">Hackaton </a>--}}
+{{--                        <span class="float-right">--}}
+{{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
+{{--                            <a href=""><i class="fas fa-times "></i></a>--}}
+{{--                        </span>--}}
+{{--                    </div>--}}
+{{--                    <div class="card-body border-top pt-2 pb-2">--}}
+{{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
+{{--                        <a href="">Discord </a>--}}
+{{--                        <span class="float-right">--}}
+{{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
+{{--                            <a href=""><i class="fas fa-times "></i></a>--}}
+{{--                        </span>--}}
+{{--                    </div>--}}
+{{--                    <div class="card-body border-top pt-2 pb-2 bg-gray">--}}
+{{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
+{{--                        <a href="">Teams </a>--}}
+{{--                        <span class="float-right">--}}
+{{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
+{{--                            <a href=""><i class="fas fa-times "></i></a>--}}
+{{--                        </span>--}}
+{{--                    </div>--}}
+{{--                    <div class="card-body border-top pt-2 pb-2">--}}
+{{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
+{{--                        <a href="">Fietsen </a>--}}
+{{--                        <span class="float-right">--}}
+{{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
+{{--                            <a href=""><i class="fas fa-times "></i></a>--}}
+{{--                        </span>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>

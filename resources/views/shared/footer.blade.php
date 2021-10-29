@@ -69,31 +69,27 @@
         <a class="text-dark" href="#">IT Factory</a>
 
         @guest
-                <a class="text-dark float-right ml-1 mr-1" href="/login">
-                    <i class="fas fa-sign-in-alt"></i>
-                    Login</a>
-                <a class="text-dark float-right ml-1 mr-1" href="/register"><i class="fas fa-signature"></i>Register</a>
+            <a class="text-dark float-right ml-1 mr-1" href="/login">
+                <i class="fas fa-sign-in-alt"></i>
+                Login</a>
+            <a class="text-dark float-right ml-1 mr-1" href="/register"><i class="fas fa-signature"></i>Register</a>
         @endguest
         @auth
             <a class="text-dark float-right ml-1 mr-1 dropdown-toggle" href="#!" data-toggle="dropdown">
-                    {{ auth()->user()->name }} <span class="caret"></span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="/user/profile"><i class="fas fa-user-cog"></i>Update Profile</a>
-                    <a class="dropdown-item" href="/user/password"><i class="fas fa-key"></i>New Password</a>
-{{--                    <a class="dropdown-item" href="/user/history"><i class="fas fa-box-open"></i>Order history</a>--}}
+                {{ auth()->user()->name }} <span class="caret"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="/user/profile"><i class="fas fa-user-cog"></i>Update Profile</a>
+                <a class="dropdown-item" href="/user/password"><i class="fas fa-key"></i>New Password</a>
+                {{--                    <a class="dropdown-item" href="/user/history"><i class="fas fa-box-open"></i>Order history</a>--}}
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                @if(auth()->user()->admin)
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i>Logout</a>
-                    @if(auth()->user()->admin)
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/admin/records"><i class="fas fa-database"></i>CMS</a>
-                    @endif
-                </div>
+                    <a class="dropdown-item" href="/admin/cms"><i class="fas fa-database"></i>CMS</a>
+                @endif
+            </div>
         @endauth
-
     </div>
-    {{--        <a href="./home" class="text-dark float-right" target="_blank">Admin</a>--}}
-    </div>
-    <!-- Copyright -->
 </footer>
 <!-- Footer -->
