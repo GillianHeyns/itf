@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->string('user_docentnummer');
         });
 
         // Insert some users (inside the up-function!)
@@ -34,7 +36,8 @@ class CreateUsersTable extends Migration
                     'admin' => true,
                     'password' => Hash::make('admin1234'),
                     'created_at' => now(),
-                    'email_verified_at' => now()
+                    'email_verified_at' => now(),
+                    'user_docentnummer' => '1'
                 ],
                 [
                     'name' => 'Jane Doe',
@@ -42,7 +45,8 @@ class CreateUsersTable extends Migration
                     'admin' => false,
                     'password' => Hash::make('user1234'),
                     'created_at' => now(),
-                    'email_verified_at' => now()
+                    'email_verified_at' => now(),
+                    'user_docentnummer' => '2'
                 ]
             ]
         );
