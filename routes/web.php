@@ -43,7 +43,7 @@ Route::post('admin/submit', 'Projects@save');
 
 //Getuigenis
 Route::view('admin/nieuw-getuigenis', 'admin.nieuw-getuigenis');
-Route::post('admin/submit', 'TestimoniesController@save');
+Route::post('admin/submit1', 'TestimoniesController@save');
 
 Route::middleware(['auth'])->prefix('user')->group(function () {
     Route::redirect('/', '/user/profile');

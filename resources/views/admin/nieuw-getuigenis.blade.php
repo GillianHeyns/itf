@@ -10,7 +10,7 @@
             <div class="col-md-11">
                 <div class="card p-0">
                     <div class="card-header">Nieuwe getuigenis toevoegen</div>
-                    <form action="submit" method="post">
+                    <form action="submit1" method="post">
                         @csrf
                         <br>
                         <p>
