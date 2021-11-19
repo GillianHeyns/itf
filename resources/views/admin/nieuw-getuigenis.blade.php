@@ -11,7 +11,7 @@
                 <div class="card p-0">
                     <div class="card-header">Nieuwe getuigenis</div>
                     <div class="card-body">
-                        <form action="submit" method="post">
+                        <form action="submit1" method="post">
                             @csrf
                             <div class="form-group row">
                                 <label for="naam"
