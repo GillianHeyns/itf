@@ -37,8 +37,13 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 });
 
 //NOG NIET VEILIG !!!!!
+//Project
 Route::view('admin/nieuw-project', 'admin.nieuw-project');
 Route::post('admin/submit', 'Projects@save');
+
+//Getuigenis
+Route::view('admin/nieuw-getuigenis', 'admin.nieuw-getuigenis');
+Route::post('admin/submit', 'TestimoniesController@save');
 
 Route::middleware(['auth'])->prefix('user')->group(function () {
     Route::redirect('/', '/user/profile');
