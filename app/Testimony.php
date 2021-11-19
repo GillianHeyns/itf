@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Testimony extends Model
 {
-    //
+    protected $table = 'testimonies';
+
+    public $timestamps =true;
 }

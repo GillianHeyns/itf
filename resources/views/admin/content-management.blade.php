@@ -13,8 +13,17 @@
 
                     <div class="card-body">
 
-                        <form action="">
-                            <a href="nieuw-project"><button type="button" class="btn btn-success col-2 p-1">Nieuw</button></a>
+{{--                        <form action="">--}}
+{{--                            <a href="nieuw-project"><button type="button" class="btn btn-success col-2 p-1">Nieuw</button></a>--}}
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle btn-success col-2 p-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Nieuw
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="nieuw-project">Project</a>
+                                    <a class="dropdown-item" href="nieuw-getuigenis">Getuigenis</a>
+                                </div>
+{{--                            </div>--}}
                             <span class="float-right col-4">
                                 <input type="text" id="search" placeholder="search here..." name="search" class="col-7">
                                 <button type="submit" class="col-4 p-1">Zoeken</button>
