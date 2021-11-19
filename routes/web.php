@@ -33,7 +33,12 @@ Route::get('admin/records', function (){
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     route::redirect('/', 'records');
     Route::get('records', 'Admin\RecordController@index');
+
 });
+
+//NOG NIET VEILIG !!!!!
+Route::view('admin/nieuw-project', 'admin.nieuw-project');
+Route::post('admin/submit', 'Projects@save');
 
 Route::middleware(['auth'])->prefix('user')->group(function () {
     Route::redirect('/', '/user/profile');
@@ -47,6 +52,8 @@ Route::middleware(['auth'])->prefix('user')->group(function () {
 //contact formulier
 Route::get('contact', 'ContactController@show');
 Route::post('contact', 'ContactController@sendEmail');
+
+
 
 Route::view('admin/records', 'admin.records.index');
 Route::view('admin/content-management','admin/content-management');
