@@ -14,7 +14,7 @@
                     <div class="card-body">
 
                         <form action="">
-                            <a href=""><button type="button" class="btn btn-success col-2 p-1">Nieuw</button></a>
+                            <a href="nieuw-project"><button type="button" class="btn btn-success col-2 p-1">Nieuw</button></a>
                             <span class="float-right col-4">
                                 <input type="text" id="search" placeholder="search here..." name="search" class="col-7">
                                 <button type="submit" class="col-4 p-1">Zoeken</button>
