@@ -12,28 +12,29 @@
                     <div class="card-header">{{ __('Overzicht content') }}</div>
 
                     <div class="card-body">
-                        <div class="dropdown">
-                            <button class="btn dropdown-toggle btn-success col-2 p-1" type="button"
-                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                Nieuw
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="nieuw-project">Project</a>
-                                <a class="dropdown-item" href="nieuw-getuigenis">Getuigenis</a>
+                        <div class="row">
+                            <div class="col dropdown">
+                                <button class="btn dropdown-toggle btn-success p-1" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                    Nieuw
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="nieuw-project">Project</a>
+                                    <a class="dropdown-item" href="nieuw-getuigenis">Getuigenis</a>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <input type="text" id="search" placeholder="search here..." name="search"
+                                           class="form-control @error('search') is-invalid @enderror">
+                                    <button type="submit" class="col-4 p-1">Zoeken</button>
+                                </div>
                             </div>
                         </div>
-                        <span class="float-right col-4">
-                                <input type="text" id="search" placeholder="search here..." name="search" class="col-7">
-                                <button type="submit" class="col-4 p-1">Zoeken</button>
-                            </span>
                     </div>
 
-                    <div class="card-body text-bold border-top pt-2 pb-2">
-                        Naam
-                    </div>
-
-                    <table class="table">
+                    <table class="table mb-0">
                         <thead>
                         <tr>
                             <th class="text-center card-body text-bold border-top pt-2 pb-2" scope="col">#</th>
