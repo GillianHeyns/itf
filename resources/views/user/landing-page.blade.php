@@ -2,7 +2,7 @@
 
 @include('shared.icons')
 
-@section('title', 'IT Factory | CMS')
+@section('title', 'IT Factory | Welcome!')
 
 @section('main')
     <div class="text-center">
