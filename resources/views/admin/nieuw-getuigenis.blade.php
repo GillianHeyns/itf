@@ -41,8 +41,8 @@
                                 <label for="tekst"
                                        class="col-md-4 col-form-label text-md-right">Tekst: </label>
                                 <div class="col-md-6">
-                                    <input type="text" id="tekst" name="tekst"
-                                           class="form-control @error('tekst') is-invalid @enderror">
+                                    <textarea type="text" id="tekst" name="tekst"
+                                              class="form-control @error('tekst') is-invalid @enderror"></textarea>
                                 </div>
                             </div>
                             <div class="form-group row mb-0">

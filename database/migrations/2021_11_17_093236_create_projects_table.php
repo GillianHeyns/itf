@@ -19,25 +19,28 @@ class CreateProjectsTable extends Migration
             $table->timestamps();
             $table->string('titel');
             $table->string('beschrijving')->nullable();
+//            $table->foreignId('content_block_id');
+//            $table->foreign('content_block_id')->references('id')->on('content_blocks')->onDelete('cascade')->onUpdate('cascade');
         });
 
-        // Insert some users (inside the up-function!)
-        DB::table('projects')->insert(
-            [
-                [
-                    'created_at' => Carbon::now(),
-                    'updated_at' => Carbon::now(),
-                    'titel' => 'ITF Website',
-                    'beschrijving' => 'Website voor de IT Factory',
-                ],
-                [
-                    'created_at' => Carbon::now(),
-                    'updated_at' => Carbon::now(),
-                    'titel' => 'Afvalsorteermachine',
-                    'beschrijving' => 'Het belang van afvalsortering',
-                ]
-            ]
-        );
+//        DB::table('projects')->insert(
+//            [
+//                [
+//                    'created_at' => Carbon::now(),
+//                    'updated_at' => Carbon::now(),
+//                    'titel' => 'ITF Website',
+//                    'beschrijving' => 'Website voor de IT Factory',
+//                    'content_block_id' => 1
+//                ],
+//                [
+//                    'created_at' => Carbon::now(),
+//                    'updated_at' => Carbon::now(),
+//                    'titel' => 'Afvalsorteermachine',
+//                    'beschrijving' => 'Het belang van afvalsortering',
+//                    'content_block_id' => 2
+//                ]
+//            ]
+//        );
     }
 
     /**
