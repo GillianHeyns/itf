@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Project;
+use Illuminate\Support\Facades\DB;
 
 class Projects extends Controller
 {
@@ -20,7 +21,9 @@ class Projects extends Controller
         $project->beschrijving= $req->beschrijving;
         $project->file_path='/storage/uploads/projects/'.$imageName;
         $project->save();
-        return view('admin.content-management');
+
+        $data= DB::table('projects')->get();
+        return view('admin.content-management',['data'=>$data]);
     }
 
 

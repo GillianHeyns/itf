@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Testimony;
+use Illuminate\Support\Facades\DB;
 
 class TestimoniesController extends Controller
 {
@@ -22,6 +23,8 @@ class TestimoniesController extends Controller
         $testimony->testimony_tekst= $req->tekst;
         $testimony->file_path='/storage/uploads/testimonies/'.$imageName;
         $testimony->save();
-        return view('admin.content-management');
+
+        $data= DB::table('testimonies')->get();
+        return view('admin.content-management',['data'=>$data]);
     }
 }
