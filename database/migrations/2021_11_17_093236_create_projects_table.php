@@ -19,6 +19,7 @@ class CreateProjectsTable extends Migration
             $table->timestamps();
             $table->string('titel');
             $table->string('beschrijving')->nullable();
+            $table->string('file_path')->nullable();
         });
 
         // Insert some users (inside the up-function!)
@@ -29,12 +30,14 @@ class CreateProjectsTable extends Migration
                     'updated_at' => Carbon::now(),
                     'titel' => 'ITF Website',
                     'beschrijving' => 'Website voor de IT Factory',
+                    'file_path' => "testURL",
                 ],
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     'titel' => 'Afvalsorteermachine',
                     'beschrijving' => 'Het belang van afvalsortering',
+                    'file_path' => "testURL",
                 ]
             ]
         );
