@@ -20,6 +20,7 @@ class CreateTestimoniesTable extends Migration
             $table->string('testimony_studentnaam')->nullable();
             $table->string('testimony_studierichting')->nullable();
             $table->year('testimony_jaar')->nullable();
+            $table->string('file_path')->nullable();
         });
     }
 
