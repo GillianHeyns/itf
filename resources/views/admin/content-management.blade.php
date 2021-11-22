@@ -12,9 +12,6 @@
                     <div class="card-header">{{ __('Overzicht content') }}</div>
 
                     <div class="card-body">
-
-                        {{--                        <form action="">--}}
-                        {{--                            <a href="nieuw-project"><button type="button" class="btn btn-success col-2 p-1">Nieuw</button></a>--}}
                         <div class="dropdown">
                             <button class="btn dropdown-toggle btn-success col-2 p-1" type="button"
                                     id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
@@ -25,133 +22,42 @@
                                 <a class="dropdown-item" href="nieuw-project">Project</a>
                                 <a class="dropdown-item" href="nieuw-getuigenis">Getuigenis</a>
                             </div>
-                            {{--                            </div>--}}
-                            <span class="float-right col-4">
+                        </div>
+                        <span class="float-right col-4">
                                 <input type="text" id="search" placeholder="search here..." name="search" class="col-7">
                                 <button type="submit" class="col-4 p-1">Zoeken</button>
                             </span>
-                            </form>
-                        </div>
-                        <div class="card-body text-bold border-top pt-2 pb-2">
-                            Naam
-                        </div>
-                        <div class="card-body border-top pt-2 pb-2 bg-gray">
-
-                            <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">
-
-                            <a href="">Mainnav </a>
-                            <span class="float-right">
-                            <a href=""><i class="fas fa-pen pr-2"></i></a>
-                            <a href=""><i class="fas fa-times "></i></a>
-                        </span>
-                        </div>
-                        <div class="card-body border-top pt-2 pb-2">
-                            <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">
-                            <a href="">Infotekst </a>
-                            <span class="float-right">
-                            <a href=""><i class="fas fa-pen pr-2"></i></a>
-                            <a href=""><i class="fas fa-times "></i></a>
-                        </span>
-                        </div>
-
-                        {{--                    <!-- voorbeeld tekst -->--}}
-                        {{--                    <div class="card-body border-top pt-2 pb-2 bg-gray">--}}
-                        {{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
-                        {{--                        <a href="">Stuvo </a>--}}
-                        {{--                        <span class="float-right">--}}
-                        {{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
-                        {{--                            <a href=""><i class="fas fa-times "></i></a>--}}
-                        {{--                        </span>--}}
-                        {{--                    </div>--}}
-                        {{--                    <div class="card-body border-top pt-2 pb-2">--}}
-                        {{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
-                        {{--                        <a href="">Atomos </a>--}}
-                        {{--                        <span class="float-right">--}}
-                        {{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
-                        {{--                            <a href=""><i class="fas fa-times "></i></a>--}}
-                        {{--                        </span>--}}
-                        {{--                    </div>--}}
-                        {{--                    <div class="card-body border-top pt-2 pb-2 bg-gray">--}}
-                        {{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
-                        {{--                        <a href="">CCS </a>--}}
-                        {{--                        <span class="float-right">--}}
-                        {{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
-                        {{--                            <a href=""><i class="fas fa-times "></i></a>--}}
-                        {{--                        </span>--}}
-                        {{--                    </div>--}}
-                        {{--                    <div class="card-body border-top pt-2 pb-2">--}}
-                        {{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
-                        {{--                        <a href="">App </a>--}}
-                        {{--                        <span class="float-right">--}}
-                        {{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
-                        {{--                            <a href=""><i class="fas fa-times "></i></a>--}}
-                        {{--                        </span>--}}
-                        {{--                    </div>--}}
-                        {{--                    <div class="card-body border-top pt-2 pb-2 bg-gray">--}}
-                        {{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
-                        {{--                        <a href="">Digital innovation </a>--}}
-                        {{--                        <span class="float-right">--}}
-                        {{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
-                        {{--                            <a href=""><i class="fas fa-times "></i></a>--}}
-                        {{--                        </span>--}}
-                        {{--                    </div>--}}
-                        {{--                    <div class="card-body border-top pt-2 pb-2">--}}
-                        {{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
-                        {{--                        <a href="">Infotekst </a>--}}
-                        {{--                        <span class="float-right">--}}
-                        {{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
-                        {{--                            <a href=""><i class="fas fa-times "></i></a>--}}
-                        {{--                        </span>--}}
-                        {{--                    </div>--}}
-                        {{--                    <div class="card-body border-top pt-2 pb-2 bg-gray">--}}
-                        {{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
-                        {{--                        <a href="">Opendeurdag </a>--}}
-                        {{--                        <span class="float-right">--}}
-                        {{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
-                        {{--                            <a href=""><i class="fas fa-times "></i></a>--}}
-                        {{--                        </span>--}}
-                        {{--                    </div>--}}
-                        {{--                    <div class="card-body border-top pt-2 pb-2">--}}
-                        {{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
-                        {{--                        <a href="">Campus </a>--}}
-                        {{--                        <span class="float-right">--}}
-                        {{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
-                        {{--                            <a href=""><i class="fas fa-times "></i></a>--}}
-                        {{--                        </span>--}}
-                        {{--                    </div>--}}
-                        {{--                    <div class="card-body border-top pt-2 pb-2 bg-gray">--}}
-                        {{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
-                        {{--                        <a href="">Hackaton </a>--}}
-                        {{--                        <span class="float-right">--}}
-                        {{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
-                        {{--                            <a href=""><i class="fas fa-times "></i></a>--}}
-                        {{--                        </span>--}}
-                        {{--                    </div>--}}
-                        {{--                    <div class="card-body border-top pt-2 pb-2">--}}
-                        {{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
-                        {{--                        <a href="">Discord </a>--}}
-                        {{--                        <span class="float-right">--}}
-                        {{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
-                        {{--                            <a href=""><i class="fas fa-times "></i></a>--}}
-                        {{--                        </span>--}}
-                        {{--                    </div>--}}
-                        {{--                    <div class="card-body border-top pt-2 pb-2 bg-gray">--}}
-                        {{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
-                        {{--                        <a href="">Teams </a>--}}
-                        {{--                        <span class="float-right">--}}
-                        {{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
-                        {{--                            <a href=""><i class="fas fa-times "></i></a>--}}
-                        {{--                        </span>--}}
-                        {{--                    </div>--}}
-                        {{--                    <div class="card-body border-top pt-2 pb-2">--}}
-                        {{--                        <input type="checkbox" id="id1" name="id1" value="true" class="mr-3">--}}
-                        {{--                        <a href="">Fietsen </a>--}}
-                        {{--                        <span class="float-right">--}}
-                        {{--                            <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
-                        {{--                            <a href=""><i class="fas fa-times "></i></a>--}}
-                        {{--                        </span>--}}
-                        {{--                    </div>--}}
                     </div>
+
+                    <div class="card-body text-bold border-top pt-2 pb-2">
+                        Naam
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="text-center card-body text-bold border-top pt-2 pb-2" scope="col">#</th>
+                            <th class="card-body text-bold border-top pt-2 pb-2" scope="col">Naam</th>
+                            <th class="card-body text-bold border-top pt-2 pb-2" scope="col">Type</th>
+                            <th class="card-body text-bold border-top pt-2 pb-2" scope="col">Beschrijving</th>
+                            <th class="card-body text-bold border-top pt-2 pb-2" scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($data as $item)
+                            <tr>
+                                <th class="text-center font-weight-normal" scope="row">{{$item->id}}</th>
+                                <td><a href="">{{$item->titel}}</a></td>
+                                <td>{{$item->beschrijving}}</td>
+                                <td>
+                                    <a href=""><i class="fas fa-pen pr-2"></i></a>
+                                    <a href=""><i class="fas fa-times "></i></a>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+
                 </div>
             </div>
         </div>
