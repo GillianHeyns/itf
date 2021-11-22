@@ -24,8 +24,8 @@
                                 <label for="beschrijving"
                                        class="col-md-4 col-form-label text-md-right">Beschrijving: </label>
                                 <div class="col-md-6">
-                                    <input type="text" id="beschrijving" name="beschrijving"
-                                           class="form-control @error('beschrijving') is-invalid @enderror">
+                                    <textarea type="text" id="beschrijving" name="beschrijving"
+                                              class="form-control @error('beschrijving') is-invalid @enderror"></textarea>
                                 </div>
                             </div>
                             <div class="form-group row mb-0">

@@ -20,6 +20,8 @@ class CreateTestimoniesTable extends Migration
             $table->string('testimony_studentnaam')->nullable();
             $table->string('testimony_studierichting')->nullable();
             $table->year('testimony_jaar')->nullable();
+//            $table->foreignId('content_block_id');
+//            $table->foreign('content_block_id')->references('id')->on('content_blocks')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
