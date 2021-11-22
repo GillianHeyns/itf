@@ -11,7 +11,7 @@
                 <div class="card p-0">
                     <div class="card-header">Nieuw project</div>
                     <div class="card-body">
-                        <form action="submit" method="post">
+                        <form action="submit" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label for="titel" class="col-md-4 col-form-label text-md-right">Titel: </label>
@@ -26,6 +26,14 @@
                                 <div class="col-md-6">
                                     <textarea type="text" id="beschrijving" name="beschrijving"
                                               class="form-control @error('beschrijving') is-invalid @enderror"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="file"
+                                       class="col-md-4 col-form-label text-md-right">Foto: </label>
+                                <div class="col-md-6">
+                                    <input multiple="multiple" type="file" id="file" name="file"
+                                           class="form-control @error('file') is-invalid @enderror">
                                 </div>
                             </div>
                             <div class="form-group row mb-0">

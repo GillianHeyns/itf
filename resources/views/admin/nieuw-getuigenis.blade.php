@@ -11,7 +11,7 @@
                 <div class="card p-0">
                     <div class="card-header">Nieuwe getuigenis</div>
                     <div class="card-body">
-                        <form action="submit1" method="post">
+                        <form action="submit1" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label for="naam"
@@ -43,6 +43,14 @@
                                 <div class="col-md-6">
                                     <textarea type="text" id="tekst" name="tekst"
                                               class="form-control @error('tekst') is-invalid @enderror"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="file"
+                                       class="col-md-4 col-form-label text-md-right">Foto: </label>
+                                <div class="col-md-6">
+                                    <input type="file" id="file" name="file"
+                                           class="form-control @error('file') is-invalid @enderror">
                                 </div>
                             </div>
                             <div class="form-group row mb-0">
