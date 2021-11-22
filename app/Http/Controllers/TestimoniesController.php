@@ -24,7 +24,7 @@ class TestimoniesController extends Controller
         $testimony->file_path='/storage/uploads/testimonies/'.$imageName;
         $testimony->save();
 
-        $projectdata= DB::table('projects')->get();
-        return view('admin.content-management',['projectdata'=>$projectdata]);
+        $data= DB::table('projects')->get();
+        return view('admin.content-management',['data'=>$data]);
     }
 }

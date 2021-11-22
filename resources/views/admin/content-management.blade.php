@@ -13,8 +13,8 @@
 
                     <div class="card-body">
                         <div class="row">
-                            <div class="col dropdown">
-                                <button class="btn dropdown-toggle btn-success p-1" type="button"
+                            <div class="col-2 dropdown">
+                                <button class="col-12 btn dropdown-toggle btn-success p-1" type="button"
                                         id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">
                                     Nieuw
@@ -24,13 +24,13 @@
                                     <a class="dropdown-item" href="nieuw-getuigenis">Getuigenis</a>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="row">
-                                    <input type="text" id="search" placeholder="search here..." name="search"
-                                           class="form-control @error('search') is-invalid @enderror">
-                                    <button type="submit" class="col-4 p-1">Zoeken</button>
-                                </div>
-                            </div>
+{{--                            <div class="col">--}}
+{{--                                <div class="row">--}}
+{{--                                    <input type="text" id="search" placeholder="search here..." name="search"--}}
+{{--                                           class="form-control @error('search') is-invalid @enderror">--}}
+{{--                                    <button type="submit" class="col-4 p-1">Zoeken</button>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
 
@@ -45,14 +45,14 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($projectdata as $project)
+                        @foreach($data as $item)
                             <tr>
-                                <th class="text-center font-weight-normal" scope="row">{{$project->id}}</th>
-                                <td><a href="">{{$project->titel}}</a></td>
-                                <td>{{$project->beschrijving}}</td>
+                                <th class="text-center font-weight-normal" scope="row">{{$item->id}}</th>
+                                <td><a href="">{{$item->titel}}</a></td>
+                                <td>{{$item->beschrijving}}</td>
                                 <td>
-                                    <a href=""><i class="fas fa-pen pr-2"></i></a>
-                                    <a href=""><i class="fas fa-times "></i></a>
+                                    <a href="/admin/cms/{{$item->id}}"><i class="fas fa-pen pr-2"></i></a>
+                                    <a href="/admin/cms/delete/{{$item->id}}"><i class="fas fa-times "></i></a>
                                 </td>
                             </tr>
                         @endforeach
