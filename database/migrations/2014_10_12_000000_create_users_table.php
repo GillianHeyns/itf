@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            $table->string('user_docentnummer');
+            $table->string('user_docentnummer')->nullable();
         });
 
         // Insert some users (inside the up-function!)

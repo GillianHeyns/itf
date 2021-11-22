@@ -22,6 +22,8 @@ Route::get('contact', function () {
     return 'Contact info';
 });
 
+Route::view('main', 'user.landing-page');
+
 Route::get('admin/cms', function (){
     return view('admin.content-management');
 });
