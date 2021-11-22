@@ -11,10 +11,10 @@ class ProjectController extends Controller
     // Master Page: http://itf.test/admin/cms
     public function index()
     {
-        $data= DB::table('projects')->get();
-//        return DB::table('projects')->get();
-        return view('admin.content-management',['data'=>$data]);
+        $projectdata= DB::table('projects')->get();
+        return view('admin.content-management',['projectdata'=>$projectdata]);
 
+        //        return DB::table('projects')->get();
 //        return view('admin.content-management');
     }
 

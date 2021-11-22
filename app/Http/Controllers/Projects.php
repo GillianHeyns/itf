@@ -22,8 +22,8 @@ class Projects extends Controller
         $project->file_path='/storage/uploads/projects/'.$imageName;
         $project->save();
 
-        $data= DB::table('projects')->get();
-        return view('admin.content-management',['data'=>$data]);
+        $projectdata= DB::table('projects')->get();
+        return view('admin.content-management',['projectdata'=>$projectdata]);
     }
 
 

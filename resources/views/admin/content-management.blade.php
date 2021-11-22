@@ -45,11 +45,11 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($data as $item)
+                        @foreach($projectdata as $project)
                             <tr>
-                                <th class="text-center font-weight-normal" scope="row">{{$item->id}}</th>
-                                <td><a href="">{{$item->titel}}</a></td>
-                                <td>{{$item->beschrijving}}</td>
+                                <th class="text-center font-weight-normal" scope="row">{{$project->id}}</th>
+                                <td><a href="">{{$project->titel}}</a></td>
+                                <td>{{$project->beschrijving}}</td>
                                 <td>
                                     <a href=""><i class="fas fa-pen pr-2"></i></a>
                                     <a href=""><i class="fas fa-times "></i></a>
@@ -57,6 +57,19 @@
                             </tr>
                         @endforeach
                         </tbody>
+{{--                        <tbody>--}}
+{{--                        @foreach($testimonydata as $testimony)--}}
+{{--                            <tr>--}}
+{{--                                <th class="text-center font-weight-normal" scope="row">{{$testimony->id}}</th>--}}
+{{--                                <td><a href="">{{$testimony->testimony_studentnaam}}</a></td>--}}
+{{--                                <td>{{$testimony->testimony_studierichting}}</td>--}}
+{{--                                <td>--}}
+{{--                                    <a href=""><i class="fas fa-pen pr-2"></i></a>--}}
+{{--                                    <a href=""><i class="fas fa-times "></i></a>--}}
+{{--                                </td>--}}
+{{--                            </tr>--}}
+{{--                        @endforeach--}}
+{{--                        </tbody>--}}
                     </table>
 
                 </div>
