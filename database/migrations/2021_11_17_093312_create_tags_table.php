@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
 
 class CreateTagsTable extends Migration
@@ -18,6 +19,51 @@ class CreateTagsTable extends Migration
             $table->timestamps();
             $table->string('tag_naam');
         });
+
+        DB::table('tags')->insert(
+            [
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_naam' => 'All',
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_naam' => 'APP',
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_naam' => 'AI',
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_naam' => 'CCS',
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_naam' => 'DI',
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_naam' => 'Hackathon',
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_naam' => 'IOT',
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_naam' => 'Other',
+                ],
+            ]
+        );
     }
 
     /**

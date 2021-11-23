@@ -6,8 +6,14 @@ use Illuminate\Http\Request;
 use App\Testimony;
 use Illuminate\Support\Facades\DB;
 
-class TestimoniesController extends Controller
+class TestimonyController extends Controller
 {
+    public function index()
+    {
+        $data= DB::table('testimonies')->get();
+        return view('admin.cms-testimonies',['data'=>$data]);
+    }
+
     function save(Request $req){
         $req->validate([
             'file'=>'required|image|mimes:jpeg,png,pg,gif,svg|max:2048',
@@ -24,7 +30,7 @@ class TestimoniesController extends Controller
         $testimony->file_path='/storage/uploads/testimonies/'.$imageName;
         $testimony->save();
 
-        $data= DB::table('projects')->get();
-        return view('admin.content-management',['data'=>$data]);
+        $data= DB::table('testimonies')->get();
+        return view('admin.cms-testimonies',['data'=>$data]);
     }
 }

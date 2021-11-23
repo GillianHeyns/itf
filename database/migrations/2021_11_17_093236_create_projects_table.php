@@ -24,7 +24,7 @@ class CreateProjectsTable extends Migration
 //            $table->foreign('content_block_id')->references('id')->on('content_blocks')->onDelete('cascade')->onUpdate('cascade');
         });
 
-        // Insert some users (inside the up-function!)
+        // Insert some projects (inside the up-function!)
         DB::table('projects')->insert(
             [
                 [
