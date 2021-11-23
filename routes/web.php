@@ -26,6 +26,13 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     route::redirect('/', 'records');
     Route::get('records', 'Admin\RecordController@index');
 
+    //Tabs
+    Route::get('cms-testimonies', 'TestimonyController@index');
+    Route::get('cms-testimonies/{id}', 'TestimonyController@show');
+
+    //    Route::view('cms-testimonies', 'admin.cms-testimonies');
+    Route::view('cms-tags', 'admin.cms-tags');
+
     //CONTROLLERS
     Route::get('cms', 'ProjectController@index');
     Route::get('cms/{id}', 'ProjectController@show');
@@ -34,9 +41,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::view('nieuw-project', 'admin.nieuw-project');
     Route::post('submit', 'Projects@save');
 
-//Getuigenis
+    //Getuigenis
     Route::view('nieuw-getuigenis', 'admin.nieuw-getuigenis');
-    Route::post('submit1', 'TestimoniesController@save');
+    Route::post('submit1', 'TestimonyController@save');
 });
 
 Route::middleware(['auth'])->prefix('user')->group(function () {
@@ -55,8 +62,6 @@ Route::middleware(['auth'])->group(function () {
 Route::get('contact', 'ContactController@show');
 Route::post('contact', 'ContactController@sendEmail');
 
-Route::view('admin/content-management','admin/content-management');
-Route::view('admin/project','admin/project');
 Route::view('faciliteiten', 'faciliteiten');
 Route::view('projecten', 'projecten');
 Route::view('dagopleiding', 'dagopleiding');
