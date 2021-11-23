@@ -42,7 +42,15 @@ class CreateProjectsTable extends Migration
                     'beschrijving' => 'Het belang van afvalsortering',
                     'file_path' => "testURL2",
 //                    'content_block_id' => 2
-                ]
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'titel' => 'GitLab',
+                    'beschrijving' => 'GitLab voor KCE',
+                    'file_path' => "testURL3",
+//                    'content_block_id' => 3
+                ],
            ]
         );
     }

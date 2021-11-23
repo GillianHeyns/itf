@@ -32,7 +32,7 @@
                                 <label for="file"
                                        class="col-md-4 col-form-label text-md-right">Foto: </label>
                                 <div class="col-md-6">
-                                    <input multiple="multiple" type="file" id="file" name="file"
+                                    <input multiple="multiple" type="file" id="file" name="file[]"
                                            class="form-control @error('file') is-invalid @enderror">
                                 </div>
                             </div>

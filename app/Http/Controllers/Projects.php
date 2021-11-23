@@ -9,8 +9,9 @@ use Illuminate\Support\Facades\DB;
 class Projects extends Controller
 {
     function save(Request $req){
-        $req->validate([
-            'file'=>'required|image|mimes:jpeg,png,pg,gif,svg|max:2048',
+        $this->validate($req, [
+            'file'=>'required',
+            'file.*'=> 'mimes:jpeg,jpg,png,gif,svg|max:2048'
         ]);
 
 //        $imageName=time().'.'.$req->file('file')->extension();
@@ -18,17 +19,18 @@ class Projects extends Controller
 
         $photo=array();
 
+        //dd($req->file('file'));
         foreach ($req->file('file') as $file){
             $imageName = time() . '.' . $file->extension();
             $file->move(public_path('uploads/projects'),$imageName);
-            $photo[]=$imageName;
+            $photo[]= 'uploads/projects/' . $imageName;
         }
 
         $project = new Project;
         $project->titel= $req->titel;
         $project->beschrijving= $req->beschrijving;
         //$project->file_path='/storage/uploads/projects/'.$imageName;
-        $project->file_path=json_encode($photo);
+        $project->file_path=json_encode($photo, JSON_UNESCAPED_SLASHES);
         $project->save();
 
         $data= DB::table('projects')->get();
