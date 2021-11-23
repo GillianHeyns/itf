@@ -75,3 +75,5 @@
         </div>
     </section>
 @endsection
+
+@section('navigation-fixed', 'fixed-bottom')

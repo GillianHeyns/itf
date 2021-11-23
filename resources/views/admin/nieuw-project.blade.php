@@ -32,8 +32,7 @@
                                 <label for="file"
                                        class="col-md-4 col-form-label text-md-right">Foto: </label>
                                 <div class="col-md-6">
-                                    <input multiple="multiple" type="file" id="file" name="file"
-                                           class="form-control @error('file') is-invalid @enderror">
+                                    <input multiple="multiple" type="file" id="file" name="file">
                                 </div>
                             </div>
                             <div class="form-group row mb-0">
@@ -50,3 +49,5 @@
         </div>
     </div>
 @endsection
+
+@section('navigation-fixed', 'fixed-bottom')
