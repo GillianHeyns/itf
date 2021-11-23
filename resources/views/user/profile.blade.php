@@ -42,3 +42,5 @@
         </div>
     </div>
 @endsection
+
+@section('navigation-fixed', 'fixed-bottom')

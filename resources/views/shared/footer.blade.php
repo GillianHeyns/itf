@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="bg-light text-center text-lg-start">
+<footer class="@yield('navigation-fixed') bg-light text-center text-lg-start">
     <!-- Grid container -->
     <div class="container p-4">
         <!--Grid row-->

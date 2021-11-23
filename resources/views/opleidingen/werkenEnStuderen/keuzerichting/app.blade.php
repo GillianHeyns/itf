@@ -19,3 +19,5 @@
         talloze IT bedrijven in Vlaanderen.</p>
     <p>Wil je graag meer weten over deze afstudeerrichting? Kijk dan hier voor meer info.</p>
 @endsection
+
+@section('navigation-fixed', 'fixed-bottom')
