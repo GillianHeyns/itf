@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -26,6 +27,31 @@ class CreateTestimoniesTable extends Migration
 //            $table->foreign('content_block_id')->references('id')->on('content_blocks')->onDelete('cascade')->onUpdate('cascade');
 
         });
+        // Insert
+        DB::table('testimonies')->insert(
+            [
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'testimony_tekst' => 'ITF Student Gillian Heyns',
+                    'testimony_studentnaam' => 'Gillian Heyns',
+                    'testimony_studierichting' => "3DI",
+                    'testimony_jaar' => "2021",
+                    'file_path' => "testURL",
+//                    'content_block_id' => 1
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'testimony_tekst' => 'ITF Student Jonas Van Hove',
+                    'testimony_studentnaam' => 'Jonas Van Hove',
+                    'testimony_studierichting' => "3DI",
+                    'testimony_jaar' => "2021",
+                    'file_path' => "testURL1",
+//                    'content_block_id' => 1
+                ]
+            ]
+        );
     }
 
     /**
