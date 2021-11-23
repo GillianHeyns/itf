@@ -22,30 +22,22 @@ Route::get('contact', function () {
     return 'Contact info';
 });
 
-Route::view('main', 'user.landing-page');
-
-Route::get('admin/cms', function (){
-    return view('admin.content-management');
-});
-
-Route::get('admin/records', function (){
-    return view('admin.records.index');
-});
-
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     route::redirect('/', 'records');
     Route::get('records', 'Admin\RecordController@index');
 
-});
+    //CONTROLLERS
+    Route::get('cms', 'ProjectController@index');
+    Route::get('cms/{id}', 'ProjectController@show');
 
-//NOG NIET VEILIG !!!!!
-//Project
-Route::view('admin/nieuw-project', 'admin.nieuw-project');
-Route::post('admin/submit', 'Projects@save');
+    //Project
+    Route::view('nieuw-project', 'admin.nieuw-project');
+    Route::post('submit', 'Projects@save');
 
 //Getuigenis
-Route::view('admin/nieuw-getuigenis', 'admin.nieuw-getuigenis');
-Route::post('admin/submit1', 'TestimoniesController@save');
+    Route::view('nieuw-getuigenis', 'admin.nieuw-getuigenis');
+    Route::post('submit1', 'TestimoniesController@save');
+});
 
 Route::middleware(['auth'])->prefix('user')->group(function () {
     Route::redirect('/', '/user/profile');
@@ -54,15 +46,15 @@ Route::middleware(['auth'])->prefix('user')->group(function () {
     Route::get('password', 'User\PasswordController@edit');
     Route::post('password', 'User\PasswordController@update');
 });
+Route::middleware(['auth'])->group(function () {
+    Route::view('main', 'user.landing-page');
+});
 
 //PAGINA's ITF WEBSITE
 //contact formulier
 Route::get('contact', 'ContactController@show');
 Route::post('contact', 'ContactController@sendEmail');
 
-
-
-Route::view('admin/records', 'admin.records.index');
 Route::view('admin/content-management','admin/content-management');
 Route::view('admin/project','admin/project');
 Route::view('faciliteiten', 'faciliteiten');
@@ -81,8 +73,3 @@ Route::view('dagopleiding/iot', 'opleidingen.bachelor.keuzerichting.iot');
 Route::view('wes/app', 'opleidingen.werkenEnStuderen.keuzerichting.app');
 Route::view('wes/ccs', 'opleidingen.werkenEnStuderen.keuzerichting.ccs');
 Route::view('facilities', 'faciliteiten_acs');
-
-
-//CONTROLLERS
-Route::get('admin/cms', 'ProjectController@index');
-Route::get('admin/cms/{id}', 'ProjectController@show');

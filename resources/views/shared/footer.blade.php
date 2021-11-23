@@ -79,15 +79,16 @@
                 {{ auth()->user()->name }} <span class="caret"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="/user/profile"><i class="fas fa-user-cog"></i>Update Profile</a>
-                <a class="dropdown-item" href="/user/password"><i class="fas fa-key"></i>New Password</a>
+                <a class="dropdown-item" href="/main"><i class="fas fa-home"></i> Main</a>
+                @if(auth()->user()->admin)
+                    <a class="dropdown-item" href="/admin/cms"><i class="fas fa-database"></i> CMS</a>
+                @endif
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/user/profile"><i class="fas fa-user-cog"></i> Update Profile</a>
+                <a class="dropdown-item" href="/user/password"><i class="fas fa-key"></i> New Password</a>
                 {{--                    <a class="dropdown-item" href="/user/history"><i class="fas fa-box-open"></i>Order history</a>--}}
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i>Logout</a>
-                @if(auth()->user()->admin)
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/admin/cms"><i class="fas fa-database"></i>CMS</a>
-                @endif
+                <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
             </div>
         @endauth
     </div>
