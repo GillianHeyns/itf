@@ -39,8 +39,8 @@
                         <tr>
                             <th class="text-center card-body text-bold border-top pt-2 pb-2" scope="col">#</th>
                             <th class="card-body text-bold border-top pt-2 pb-2" scope="col">Naam</th>
-                            <th class="card-body text-bold border-top pt-2 pb-2" scope="col">Type</th>
                             <th class="card-body text-bold border-top pt-2 pb-2" scope="col">Beschrijving</th>
+                            <th class="card-body text-bold border-top pt-2 pb-2" scope="col">Type</th>
                             <th class="card-body text-bold border-top pt-2 pb-2" scope="col"></th>
                         </tr>
                         </thead>
@@ -50,6 +50,7 @@
                                 <th class="text-center font-weight-normal" scope="row">{{$item->id}}</th>
                                 <td><a href="">{{$item->titel}}</a></td>
                                 <td>{{$item->beschrijving}}</td>
+                                <td></td>
                                 <td>
                                     <a href="/admin/cms/{{$item->id}}"><i class="fas fa-pen pr-2"></i></a>
                                     <a href="/admin/cms/delete/{{$item->id}}"><i class="fas fa-times "></i></a>
