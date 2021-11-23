@@ -21,4 +21,21 @@
     <p>Wil je graag meer weten over deze afstudeerrichting? Kijk dan hier voor meer info.</p>
 @endsection
 
-@section('navigation-fixed', 'fixed-bottom')
+<style>
+    body {
+        position: relative;
+    }
+
+    body::after {
+        content: '';
+        display: block;
+        height: 50px; /* Set same as footer's height */
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+    }
+</style>
