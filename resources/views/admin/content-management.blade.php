@@ -45,7 +45,7 @@
                         <thead>
                         <tr>
                             <th class="text-center card-body text-bold border-top pt-2 pb-2" scope="col">#</th>
-                            <th class="card-body text-bold border-top pt-2 pb-2" scope="col">Naam</th>
+                            <th class="card-body text-bold border-top pt-2 pb-2" scope="col">Project</th>
                             <th class="card-body text-bold border-top pt-2 pb-2" scope="col">Beschrijving</th>
                             <th class="card-body text-bold border-top pt-2 pb-2" scope="col"></th>
                         </tr>
@@ -71,4 +71,21 @@
     </div>
 @endsection
 
-@section('navigation-fixed', 'fixed-bottom')
+<style>
+    body {
+        position: relative;
+    }
+
+    body::after {
+        content: '';
+        display: block;
+        height: 50px; /* Set same as footer's height */
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+    }
+</style>

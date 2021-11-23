@@ -26,16 +26,13 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     route::redirect('/', 'records');
     Route::get('records', 'Admin\RecordController@index');
 
-    //Tabs
-    Route::get('cms-testimonies', 'TestimonyController@index');
-    Route::get('cms-testimonies/{id}', 'TestimonyController@show');
-
-    //    Route::view('cms-testimonies', 'admin.cms-testimonies');
-    Route::view('cms-tags', 'admin.cms-tags');
-
     //CONTROLLERS
     Route::get('cms', 'ProjectController@index');
     Route::get('cms/{id}', 'ProjectController@show');
+    Route::get('cms-testimonies', 'TestimonyController@index');
+    Route::get('cms-testimonies/{id}', 'TestimonyController@show');
+    Route::get('cms-tags', 'TagController@index');
+    Route::get('cms-tags/{id}', 'TagController@show');
 
     //Project
     Route::view('nieuw-project', 'admin.nieuw-project');
@@ -44,6 +41,10 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     //Getuigenis
     Route::view('nieuw-getuigenis', 'admin.nieuw-getuigenis');
     Route::post('submit1', 'TestimonyController@save');
+
+    //Tag
+    Route::view('nieuw-tag', 'admin.nieuw-tag');
+    Route::post('submit2', 'TagController@save');
 });
 
 Route::middleware(['auth'])->prefix('user')->group(function () {
