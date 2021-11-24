@@ -36,7 +36,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 
     //Project
     Route::view('nieuw-project', 'admin.nieuw-project');
-    Route::post('submit', 'Projects@save');
+    Route::post('submit', 'ProjectController@save');
 
     //Getuigenis
     Route::view('nieuw-getuigenis', 'admin.nieuw-getuigenis');
