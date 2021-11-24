@@ -27,4 +27,29 @@ class TagController extends Controller
     {
         return view('admin.edit-tag', ['id' => $id]);
     }
+
+    public function edit($id)
+    {
+//        $project = Project($id);
+//        $project->titel = $req->titel;
+//        $project->beschrijving = $req->beschrijving;
+//        $project->file_path = json_encode($photo, JSON_UNESCAPED_SLASHES);
+//        $project->save();
+    }
+
+    public function showdelete($id)
+    {
+        $tag = DB::table('tags')->where('id', $id)->get();
+        return view('admin.delete-tag', ['tag' => $tag]);
+    }
+
+    public function delete($id)
+    {
+        DB::delete('delete from tags where id = ?',[$id]);
+
+        $data= DB::table('tags')->get();
+        return view('admin.cms-tags',['data'=>$data]);
+//        echo "Record deleted successfully.<br/>";
+//        echo '<a href = "/admin/cms-tags">Click Here</a> to go back.';
+    }
 }

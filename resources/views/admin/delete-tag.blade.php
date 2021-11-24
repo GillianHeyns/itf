@@ -9,19 +9,20 @@
         <div class="row justify-content-center">
             <div class="col-md-11">
                 <div class="card p-0">
-                    @foreach($project as $project)
+                    @foreach($tag as $tag)
                         <div
-                            class="card-header">{{ __('Delete project') }} {{ $project->id }}{{ __(':') }} {{ $project->titel}}</div>
+                            class="card-header">{{ __('Delete tag') }} {{ $tag->id }}{{ __(':') }} {{ $tag->tag_naam}}</div>
                         <div class="card-body">
                             <div class="d-flex justify-content-center">
-                                <p class="row">Weet je zeker dat je het project "<span
-                                        class="font-weight-bold">{{ $project -> titel }}</span>" wil verwijderen?</p>
+                                <p class="row">Weet je zeker dat je de tag "<span
+                                        class="font-weight-bold">{{ $tag -> tag_naam }}</span>" wil verwijderen?</p>
                             </div>
 
                             <div class="d-flex justify-content-around">
 {{--                                <button class="m-0 col-4 btn btn-danger btn-sm">Delete</button>--}}
-                                <a role="button" href="/admin/cms/delete/confirm" class="col-4 btn btn-danger btn-sm">Annuleer</a>
-                                <a role="button" href="/admin/cms" class="col-4 btn btn-success btn-sm">Annuleer</a>
+{{--                                <a role="button" href="/admin/cms-tags/delete/confirm" class="col-4 btn btn-danger btn-sm">Delete</a>--}}
+                                <a role="button" href = '/admin/cms-tags/delete/{{ $tag->id }}/confirm' class="col-4 btn btn-danger btn-sm">Delete</a>
+                                <a role="button" href="/admin/cms-tags" class="col-4 btn btn-success btn-sm">Annuleer</a>
                             </div>
                         </div>
                     @endforeach
