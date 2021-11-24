@@ -22,4 +22,9 @@ class TagController extends Controller
         $data= DB::table('tags')->get();
         return view('admin.cms-tags',['data'=>$data]);
     }
+
+    public function show($id)
+    {
+        return view('admin.edit-tag', ['id' => $id]);
+    }
 }

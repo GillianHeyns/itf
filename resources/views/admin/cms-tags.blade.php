@@ -55,10 +55,10 @@
                         @foreach($data as $tag)
                             <tr>
                                 <th class="text-center font-weight-normal" scope="row">{{$tag->id}}</th>
-                                <td><a href="">{{$tag->tag_naam}}</a></td>
+                                <td><a href="/admin/cms-tags/{{$tag->id}}">{{$tag->tag_naam}}</a></td>
                                 <td>
-                                    <a href=""><i class="fas fa-pen pr-2"></i></a>
-                                    <a href=""><i class="fas fa-times "></i></a>
+                                    <a href="/admin/cms-tags/{{$tag->id}}"><i class="fas fa-pen pr-2"></i></a>
+                                    <a href="/admin/cms-tags/delete/{{$tag->id}}"><i class="fas fa-times "></i></a>
                                 </td>
                             </tr>
                         @endforeach

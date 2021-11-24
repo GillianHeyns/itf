@@ -54,11 +54,11 @@
                         @foreach($data as $testimony)
                             <tr>
                                 <th class="text-center font-weight-normal" scope="row">{{$testimony->id}}</th>
-                                <td><a href="">{{$testimony->testimony_studentnaam}}</a></td>
+                                <td><a href="/admin/cms-testimonies/{{$testimony->id}}">{{$testimony->testimony_studentnaam}}</a></td>
                                 <td>{{$testimony->testimony_studierichting}}</td>
                                 <td>
-                                    <a href=""><i class="fas fa-pen pr-2"></i></a>
-                                    <a href=""><i class="fas fa-times "></i></a>
+                                    <a href="/admin/cms-testimonies/{{$testimony->id}}"><i class="fas fa-pen pr-2"></i></a>
+                                    <a href="/admin/cms-testimonies/delete/{{$testimony->id}}"><i class="fas fa-times "></i></a>
                                 </td>
                             </tr>
                         @endforeach
