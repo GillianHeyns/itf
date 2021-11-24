@@ -11,7 +11,7 @@
                 <div class="card p-0">
                     <div class="card-header">Nieuwe tag</div>
                     <div class="card-body">
-                        <form action="submit2" method="post" enctype="multipart/form-data">
+                        <form action="cms-tags" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label for="naam" class="col-md-4 col-form-label text-md-right">Tag: </label>

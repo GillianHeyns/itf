@@ -46,10 +46,6 @@ class TagController extends Controller
     public function delete($id)
     {
         DB::delete('delete from tags where id = ?',[$id]);
-
-        $data= DB::table('tags')->get();
-        return view('admin.cms-tags',['data'=>$data]);
-//        echo "Record deleted successfully.<br/>";
-//        echo '<a href = "/admin/cms-tags">Click Here</a> to go back.';
+        return redirect('/admin/cms-tags');
     }
 }

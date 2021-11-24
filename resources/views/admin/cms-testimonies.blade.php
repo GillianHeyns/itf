@@ -33,9 +33,9 @@
                                     Nieuw
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="nieuw-project">Project</a>
-                                    <a class="dropdown-item" href="nieuw-getuigenis">Getuigenis</a>
-                                    <a class="dropdown-item" href="nieuw-tag">Tag</a>
+                                    <a class="dropdown-item" href="/admin/nieuw-project">Project</a>
+                                    <a class="dropdown-item" href="/admin/nieuw-getuigenis">Getuigenis</a>
+                                    <a class="dropdown-item" href="/admin/nieuw-tag">Tag</a>
                                 </div>
                             </div>
                         </div>

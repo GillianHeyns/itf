@@ -44,8 +44,8 @@ class ProjectController extends Controller
 
     public function delete($id)
     {
-        $projects = DB::select('SELECT * FROM projects');
-        return view('admin.content-management', ['projects' => $projects]);
+        DB::delete('delete from projects where id = ?',[$id]);
+        return redirect('/admin/cms');
     }
 
     function save(Request $req)
