@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Photo;
 use App\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -18,29 +19,35 @@ class ProjectController extends Controller
 //        return view('admin.content-management');
     }
 
-    function save(Request $req)
-    {
+    function save(Request $req){
         $this->validate($req, [
-            'file' => 'required',
-            'file.*' => 'mimes:jpeg,jpg,png,gif,svg|max:2048'
+            'file'=>'required',
+            'file.*'=> 'mimes:jpeg,jpg,png,gif,svg|max:2048'
         ]);
 
-        $photo = array();
+        $photolink=array();
 
-        foreach ($req->file('file') as $file) {
+        foreach ($req->file('file') as $file){
             $imageName = time() . '.' . $file->extension();
-            $file->move(public_path('uploads/projects'), $imageName);
-            $photo[] = 'uploads/projects/' . $imageName;
+            $file->move(public_path('uploads/projects'),$imageName);
+            $photolink[]= 'uploads/projects/' . $imageName;
         }
 
         $project = new Project;
-        $project->titel = $req->titel;
-        $project->beschrijving = $req->beschrijving;
-        $project->file_path = json_encode($photo, JSON_UNESCAPED_SLASHES);
+        $project->titel= $req->titel;
+        $project->beschrijving= $req->beschrijving;
+        //$project->file_path=json_encode($photolink, JSON_UNESCAPED_SLASHES);
         $project->save();
+        $projectId = $project->id;
 
-        $data = DB::table('projects')->get();
-        return view('admin.content-management', ['data' => $data]);
+        $photo= new Photo;
+        $photo->foto_link=json_encode($photolink, JSON_UNESCAPED_SLASHES);
+        $photo->foto_beschrijving=$req->fotobeschrijving;
+        $photo->project_id=$projectId;
+        $photo->save();
+
+        $data= DB::table('projects')->get();
+        return view('admin.content-management',['data'=>$data]);
     }
 
     // Detail Page: http://itf.test/admin/cms/{id}

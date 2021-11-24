@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Testimony;
 use Illuminate\Support\Facades\DB;
+use App\Photo;
 
 class TestimonyController extends Controller
 {
@@ -29,6 +30,14 @@ class TestimonyController extends Controller
         $testimony->testimony_tekst= $req->tekst;
         $testimony->file_path='/storage/uploads/testimonies/'.$imageName;
         $testimony->save();
+
+        $testimonyId = $testimony->id;
+
+        $photo = new Photo;
+        $photo->foto_link='/storage/uploads/testimonies/'.$imageName;
+        $photo->foto_beschrijving=$req->foto_beschrijving;
+        $photo->testimony_id=$testimonyId;
+        $photo->save();
 
         $data= DB::table('testimonies')->get();
         return view('admin.cms-testimonies',['data'=>$data]);

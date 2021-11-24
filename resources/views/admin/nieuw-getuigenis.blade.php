@@ -52,6 +52,14 @@
                                     <input type="file" id="file" name="file">
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label for="foto_beschrijving"
+                                       class="col-md-4 col-form-label text-md-right">Foto beschrijving: </label>
+                                <div class="col-md-6">
+                                    <textarea type="text" id="foto_beschrijving" name="foto_beschrijving"
+                                              class="form-control @error('foto_beschrijving') is-invalid @enderror"></textarea>
+                                </div>
+                            </div>
                             <div class="form-group row mb-0">
                                 <div class="col-md-4 offset-md-6">
                                     <button type="submit" class="col-md-12 btn btn-primary">
