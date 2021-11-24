@@ -26,4 +26,28 @@ class ProjectController extends Controller
 //        Json::dump($result);
         return view('project.show', ['id' => $id]);
     }
+
+    function save(Request $req){
+        $this->validate($req, [
+            'file'=>'required',
+            'file.*'=> 'mimes:jpeg,jpg,png,gif,svg|max:2048'
+        ]);
+
+        $photo=array();
+
+        foreach ($req->file('file') as $file){
+            $imageName = time() . '.' . $file->extension();
+            $file->move(public_path('uploads/projects'),$imageName);
+            $photo[]= 'uploads/projects/' . $imageName;
+        }
+
+        $project = new Project;
+        $project->titel= $req->titel;
+        $project->beschrijving= $req->beschrijving;
+        $project->file_path=json_encode($photo, JSON_UNESCAPED_SLASHES);
+        $project->save();
+
+        $data= DB::table('projects')->get();
+        return view('admin.content-management',['data'=>$data]);
+    }
 }
