@@ -22,10 +22,15 @@
                                            class="form-control @error('naam') is-invalid @enderror">
                                 </div>
                             </div>
-                            <div class="form-group row mb-0">
-                                <div class="col-md-4 offset-md-6">
-                                    <button type="submit" class="col-md-12 btn btn-primary">
-                                        {{ __('Toevoegen') }}
+                            <div class="form-group d-flex justify-content-end">
+                                <div class="col-md-4">
+                                    <a role="button" href="/admin/cms-tags" class="col-md-12 btn btn-danger">
+                                        Annuleer
+                                    </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="submit" class="col-md-12 m-0 btn btn-success">
+                                        {{ __('Save') }}
                                     </button>
                                 </div>
                             </div>
@@ -36,3 +41,5 @@
         </div>
     </div>
 @endsection
+
+@section('navigation-fixed', 'fixed-bottom')

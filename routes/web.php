@@ -29,6 +29,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     //CONTROLLERS
     Route::get('cms', 'ProjectController@index');
     Route::get('cms/{id}', 'ProjectController@show');
+    Route::get('cms/delete/{id}', 'ProjectController@showdelete');
     Route::get('cms-testimonies', 'TestimonyController@index');
     Route::get('cms-testimonies/{id}', 'TestimonyController@show');
     Route::get('cms-tags', 'TagController@index');
