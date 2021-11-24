@@ -9,20 +9,20 @@
         <div class="row justify-content-center">
             <div class="col-md-11">
                 <div class="card p-0">
-                        <ul class="nav nav-tabs font-weight-bold">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="cms">Projecten</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="cms-testimonies" style="color: #3F3F3F;">Getuigenissen</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="cms-tags" style="color: #3F3F3F;">Tags</a>
-                            </li>
-{{--                            <li class="nav-item">--}}
-{{--                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>--}}
-{{--                            </li>--}}
-                        </ul>
+                    <ul class="nav nav-tabs font-weight-bold">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="cms">Projecten</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cms-testimonies" style="color: #3F3F3F;">Getuigenissen</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cms-tags" style="color: #3F3F3F;">Tags</a>
+                        </li>
+                        {{--                            <li class="nav-item">--}}
+                        {{--                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>--}}
+                        {{--                            </li>--}}
+                    </ul>
 
                     <div class="card-body">
                         <div class="row">
@@ -33,9 +33,9 @@
                                     Nieuw
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="nieuw-project">Project</a>
-                                    <a class="dropdown-item" href="nieuw-getuigenis">Getuigenis</a>
-                                    <a class="dropdown-item" href="nieuw-tag">Tag</a>
+                                    <a class="dropdown-item" href="/admin/nieuw-project">Project</a>
+                                    <a class="dropdown-item" href="/admin/nieuw-getuigenis">Getuigenis</a>
+                                    <a class="dropdown-item" href="/admin/nieuw-tag">Tag</a>
                                 </div>
                             </div>
                         </div>

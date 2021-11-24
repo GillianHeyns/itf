@@ -2,7 +2,7 @@
 
 @include('shared.icons')
 
-@section('title', 'IT Factory | Home')
+@section('title', 'IT Factory | Nieuw project')
 
 @section('main')
     <div class="container mt-5 mb-5">
@@ -11,7 +11,7 @@
                 <div class="card p-0">
                     <div class="card-header">Nieuw project</div>
                     <div class="card-body">
-                        <form action="submit" method="post" enctype="multipart/form-data">
+                        <form action="cms" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label for="titel" class="col-md-4 col-form-label text-md-right">Titel: </label>

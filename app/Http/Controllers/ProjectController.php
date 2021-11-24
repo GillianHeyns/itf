@@ -19,28 +19,6 @@ class ProjectController extends Controller
 //        return view('admin.content-management');
     }
 
-    // Detail Page: http://itf.test/admin/cms/{id}
-    public function show($id)
-    {
-//        $project = Project::with('id')->findOrFail($id);
-//        $result = compact('project');
-//        Json::dump($result);
-        return view('admin.edit-project', ['id' => $id]);
-    }
-
-    public function showdelete($id)
-    {
-//        $project = DB::table('projects')->where('id', '1')->first();
-        $project = DB::table('users')->where('name', 'John')->pluck('name');
-        return view('admin.delete-project', ['project' => $project]);
-    }
-
-    public function delete($id)
-    {
-        $projects = DB::select('SELECT * FROM projects');
-        return view('admin.content-management', ['projects' => $projects]);
-    }
-
     function save(Request $req){
         $this->validate($req, [
             'file'=>'required',
@@ -70,5 +48,35 @@ class ProjectController extends Controller
 
         $data= DB::table('projects')->get();
         return view('admin.content-management',['data'=>$data]);
+    }
+
+    // Detail Page: http://itf.test/admin/cms/{id}
+    public function show($id)
+    {
+//        $project = Project::with('id')->findOrFail($id);
+//        $result = compact('project');
+//        Json::dump($result);
+        return view('admin.edit-project', ['id' => $id]);
+    }
+
+    public function edit($id)
+    {
+//        $project = Project($id);
+//        $project->titel = $req->titel;
+//        $project->beschrijving = $req->beschrijving;
+//        $project->file_path = json_encode($photo, JSON_UNESCAPED_SLASHES);
+//        $project->save();
+    }
+
+    public function showdelete($id)
+    {
+        $project = DB::table('projects')->where('id', $id)->get();
+        return view('admin.delete-project', ['project' => $project]);
+    }
+
+    public function delete($id)
+    {
+        DB::delete('delete from projects where id = ?',[$id]);
+        return redirect('/admin/cms');
     }
 }
