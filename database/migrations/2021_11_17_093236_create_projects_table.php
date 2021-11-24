@@ -19,7 +19,7 @@ class CreateProjectsTable extends Migration
             $table->timestamps();
             $table->string('titel');
             $table->string('beschrijving')->nullable();
-            $table->string('file_path')->nullable();
+            //$table->string('file_path')->nullable();
 //            $table->foreignId('content_block_id');
 //            $table->foreign('content_block_id')->references('id')->on('content_blocks')->onDelete('cascade')->onUpdate('cascade');
         });
@@ -32,7 +32,7 @@ class CreateProjectsTable extends Migration
                     'updated_at' => Carbon::now(),
                     'titel' => 'ITF Website',
                     'beschrijving' => 'Website voor de IT Factory',
-                    'file_path' => "testURL",
+                    //'file_path' => "testURL",
 //                    'content_block_id' => 1
                 ],
                 [
@@ -40,7 +40,7 @@ class CreateProjectsTable extends Migration
                     'updated_at' => Carbon::now(),
                     'titel' => 'Afvalsorteermachine',
                     'beschrijving' => 'Het belang van afvalsortering',
-                    'file_path' => "testURL2",
+                    //'file_path' => "testURL2",
 //                    'content_block_id' => 2
                 ],
                 [
@@ -48,7 +48,7 @@ class CreateProjectsTable extends Migration
                     'updated_at' => Carbon::now(),
                     'titel' => 'GitLab',
                     'beschrijving' => 'GitLab voor KCE',
-                    'file_path' => "testURL3",
+                    //'file_path' => "testURL3",
 //                    'content_block_id' => 3
                 ],
            ]
