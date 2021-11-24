@@ -36,6 +36,27 @@ class TestimonyController extends Controller
 
     public function show($id)
     {
-        return view('admin.edit-testimony', ['id' => $id]);
+        return view('admin.edit-getuigenis', ['id' => $id]);
+    }
+
+    public function edit($id)
+    {
+//        $project = Project($id);
+//        $project->titel = $req->titel;
+//        $project->beschrijving = $req->beschrijving;
+//        $project->file_path = json_encode($photo, JSON_UNESCAPED_SLASHES);
+//        $project->save();
+    }
+
+    public function showdelete($id)
+    {
+        $testimony = DB::table('testimonies')->where('id', $id)->get();
+        return view('admin.delete-getuigenis', ['testimony' => $testimony]);
+    }
+
+    public function delete($id)
+    {
+        DB::delete('delete from testimonies where id = ?',[$id]);
+        return redirect('/admin/cms-testimonies');
     }
 }

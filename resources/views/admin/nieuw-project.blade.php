@@ -2,7 +2,7 @@
 
 @include('shared.icons')
 
-@section('title', 'IT Factory | Home')
+@section('title', 'IT Factory | Nieuw project')
 
 @section('main')
     <div class="container mt-5 mb-5">
