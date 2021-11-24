@@ -24,6 +24,6 @@ class ProjectController extends Controller
 //        $project = Project::with('id')->findOrFail($id);
 //        $result = compact('project');
 //        Json::dump($result);
-        return view('project.show', ['id' => $id]);
+        return view('admin.edit-project', ['id' => $id]);
     }
 }

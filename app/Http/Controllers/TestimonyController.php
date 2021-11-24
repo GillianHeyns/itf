@@ -33,4 +33,9 @@ class TestimonyController extends Controller
         $data= DB::table('testimonies')->get();
         return view('admin.cms-testimonies',['data'=>$data]);
     }
+
+    public function show($id)
+    {
+        return view('admin.edit-testimony', ['id' => $id]);
+    }
 }

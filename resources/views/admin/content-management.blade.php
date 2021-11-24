@@ -54,7 +54,7 @@
                         @foreach($data as $project)
                             <tr>
                                 <th class="text-center font-weight-normal" scope="row">{{$project->id}}</th>
-                                <td><a href="">{{$project->titel}}</a></td>
+                                <td><a href="/admin/cms/{{$project->id}}">{{$project->titel}}</a></td>
                                 <td>{{$project->beschrijving}}</td>
                                 <td>
                                     <a href="/admin/cms/{{$project->id}}"><i class="fas fa-pen pr-2"></i></a>
