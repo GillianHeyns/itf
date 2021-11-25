@@ -48,4 +48,5 @@ class TagController extends Controller
         DB::delete('delete from tags where id = ?',[$id]);
         return redirect('/admin/cms-tags');
     }
+
 }

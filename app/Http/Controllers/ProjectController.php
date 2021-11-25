@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Photo;
 use App\Project;
+use App\ProjectTag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -46,6 +47,11 @@ class ProjectController extends Controller
         $photo->project_id=$projectId;
         $photo->save();
 
+        $projectTag = new ProjectTag;
+        $projectTag->project_id=$projectId;
+        $projectTag->tag_id=$req->tags;
+        $projectTag->save();
+
         $data= DB::table('projects')->get();
         return view('admin.content-management',['data'=>$data]);
     }
@@ -78,5 +84,10 @@ class ProjectController extends Controller
     {
         DB::delete('delete from projects where id = ?',[$id]);
         return redirect('/admin/cms');
+    }
+
+    public function showlisttags(){
+        $tags = DB::table('tags')->get();
+        return view('admin.nieuw-project', ['tags' => $tags]);
     }
 }

@@ -19,7 +19,6 @@ class CreateProjectsTable extends Migration
             $table->timestamps();
             $table->string('titel');
             $table->string('beschrijving')->nullable();
-            //$table->string('file_path')->nullable();
 //            $table->foreignId('content_block_id');
 //            $table->foreign('content_block_id')->references('id')->on('content_blocks')->onDelete('cascade')->onUpdate('cascade');
         });
