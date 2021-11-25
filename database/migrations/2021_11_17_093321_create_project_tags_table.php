@@ -16,8 +16,8 @@ class CreateProjectTagsTable extends Migration
         Schema::create('project_tags', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('project_id');
-            $table->foreignId('tag_id');
+            $table->foreignId('project_id')->nullable();
+            $table->foreignId('tag_id')->nullable();
 
             // Foreign key relation
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade')->onUpdate('cascade');

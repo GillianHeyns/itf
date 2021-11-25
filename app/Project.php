@@ -10,6 +10,10 @@ class Project extends Model
         return $this->hasMany('App\Photo'); // a project has many photos
     }
 
+    public function projectTags(){
+        return $this->hasMany('App\ProjectTag'); // a project has many projecttags
+    }
+
     protected $table = 'projects';
 
     public $timestamps =true;

@@ -37,7 +37,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('cms-tags/{id}', 'TagController@show');
 
     //Project
-    Route::view('nieuw-project', 'admin.nieuw-project');
+    Route::get('nieuw-project', 'ProjectController@showlisttags');
     Route::post('cms', 'ProjectController@save');
     Route::get('cms/delete/{id}', 'ProjectController@showdelete');
     Route::get('cms/delete/{id}/confirm', 'ProjectController@delete');
