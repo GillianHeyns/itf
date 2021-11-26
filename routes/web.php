@@ -23,7 +23,7 @@ Route::get('contact', function () {
 });
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
-    Route::redirect('/', 'cms');
+    Route::redirect('/', '/admin/cms');
 //    Route::get('records', 'Admin\RecordController@index');
 
     //CONTROLLERS
@@ -34,7 +34,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('cms/delete/{id}', 'ProjectController@showdelete');
     Route::get('cms/delete/{id}/confirm', 'ProjectController@delete');
     Route::get('cms/{id}', 'ProjectController@edit');
-    Route::get('cms/{id}/confirm', 'ProjectController@update');
+    Route::post('cms/{id}/confirm', 'ProjectController@update');
 
     //Getuigenis
     Route::get('cms-testimonies', 'TestimonyController@index');
@@ -43,7 +43,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('cms-testimonies/delete/{id}', 'TestimonyController@showdelete');
     Route::get('cms-testimonies/delete/{id}/confirm', 'TestimonyController@delete');
     Route::get('cms-testimonies/{id}', 'TestimonyController@edit');
-    Route::get('cms-testimonies/{id}/confirm', 'TestimonyController@update');
+    Route::post('cms-testimonies/{id}/confirm', 'TestimonyController@update');
 
     //Tag
     Route::get('cms-tags', 'TagController@index');

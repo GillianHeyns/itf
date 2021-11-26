@@ -36,8 +36,7 @@ class TagController extends Controller
         $tag->tag_naam = $req->naam;
         $tag->save();
 
-        $data = DB::table('tags')->get();
-        return view('admin.cms-tags', ['data' => $data]);
+        return redirect('/admin/cms-tags');
     }
 
     public function showdelete($id)

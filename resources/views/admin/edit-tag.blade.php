@@ -14,15 +14,7 @@
                             class="card-header">{{ __('Edit tag') }} {{ $tag->id }}{{ __(':') }} {{ $tag->tag_naam}}</div>
                         <div class="card-body">
                             <form action="{{ $tag->id }}/confirm" method="post">
-{{--                            <form action="/admin/cms-tags" method="post">--}}
                                 @csrf
-{{--                                <div class="d-flex justify-content-around">--}}
-{{--                                    <a role="button" href='/admin/cms-tags/delete/{{ $tag->id }}/confirm'--}}
-{{--                                       class="col-4 btn btn-danger btn-sm">Delete</a>--}}
-{{--                                    <a role="button" href="/admin/cms-tags"--}}
-{{--                                       class="col-4 btn btn-success btn-sm">Annuleer</a>--}}
-{{--                                </div>--}}
-
                                 <div class="form-group row">
                                     <label for="naam" class="col-md-4 col-form-label text-md-right">Tag: </label>
                                     <div class="col-md-6">
