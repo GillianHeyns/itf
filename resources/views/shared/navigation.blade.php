@@ -22,19 +22,19 @@
                         {{--                        <a class="dropdown-item" href="../opleidingen/digitalInnovation">Digital Innovation</a>--}}
                         {{--                        <a class="dropdown-item" href="../opleidingen/internetOfThings">Internet Of Things</a>--}}
                         <a class="dropdown-item"
-                           href="../dagopleiding/app">Application
+                           href="/dagopleiding/app">Application
                             Development</a>
                         <a class="dropdown-item"
-                           href="../dagopleiding/ai">Artificial
+                           href="/dagopleiding/ai">Artificial
                             Intelligence</a>
                         <a class="dropdown-item"
-                           href="../dagopleiding/ccs">Cloud & Cyber Security</a>
+                           href="/dagopleiding/ccs">Cloud & Cyber Security</a>
                         <a class="dropdown-item"
-                           href="../dagopleiding/di">Digital Innovation</a>
+                           href="/dagopleiding/di">Digital Innovation</a>
                         <a class="dropdown-item"
-                           href="../dagopleiding/iot">Internet Of Things</a>
+                           href="/dagopleiding/iot">Internet Of Things</a>
                         <a class="dropdown-item"
-                           href="../projecten">Projecten</a>
+                           href="/projecten">Projecten</a>
                     </div>
                 </li>
 
@@ -42,12 +42,12 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#!" data-toggle="dropdown">Werken en studeren</a>
                     <div class="dropdown-menu dropdown-menu-right animate slideIn">
-                        <a class="dropdown-item" href="../wes/app">Application Development
+                        <a class="dropdown-item" href="/wes/app">Application Development
                         </a>
-                        <a class="dropdown-item" href="../wes/ccs">Cloud & Cyber Security
+                        <a class="dropdown-item" href="/wes/ccs">Cloud & Cyber Security
                         </a>
                         <a class="dropdown-item"
-                           href="../projecten">Projecten</a>
+                           href="/projecten">Projecten</a>
                     </div>
                 </li>
 
@@ -58,13 +58,13 @@
                 {{--                    <a class="nav-link" href="../projecten">Projecten</a>--}}
                 {{--                </li>--}}
                 <li class="nav-item">
-                    <a class="nav-link" href="../faciliteiten">Faciliteiten</a>
+                    <a class="nav-link" href="/faciliteiten">Faciliteiten</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="http://minecraft.weareitfactory.be/" target="_blank">Minecraft</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../contact">Contact</a>
+                    <a class="nav-link" href="/contact">Contact</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -72,7 +72,7 @@
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Language</a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <a class="dropdown-item" href="/">Nederlands</a>
-                        <a class="dropdown-item" href="../acs">English</a>
+                        <a class="dropdown-item" href="/acs">English</a>
                     </div>
                 </li>
             </ul>
