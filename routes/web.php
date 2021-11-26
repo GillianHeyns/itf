@@ -43,7 +43,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('cms/delete/{id}/confirm', 'ProjectController@delete');
 
     //Getuigenis
-    Route::view('nieuw-getuigenis', 'admin.nieuw-getuigenis');
+    Route::get('nieuw-getuigenis', 'TestimonyController@showlisttags');
     Route::post('cms-testimonies', 'TestimonyController@save');
     Route::get('cms-testimonies/delete/{id}', 'TestimonyController@showdelete');
     Route::get('cms-testimonies/delete/{id}/confirm', 'TestimonyController@delete');
