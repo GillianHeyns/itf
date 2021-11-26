@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\TestimonyTag;
 use Illuminate\Http\Request;
 use App\Testimony;
 use Illuminate\Support\Facades\DB;
@@ -38,6 +39,12 @@ class TestimonyController extends Controller
         $photo->foto_beschrijving=$req->foto_beschrijving;
         $photo->testimony_id=$testimonyId;
         $photo->save();
+
+        $testimonyTag = new TestimonyTag;
+        $testimonyTag->testimony_id=$testimonyId;
+        $testimonyTag->tag_id=$req->tags;
+        $testimonyTag->save();
+
 
         $data= DB::table('testimonies')->get();
         return view('admin.cms-testimonies',['data'=>$data]);
@@ -88,5 +95,10 @@ class TestimonyController extends Controller
     {
         DB::delete('delete from testimonies where id = ?',[$id]);
         return redirect('/admin/cms-testimonies');
+    }
+
+    public function showlisttags(){
+        $tags = DB::table('tags')->get();
+        return view('admin.nieuw-getuigenis', ['tags' => $tags]);
     }
 }

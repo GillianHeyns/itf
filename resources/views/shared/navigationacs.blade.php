@@ -10,16 +10,16 @@
             <ul class="navbar-nav mr-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="../acs">Bachelor</a>
+                    <a class="nav-link" href="/acs">Bachelor</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../facilities">Facilities</a>
+                    <a class="nav-link" href="/facilities">Facilities</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="http://minecraft.weareitfactory.be/" target="_blank">Minecraft</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../contact">Contact</a>
+                    <a class="nav-link" href="/contact">Contact</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -27,7 +27,7 @@
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Language</a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <a class="dropdown-item" href="/">Nederlands</a>
-                        <a class="dropdown-item" href="../acs">English</a>
+                        <a class="dropdown-item" href="/acs">English</a>
                     </div>
                 </li>
             </ul>
