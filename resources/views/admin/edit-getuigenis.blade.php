@@ -9,65 +9,69 @@
         <div class="row justify-content-center">
             <div class="col-md-11">
                 <div class="card p-0">
-                    <div class="card-header">{{ __('Edit') }} {{ $id }}</div>
-
-                    <div class="card-body">
-
-                        <form action="submit1" method="post" enctype="multipart/form-data">
-                            @csrf
-                            <div class="form-group row">
-                                <label for="naam"
-                                       class="col-md-4 col-form-label text-md-right">Voornaam + naam: </label>
-                                <div class="col-md-6">
-                                    <input type="text" id="naam" name="naam"
-                                           class="form-control @error('naam') is-invalid @enderror">
+                    @foreach($testimony as $testimony)
+                        <div
+                            class="card-header">{{ __('Edit getuigenis') }} {{ $testimony->id }}{{ __(':') }} {{ $testimony->testimony_studentnaam}}</div>
+                        <div class="card-body">
+                            <form action="{{ $testimony->id }}/confirm" method="post">
+                                @csrf
+                                <div class="form-group row">
+                                    <label for="naam"
+                                           class="col-md-4 col-form-label text-md-right">Voornaam + naam: </label>
+                                    <div class="col-md-6">
+                                        <input value="{{ $testimony->testimony_studentnaam}}" type="text" id="naam" name="naam"
+                                               class="form-control @error('naam') is-invalid @enderror">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="studierichting"
-                                       class="col-md-4 col-form-label text-md-right">Studierichting: </label>
-                                <div class="col-md-6">
-                                    <input type="text" id="studierichting" name="studierichting"
-                                           class="form-control @error('studierichting') is-invalid @enderror">
+                                <div class="form-group row">
+                                    <label for="studierichting"
+                                           class="col-md-4 col-form-label text-md-right">Studierichting: </label>
+                                    <div class="col-md-6">
+                                        <input value="{{ $testimony->testimony_studierichting}}" type="text" id="studierichting" name="studierichting"
+                                               class="form-control @error('studierichting') is-invalid @enderror">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="jaar"
-                                       class="col-md-4 col-form-label text-md-right">Jaar: </label>
-                                <div class="col-md-6">
-                                    <input type="text" id="jaar" name="jaar"
-                                           class="form-control @error('jaar') is-invalid @enderror">
+                                <div class="form-group row">
+                                    <label for="jaar"
+                                           class="col-md-4 col-form-label text-md-right">Jaar: </label>
+                                    <div class="col-md-6">
+                                        <input value="{{ $testimony->testimony_jaar}}" type="text" id="jaar" name="jaar"
+                                               class="form-control @error('jaar') is-invalid @enderror">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="tekst"
-                                       class="col-md-4 col-form-label text-md-right">Tekst: </label>
-                                <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="tekst"
+                                           class="col-md-4 col-form-label text-md-right">Tekst: </label>
+                                    <div class="col-md-6">
                                     <textarea type="text" id="tekst" name="tekst"
-                                              class="form-control @error('tekst') is-invalid @enderror"></textarea>
+                                              class="form-control @error('tekst') is-invalid @enderror">{{ $testimony->testimony_tekst}}</textarea>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="file"
-                                       class="col-md-4 col-form-label text-md-right">Foto: </label>
-                                <div class="col-md-6">
-                                    <input type="file" id="file" name="file">
+                                <div class="form-group row">
+                                    <label for="file"
+                                           class="col-md-4 col-form-label text-md-right">Foto: </label>
+                                    <div class="col-md-6">
+                                        <input value="" type="file" id="file" name="file">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group d-flex justify-content-end">
-                                <div class="col-md-4">
-                                    <a role="button" href="/admin/cms-testimonies" class="col-md-12 btn btn-danger">
-                                        Annuleer
-                                    </a>
+                                <div class="form-group row">
+                                    <label for="foto_beschrijving"
+                                           class="col-md-4 col-form-label text-md-right">Foto beschrijving: </label>
+                                    <div class="col-md-6">
+                                    <textarea type="text" id="foto_beschrijving" name="foto_beschrijving"
+                                              class="form-control @error('foto_beschrijving') is-invalid @enderror"></textarea>
+                                    </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <button type="submit" class="col-md-12 m-0 btn btn-success">
-                                        {{ __('Save') }}
-                                    </button>
+                                <div class="form-group row mb-0">
+                                    <div class="col-md-4 offset-md-6">
+                                        <button type="submit" class="col-md-12 btn btn-primary">
+                                            {{ __('Toevoegen') }}
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
-                    </div>
+                            </form>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

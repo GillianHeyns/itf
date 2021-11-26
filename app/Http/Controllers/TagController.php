@@ -10,31 +10,33 @@ class TagController extends Controller
 {
     public function index()
     {
-        $data= DB::table('tags')->get();
-        return view('admin.cms-tags',['data'=>$data]);
+        $data = DB::table('tags')->get();
+        return view('admin.cms-tags', ['data' => $data]);
     }
 
-    function save(Request $req){
+    function save(Request $req)
+    {
         $tag = new Tag();
-        $tag->tag_naam= $req->naam;
+        $tag->tag_naam = $req->naam;
         $tag->save();
 
-        $data= DB::table('tags')->get();
-        return view('admin.cms-tags',['data'=>$data]);
-    }
-
-    public function show($id)
-    {
-        return view('admin.edit-tag', ['id' => $id]);
+        $data = DB::table('tags')->get();
+        return view('admin.cms-tags', ['data' => $data]);
     }
 
     public function edit($id)
     {
-//        $project = Project($id);
-//        $project->titel = $req->titel;
-//        $project->beschrijving = $req->beschrijving;
-//        $project->file_path = json_encode($photo, JSON_UNESCAPED_SLASHES);
-//        $project->save();
+        $tag = DB::table('tags')->where('id', $id)->get();
+        return view('admin.edit-tag', ['tag' => $tag]);
+    }
+
+    public function update(Request $req, $id)
+    {
+        $tag = Tag::find($id);
+        $tag->tag_naam = $req->naam;
+        $tag->save();
+
+        return redirect('/admin/cms-tags');
     }
 
     public function showdelete($id)
@@ -45,7 +47,7 @@ class TagController extends Controller
 
     public function delete($id)
     {
-        DB::delete('delete from tags where id = ?',[$id]);
+        DB::delete('delete from tags where id = ?', [$id]);
         return redirect('/admin/cms-tags');
     }
 

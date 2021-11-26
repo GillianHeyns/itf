@@ -23,36 +23,36 @@ Route::get('contact', function () {
 });
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
-    route::redirect('/', 'admin/cms');
+    Route::redirect('/', '/admin/cms');
 //    Route::get('records', 'Admin\RecordController@index');
 
     //CONTROLLERS
-    Route::get('cms', 'ProjectController@index');
-    Route::get('cms/{id}', 'ProjectController@show');
-
-    Route::get('cms-testimonies', 'TestimonyController@index');
-    Route::get('cms-testimonies/{id}', 'TestimonyController@show');
-
-    Route::get('cms-tags', 'TagController@index');
-    Route::get('cms-tags/{id}', 'TagController@show');
-
     //Project
+    Route::get('cms', 'ProjectController@index');
     Route::get('nieuw-project', 'ProjectController@showlisttags');
     Route::post('cms', 'ProjectController@save');
     Route::get('cms/delete/{id}', 'ProjectController@showdelete');
     Route::get('cms/delete/{id}/confirm', 'ProjectController@delete');
+    Route::get('cms/{id}', 'ProjectController@edit');
+    Route::post('cms/{id}/confirm', 'ProjectController@update');
 
     //Getuigenis
+    Route::get('cms-testimonies', 'TestimonyController@index');
     Route::get('nieuw-getuigenis', 'TestimonyController@showlisttags');
     Route::post('cms-testimonies', 'TestimonyController@save');
     Route::get('cms-testimonies/delete/{id}', 'TestimonyController@showdelete');
     Route::get('cms-testimonies/delete/{id}/confirm', 'TestimonyController@delete');
+    Route::get('cms-testimonies/{id}', 'TestimonyController@edit');
+    Route::post('cms-testimonies/{id}/confirm', 'TestimonyController@update');
 
     //Tag
+    Route::get('cms-tags', 'TagController@index');
     Route::view('nieuw-tag', 'admin.nieuw-tag');
     Route::post('cms-tags', 'TagController@save');
     Route::get('cms-tags/delete/{id}', 'TagController@showdelete');
     Route::get('cms-tags/delete/{id}/confirm', 'TagController@delete');
+    Route::get('cms-tags/{id}', 'TagController@edit');
+    Route::post('cms-tags/{id}/confirm', 'TagController@update');
 });
 
 Route::middleware(['auth'])->prefix('user')->group(function () {
