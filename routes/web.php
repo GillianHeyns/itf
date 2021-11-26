@@ -27,26 +27,23 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 //    Route::get('records', 'Admin\RecordController@index');
 
     //CONTROLLERS
-    Route::get('cms', 'ProjectController@index');
-    Route::get('cms/{id}', 'ProjectController@edit');
-    Route::get('cms/{id}/confirm', 'ProjectController@update');
-
-    Route::get('cms-testimonies', 'TestimonyController@index');
-    Route::get('cms-testimonies/{id}', 'TestimonyController@edit');
-    Route::get('cms-testimonies/{id}/confirm', 'TestimonyController@update');
-
-
     //Project
+    Route::get('cms', 'ProjectController@index');
     Route::get('nieuw-project', 'ProjectController@showlisttags');
     Route::post('cms', 'ProjectController@save');
     Route::get('cms/delete/{id}', 'ProjectController@showdelete');
     Route::get('cms/delete/{id}/confirm', 'ProjectController@delete');
+    Route::get('cms/{id}', 'ProjectController@edit');
+    Route::get('cms/{id}/confirm', 'ProjectController@update');
 
     //Getuigenis
+    Route::get('cms-testimonies', 'TestimonyController@index');
     Route::view('nieuw-getuigenis', 'admin.nieuw-getuigenis');
     Route::post('cms-testimonies', 'TestimonyController@save');
     Route::get('cms-testimonies/delete/{id}', 'TestimonyController@showdelete');
     Route::get('cms-testimonies/delete/{id}/confirm', 'TestimonyController@delete');
+    Route::get('cms-testimonies/{id}', 'TestimonyController@edit');
+    Route::get('cms-testimonies/{id}/confirm', 'TestimonyController@update');
 
     //Tag
     Route::get('cms-tags', 'TagController@index');
