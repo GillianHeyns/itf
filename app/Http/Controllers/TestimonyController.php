@@ -29,22 +29,24 @@ class TestimonyController extends Controller
         $testimony->testimony_studierichting= $req->studierichting;
         $testimony->testimony_jaar= $req->jaar;
         $testimony->testimony_tekst= $req->tekst;
-        $testimony->file_path='/storage/uploads/testimonies/'.$imageName;
+        $testimony->file_path='/uploads/testimonies/'.$imageName;
         $testimony->save();
 
         $testimonyId = $testimony->id;
 
         $photo = new Photo;
-        $photo->foto_link='/storage/uploads/testimonies/'.$imageName;
+        $photo->foto_link='/uploads/testimonies/'.$imageName;
         $photo->foto_beschrijving=$req->foto_beschrijving;
         $photo->testimony_id=$testimonyId;
         $photo->save();
 
-        $testimonyTag = new TestimonyTag;
-        $testimonyTag->testimony_id=$testimonyId;
-        $testimonyTag->tag_id=$req->tags;
-        $testimonyTag->save();
 
+        foreach ($req->tags as $tag){
+            $testimonyTag = new TestimonyTag;
+            $testimonyTag->testimony_id=$testimonyId;
+            $testimonyTag->tag_id=$tag;
+            $testimonyTag->save();
+        }
 
         $data= DB::table('testimonies')->get();
         return view('admin.cms-testimonies',['data'=>$data]);

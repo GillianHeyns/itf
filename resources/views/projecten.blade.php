@@ -38,255 +38,274 @@
         {{--        filter-app, filter-iot, filter-di, filter-ccs, filter-ai, filter-hackathon, filter-other--}}
 
         <div class="row portfolio-container">
-            <div class="col-lg-4 col-sm-6 mb-4 filter-ai filter-hackathon">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/ha_patientzero1.jpg" alt="Patient Zero"/>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">‘Patient Zero’</div>
-                        <div class="portfolio-caption-subheading text-muted">Hackathon, Artificial Intelligence</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 filter-di filter-ccs">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/di_datacenterautomatisation1.jpg"
-                             alt="Datacenter Automatisation"/>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Datacenter automatisation</div>
-                        <div class="portfolio-caption-subheading text-muted">Digital Innovation, Cloud & Cyber
-                            Security
+{{--            TEST --}}
+            @foreach($data as $project)
+                <div class="col-lg-4 col-sm-6 mb-4 filter-ai filter-hackathon">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal{{$project->id}}">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="/uploads/testimonies/1637930380.png" alt="Patient Zero"/>
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">{{$project->titel}}</div>
+                            <div class="portfolio-caption-subheading text-muted">TAG</div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 filter-ccs filter-hackathon">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/ha_smartpolicinghackathon1.jpg"
-                             alt="Smart Policing Hackathon"/>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">‘Smart Policing – Smart Interaction’</div>
-                        <div class="portfolio-caption-subheading text-muted">Hackathon</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0 filter-app">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/app_webctrl1.jpg" alt="Web-Ctrl"/>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">WebCtrl, Student-ondernemer</div>
-                        <div class="portfolio-caption-subheading text-muted">Student-ondernemer, Application
-                            Development
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0 filter-iot">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/iot_iotessentials1.jpg" alt="IoT Essentials"/>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Internet of Things Essentials</div>
-                        <div class="portfolio-caption-subheading text-muted">Categorie: Internet of Things</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 filter-iot">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/iot_keuzeprojectiot1.jpg"
-                             alt="Keuzeproject IoT"/>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Keuzeproject Internet of Things</div>
-                        <div class="portfolio-caption-subheading text-muted">Keuzeprojecten, Internet of Things</div>
-                    </div>
-                </div>
-            </div>
+        @endforeach
 
-            <div class="col-lg-4 col-sm-6 mb-4 filter-other">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal7">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/tech_techandhealth1.jpg"
-                             alt="Tech and Health"/>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Project Tech & Health</div>
-                        <div class="portfolio-caption-subheading text-muted">Tech & Health</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 filter-di">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal8">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/di_projectportaal1.jpg" alt="Project Portaal"/>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Digital Innovation Project Portaal</div>
-                        <div class="portfolio-caption-subheading text-muted">Digital Innovation</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 filter-iot">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal9">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/iot_KNX1.jpg" alt="KNX"/>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Project KNX Smart Home</div>
-                        <div class="portfolio-caption-subheading text-muted">Internet of Things</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 filter-ccs filter-hackathon">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal10">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/ha_smartpolicinghackathon3.jpg"
-                             alt="Smart Policing Hackathon"/>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">‘Smart Policing – Smart Selection & Training’
-                        </div>
-                        <div class="portfolio-caption-subheading text-muted">Hackathon, Cloud & Cyber Security</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 filter-other">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal11">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/ice_telaviv1.jpg" alt="Ice Cube Tel Aviv"/>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Disruptive tour Tel Aviv – ICE Cube</div>
-                        <div class="portfolio-caption-subheading text-muted">ICE Cube, Other</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 filter-di">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal12">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/di_websiteitfactory1.jpg" alt="Website ITF"/>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Website IT Factory</div>
-                        <div class="portfolio-caption-subheading text-muted">Digital Innovation</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 filter-other">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal13">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/other_vibus1.jpg" alt="Vibus"/>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Vibus Student-ondernemer</div>
-                        <div class="portfolio-caption-subheading text-muted">Student-ondernemer</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 filter-app">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal14">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/ICEConnect_1.png" alt="ICE Connect"/>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Cordova - ICE Connect app</div>
-                        <div class="portfolio-caption-subheading text-muted">Application Development</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 filter-app">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal15">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/Mobile_Dev_1.png" alt="Flutter mobile development"/>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Mobile Development - Het Museum</div>
-                        <div class="portfolio-caption-subheading text-muted">Application Development</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 filter-ccs">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal16">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/Keuzeproject_BroodSpelen_2.png" alt="broodspelen"/>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Orientation Project 1: Lan-party</div>
-                        <div class="portfolio-caption-subheading text-muted">Cloud & Cyber Security</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 filter-app">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal17">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/PHP_Alumni_1.png" alt="Php alumni app"/>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">PHP Project - Alumni avond</div>
-                        <div class="portfolio-caption-subheading text-muted">Application Development</div>
-                    </div>
-                </div>
-            </div>
+
+{{--            <div class="col-lg-4 col-sm-6 mb-4 filter-ai filter-hackathon">--}}
+{{--                <div class="portfolio-item">--}}
+{{--                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">--}}
+{{--                        <div class="portfolio-hover">--}}
+{{--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>--}}
+{{--                        </div>--}}
+{{--                        <img class="img-fluid" src="assets/img/portfolio/ha_patientzero1.jpg" alt="Patient Zero"/>--}}
+{{--                    </a>--}}
+{{--                    <div class="portfolio-caption">--}}
+{{--                        <div class="portfolio-caption-heading">‘Patient Zero’</div>--}}
+{{--                        <div class="portfolio-caption-subheading text-muted">Hackathon, Artificial Intelligence</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4 col-sm-6 mb-4 filter-di filter-ccs">--}}
+{{--                <div class="portfolio-item">--}}
+{{--                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">--}}
+{{--                        <div class="portfolio-hover">--}}
+{{--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>--}}
+{{--                        </div>--}}
+{{--                        <img class="img-fluid" src="assets/img/portfolio/di_datacenterautomatisation1.jpg"--}}
+{{--                             alt="Datacenter Automatisation"/>--}}
+{{--                    </a>--}}
+{{--                    <div class="portfolio-caption">--}}
+{{--                        <div class="portfolio-caption-heading">Datacenter automatisation</div>--}}
+{{--                        <div class="portfolio-caption-subheading text-muted">Digital Innovation, Cloud & Cyber--}}
+{{--                            Security--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4 col-sm-6 mb-4 filter-ccs filter-hackathon">--}}
+{{--                <div class="portfolio-item">--}}
+{{--                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">--}}
+{{--                        <div class="portfolio-hover">--}}
+{{--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>--}}
+{{--                        </div>--}}
+{{--                        <img class="img-fluid" src="assets/img/portfolio/ha_smartpolicinghackathon1.jpg"--}}
+{{--                             alt="Smart Policing Hackathon"/>--}}
+{{--                    </a>--}}
+{{--                    <div class="portfolio-caption">--}}
+{{--                        <div class="portfolio-caption-heading">‘Smart Policing – Smart Interaction’</div>--}}
+{{--                        <div class="portfolio-caption-subheading text-muted">Hackathon</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0 filter-app">--}}
+{{--                <div class="portfolio-item">--}}
+{{--                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">--}}
+{{--                        <div class="portfolio-hover">--}}
+{{--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>--}}
+{{--                        </div>--}}
+{{--                        <img class="img-fluid" src="assets/img/portfolio/app_webctrl1.jpg" alt="Web-Ctrl"/>--}}
+{{--                    </a>--}}
+{{--                    <div class="portfolio-caption">--}}
+{{--                        <div class="portfolio-caption-heading">WebCtrl, Student-ondernemer</div>--}}
+{{--                        <div class="portfolio-caption-subheading text-muted">Student-ondernemer, Application--}}
+{{--                            Development--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0 filter-iot">--}}
+{{--                <div class="portfolio-item">--}}
+{{--                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">--}}
+{{--                        <div class="portfolio-hover">--}}
+{{--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>--}}
+{{--                        </div>--}}
+{{--                        <img class="img-fluid" src="assets/img/portfolio/iot_iotessentials1.jpg" alt="IoT Essentials"/>--}}
+{{--                    </a>--}}
+{{--                    <div class="portfolio-caption">--}}
+{{--                        <div class="portfolio-caption-heading">Internet of Things Essentials</div>--}}
+{{--                        <div class="portfolio-caption-subheading text-muted">Categorie: Internet of Things</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4 col-sm-6 mb-4 filter-iot">--}}
+{{--                <div class="portfolio-item">--}}
+{{--                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">--}}
+{{--                        <div class="portfolio-hover">--}}
+{{--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>--}}
+{{--                        </div>--}}
+{{--                        <img class="img-fluid" src="assets/img/portfolio/iot_keuzeprojectiot1.jpg"--}}
+{{--                             alt="Keuzeproject IoT"/>--}}
+{{--                    </a>--}}
+{{--                    <div class="portfolio-caption">--}}
+{{--                        <div class="portfolio-caption-heading">Keuzeproject Internet of Things</div>--}}
+{{--                        <div class="portfolio-caption-subheading text-muted">Keuzeprojecten, Internet of Things</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+{{--            <div class="col-lg-4 col-sm-6 mb-4 filter-other">--}}
+{{--                <div class="portfolio-item">--}}
+{{--                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal7">--}}
+{{--                        <div class="portfolio-hover">--}}
+{{--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>--}}
+{{--                        </div>--}}
+{{--                        <img class="img-fluid" src="assets/img/portfolio/tech_techandhealth1.jpg"--}}
+{{--                             alt="Tech and Health"/>--}}
+{{--                    </a>--}}
+{{--                    <div class="portfolio-caption">--}}
+{{--                        <div class="portfolio-caption-heading">Project Tech & Health</div>--}}
+{{--                        <div class="portfolio-caption-subheading text-muted">Tech & Health</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4 col-sm-6 mb-4 filter-di">--}}
+{{--                <div class="portfolio-item">--}}
+{{--                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal8">--}}
+{{--                        <div class="portfolio-hover">--}}
+{{--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>--}}
+{{--                        </div>--}}
+{{--                        <img class="img-fluid" src="assets/img/portfolio/di_projectportaal1.jpg" alt="Project Portaal"/>--}}
+{{--                    </a>--}}
+{{--                    <div class="portfolio-caption">--}}
+{{--                        <div class="portfolio-caption-heading">Digital Innovation Project Portaal</div>--}}
+{{--                        <div class="portfolio-caption-subheading text-muted">Digital Innovation</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4 col-sm-6 mb-4 filter-iot">--}}
+{{--                <div class="portfolio-item">--}}
+{{--                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal9">--}}
+{{--                        <div class="portfolio-hover">--}}
+{{--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>--}}
+{{--                        </div>--}}
+{{--                        <img class="img-fluid" src="assets/img/portfolio/iot_KNX1.jpg" alt="KNX"/>--}}
+{{--                    </a>--}}
+{{--                    <div class="portfolio-caption">--}}
+{{--                        <div class="portfolio-caption-heading">Project KNX Smart Home</div>--}}
+{{--                        <div class="portfolio-caption-subheading text-muted">Internet of Things</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4 col-sm-6 mb-4 filter-ccs filter-hackathon">--}}
+{{--                <div class="portfolio-item">--}}
+{{--                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal10">--}}
+{{--                        <div class="portfolio-hover">--}}
+{{--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>--}}
+{{--                        </div>--}}
+{{--                        <img class="img-fluid" src="assets/img/portfolio/ha_smartpolicinghackathon3.jpg"--}}
+{{--                             alt="Smart Policing Hackathon"/>--}}
+{{--                    </a>--}}
+{{--                    <div class="portfolio-caption">--}}
+{{--                        <div class="portfolio-caption-heading">‘Smart Policing – Smart Selection & Training’--}}
+{{--                        </div>--}}
+{{--                        <div class="portfolio-caption-subheading text-muted">Hackathon, Cloud & Cyber Security</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4 col-sm-6 mb-4 filter-other">--}}
+{{--                <div class="portfolio-item">--}}
+{{--                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal11">--}}
+{{--                        <div class="portfolio-hover">--}}
+{{--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>--}}
+{{--                        </div>--}}
+{{--                        <img class="img-fluid" src="assets/img/portfolio/ice_telaviv1.jpg" alt="Ice Cube Tel Aviv"/>--}}
+{{--                    </a>--}}
+{{--                    <div class="portfolio-caption">--}}
+{{--                        <div class="portfolio-caption-heading">Disruptive tour Tel Aviv – ICE Cube</div>--}}
+{{--                        <div class="portfolio-caption-subheading text-muted">ICE Cube, Other</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4 col-sm-6 mb-4 filter-di">--}}
+{{--                <div class="portfolio-item">--}}
+{{--                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal12">--}}
+{{--                        <div class="portfolio-hover">--}}
+{{--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>--}}
+{{--                        </div>--}}
+{{--                        <img class="img-fluid" src="assets/img/portfolio/di_websiteitfactory1.jpg" alt="Website ITF"/>--}}
+{{--                    </a>--}}
+{{--                    <div class="portfolio-caption">--}}
+{{--                        <div class="portfolio-caption-heading">Website IT Factory</div>--}}
+{{--                        <div class="portfolio-caption-subheading text-muted">Digital Innovation</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4 col-sm-6 mb-4 filter-other">--}}
+{{--                <div class="portfolio-item">--}}
+{{--                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal13">--}}
+{{--                        <div class="portfolio-hover">--}}
+{{--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>--}}
+{{--                        </div>--}}
+{{--                        <img class="img-fluid" src="assets/img/portfolio/other_vibus1.jpg" alt="Vibus"/>--}}
+{{--                    </a>--}}
+{{--                    <div class="portfolio-caption">--}}
+{{--                        <div class="portfolio-caption-heading">Vibus Student-ondernemer</div>--}}
+{{--                        <div class="portfolio-caption-subheading text-muted">Student-ondernemer</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4 col-sm-6 mb-4 filter-app">--}}
+{{--                <div class="portfolio-item">--}}
+{{--                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal14">--}}
+{{--                        <div class="portfolio-hover">--}}
+{{--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>--}}
+{{--                        </div>--}}
+{{--                        <img class="img-fluid" src="assets/img/portfolio/ICEConnect_1.png" alt="ICE Connect"/>--}}
+{{--                    </a>--}}
+{{--                    <div class="portfolio-caption">--}}
+{{--                        <div class="portfolio-caption-heading">Cordova - ICE Connect app</div>--}}
+{{--                        <div class="portfolio-caption-subheading text-muted">Application Development</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4 col-sm-6 mb-4 filter-app">--}}
+{{--                <div class="portfolio-item">--}}
+{{--                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal15">--}}
+{{--                        <div class="portfolio-hover">--}}
+{{--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>--}}
+{{--                        </div>--}}
+{{--                        <img class="img-fluid" src="assets/img/portfolio/Mobile_Dev_1.png" alt="Flutter mobile development"/>--}}
+{{--                    </a>--}}
+{{--                    <div class="portfolio-caption">--}}
+{{--                        <div class="portfolio-caption-heading">Mobile Development - Het Museum</div>--}}
+{{--                        <div class="portfolio-caption-subheading text-muted">Application Development</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4 col-sm-6 mb-4 filter-ccs">--}}
+{{--                <div class="portfolio-item">--}}
+{{--                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal16">--}}
+{{--                        <div class="portfolio-hover">--}}
+{{--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>--}}
+{{--                        </div>--}}
+{{--                        <img class="img-fluid" src="assets/img/portfolio/Keuzeproject_BroodSpelen_2.png" alt="broodspelen"/>--}}
+{{--                    </a>--}}
+{{--                    <div class="portfolio-caption">--}}
+{{--                        <div class="portfolio-caption-heading">Orientation Project 1: Lan-party</div>--}}
+{{--                        <div class="portfolio-caption-subheading text-muted">Cloud & Cyber Security</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4 col-sm-6 mb-4 filter-app">--}}
+{{--                <div class="portfolio-item">--}}
+{{--                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal17">--}}
+{{--                        <div class="portfolio-hover">--}}
+{{--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>--}}
+{{--                        </div>--}}
+{{--                        <img class="img-fluid" src="assets/img/portfolio/PHP_Alumni_1.png" alt="Php alumni app"/>--}}
+{{--                    </a>--}}
+{{--                    <div class="portfolio-caption">--}}
+{{--                        <div class="portfolio-caption-heading">PHP Project - Alumni avond</div>--}}
+{{--                        <div class="portfolio-caption-subheading text-muted">Application Development</div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
             <!-- Portfolio Modals-->
             <!-- Modal 1-->
