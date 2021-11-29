@@ -46,7 +46,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="/uploads/testimonies/1637930380.png" alt="Patient Zero"/>
+                            <img class="img-fluid" src="/uploads/projects/{{$project->id}}-{{$project->titel}}/{{$project->titel}}-1.jpg" alt='Foto van project "{{$project->titel}}"'/>
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">{{$project->titel}}</div>

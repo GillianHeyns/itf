@@ -38,7 +38,8 @@ class ProjectController extends Controller
         $teller = 0;
         foreach ($req->file('file') as $file) {
             $teller += 1;
-            $imageName = time() . '-' . $teller . '.' . $file->extension();
+            $imageName = $req->titel . '-' . $teller . '.' . $file->extension();
+//            $imageName = time() . '-' . $teller . '.' . $file->extension();
             $file->move(public_path('uploads/projects/' . $projectId . '-' . $req->titel), $imageName);
             $photolink[] = 'uploads/projects/' . $imageName;
         }
