@@ -80,7 +80,8 @@ Route::view('acs', 'acs');
 Route::view('dagopleiding/app', 'opleidingen.bachelor.keuzerichting.app');
 Route::view('dagopleiding/ai', 'opleidingen.bachelor.keuzerichting.ai');
 Route::view('dagopleiding/ccs', 'opleidingen.bachelor.keuzerichting.ccs');
-Route::view('dagopleiding/di', 'opleidingen.bachelor.keuzerichting.di');
+Route::get('dagopleiding/di', 'Testimony_DI_ViewController@showTestimonies');
+//Route::view('dagopleiding/di', 'opleidingen.bachelor.keuzerichting.di');
 Route::view('dagopleiding/iot', 'opleidingen.bachelor.keuzerichting.iot');
 
 Route::view('wes/app', 'opleidingen.werkenEnStuderen.keuzerichting.app');
