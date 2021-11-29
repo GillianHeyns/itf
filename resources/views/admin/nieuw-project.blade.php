@@ -16,7 +16,7 @@
                             <div class="form-group row">
                                 <label for="titel" class="col-md-4 col-form-label text-md-right">Titel: </label>
                                 <div class="col-md-6">
-                                    <input type="text" id="titel" name="titel"
+                                    <input required type="text" id="titel" name="titel"
                                            class="form-control @error('titel') is-invalid @enderror">
                                 </div>
                             </div>
@@ -24,7 +24,7 @@
                                 <label for="beschrijving"
                                        class="col-md-4 col-form-label text-md-right">Beschrijving: </label>
                                 <div class="col-md-6">
-                                    <textarea type="text" id="beschrijving" name="beschrijving"
+                                    <textarea required type="text" id="beschrijving" name="beschrijving"
                                               class="form-control @error('beschrijving') is-invalid @enderror"></textarea>
                                 </div>
                             </div>
@@ -33,7 +33,7 @@
                                        class="col-md-4 col-form-label text-md-right">Foto: </label>
                                 <div class="col-md-6">
 
-                                    <input multiple="multiple" type="file" id="file" name="file[]">
+                                    <input required multiple="multiple" type="file" id="file" name="file[]">
 
                                 </div>
                             </div>
@@ -41,7 +41,7 @@
                                 <label for="tag"
                                        class="col-md-4 col-form-label text-md-right">Selecteer een tag of meerdere tags: </label>
                                 <div class="col-md-6">
-                                    <select name="tags[]" id="tags" multiple="multiple">
+                                    <select required name="tags[]" id="tags" multiple="multiple">
                                         @foreach($tags as $tag)
                                         <option value="{{ $tag -> id }}">{{ $tag -> tag_naam }}</option>
                                         @endforeach
@@ -52,7 +52,7 @@
                                 <label for="fotobeschrijving"
                                        class="col-md-4 col-form-label text-md-right">Foto beschrijving: </label>
                                 <div class="col-md-6">
-                                    <textarea type="text" id="fotobeschrijving" name="fotobeschrijving"
+                                    <textarea required type="text" id="fotobeschrijving" name="fotobeschrijving"
                                               class="form-control @error('fotobeschrijving') is-invalid @enderror"></textarea>
                                 </div>
                             </div>

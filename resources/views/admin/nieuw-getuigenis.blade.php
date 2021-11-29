@@ -17,7 +17,7 @@
                                 <label for="naam"
                                        class="col-md-4 col-form-label text-md-right">Voornaam + naam: </label>
                                 <div class="col-md-6">
-                                    <input type="text" id="naam" name="naam"
+                                    <input required type="text" id="naam" name="naam"
                                            class="form-control @error('naam') is-invalid @enderror">
                                 </div>
                             </div>
@@ -25,7 +25,7 @@
                                 <label for="studierichting"
                                        class="col-md-4 col-form-label text-md-right">Studierichting: </label>
                                 <div class="col-md-6">
-                                    <input type="text" id="studierichting" name="studierichting"
+                                    <input required type="text" id="studierichting" name="studierichting"
                                            class="form-control @error('studierichting') is-invalid @enderror">
                                 </div>
                             </div>
@@ -33,7 +33,7 @@
                                 <label for="jaar"
                                        class="col-md-4 col-form-label text-md-right">Jaar: </label>
                                 <div class="col-md-6">
-                                    <input type="text" id="jaar" name="jaar"
+                                    <input required type="text" id="jaar" name="jaar"
                                            class="form-control @error('jaar') is-invalid @enderror">
                                 </div>
                             </div>
@@ -41,7 +41,7 @@
                                 <label for="tekst"
                                        class="col-md-4 col-form-label text-md-right">Tekst: </label>
                                 <div class="col-md-6">
-                                    <textarea type="text" id="tekst" name="tekst"
+                                    <textarea required type="text" id="tekst" name="tekst"
                                               class="form-control @error('tekst') is-invalid @enderror"></textarea>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
                                 <label for="tag"
                                        class="col-md-4 col-form-label text-md-right">Selecteer een tag: </label>
                                 <div class="col-md-6">
-                                    <select name="tags[]" id="tags" multiple="multiple">
+                                    <select required name="tags[]" id="tags" multiple="multiple">
                                         @foreach($tags as $tag)
                                             <option value="{{ $tag -> id }}">{{ $tag -> tag_naam }}</option>
                                         @endforeach
@@ -60,14 +60,14 @@
                                 <label for="file"
                                        class="col-md-4 col-form-label text-md-right">Foto: </label>
                                 <div class="col-md-6">
-                                    <input type="file" id="file" name="file">
+                                    <input required type="file" id="file" name="file">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="foto_beschrijving"
                                        class="col-md-4 col-form-label text-md-right">Foto beschrijving: </label>
                                 <div class="col-md-6">
-                                    <textarea type="text" id="foto_beschrijving" name="foto_beschrijving"
+                                    <textarea required type="text" id="foto_beschrijving" name="foto_beschrijving"
                                               class="form-control @error('foto_beschrijving') is-invalid @enderror"></textarea>
                                 </div>
                             </div>

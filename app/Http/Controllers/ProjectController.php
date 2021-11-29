@@ -42,8 +42,6 @@ class ProjectController extends Controller
             $photolink[]= 'uploads/projects/' . $imageName;
         }
 
-
-
         $photo= new Photo;
         $photo->foto_link=json_encode($photolink, JSON_UNESCAPED_SLASHES);
         $photo->project_id=$projectId;
@@ -87,7 +85,15 @@ class ProjectController extends Controller
 
     public function delete($id)
     {
-        DB::delete('delete from projects where id = ?',[$id]);
+        $project = DB::table('projects')->where('id', $id)->first();
+        $titel= $project->titel;
+
+        if (\File::exists(public_path('/uploads/projects/').$id. '-'.$titel)) {
+            \File::deleteDirectory(public_path('/uploads/projects/').$id. '-'.$titel);
+        } else {
+//            dd('File does not exists.');
+        }
+        DB::delete('delete from projects where id = ?', [$id]);
         return redirect('/admin/cms');
     }
 
