@@ -44,7 +44,7 @@
                     <table class="table mb-0">
                         <thead>
                         <tr>
-                            <th class="text-center card-body text-bold border-top pt-2 pb-2" scope="col">#</th>
+                            <th class="text-center card-body text-bold border-top pt-2 pb-2" scope="col" style="width: 65px;">#</th>
                             <th class="card-body text-bold border-top pt-2 pb-2" scope="col">Student</th>
                             <th class="card-body text-bold border-top pt-2 pb-2" scope="col" style="width: 150px;">Studierichting</th>
                             <th class="card-body text-bold border-top pt-2 pb-2" scope="col" style="width: 65px;"></th>
