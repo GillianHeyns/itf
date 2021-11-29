@@ -100,7 +100,7 @@ class TestimonyController extends Controller
         $file_path = $testimony->file_path;
 
         if (\File::exists(public_path($file_path))) {
-            \File::deleteDirectory(public_path($file_path));
+            \File::delete(public_path($file_path));
         } else {
             dd('File does not exists.');
         }
