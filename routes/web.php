@@ -24,7 +24,6 @@ Route::get('contact', function () {
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::redirect('/', '/admin/cms');
-//    Route::get('records', 'Admin\RecordController@index');
 
     //CONTROLLERS
     //Project
