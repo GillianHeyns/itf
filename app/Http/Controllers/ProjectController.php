@@ -28,29 +28,34 @@ class ProjectController extends Controller
 
         $photolink=array();
 
-        foreach ($req->file('file') as $file){
-            $imageName = time() . '.' . $file->extension();
-            $file->move(public_path('uploads/projects'),$imageName);
-            $photolink[]= 'uploads/projects/' . $imageName;
-        }
-
         $project = new Project;
         $project->titel= $req->titel;
         $project->beschrijving= $req->beschrijving;
-        //$project->file_path=json_encode($photolink, JSON_UNESCAPED_SLASHES);
         $project->save();
         $projectId = $project->id;
 
+        $teller = 0;
+        foreach ($req->file('file') as $file){
+            $teller += 1;
+            $imageName = time() . '-' . $teller . '.' . $file->extension();
+            $file->move(public_path('uploads/projects/'.$projectId. '-'.$req->titel),$imageName);
+            $photolink[]= 'uploads/projects/' . $imageName;
+        }
+
+
+
         $photo= new Photo;
         $photo->foto_link=json_encode($photolink, JSON_UNESCAPED_SLASHES);
-        $photo->foto_beschrijving=$req->fotobeschrijving;
         $photo->project_id=$projectId;
         $photo->save();
 
-        $projectTag = new ProjectTag;
-        $projectTag->project_id=$projectId;
-        $projectTag->tag_id=$req->tags;
-        $projectTag->save();
+        foreach($req->tags as $tag){
+            //$projectTags[] = $tag;
+            $projectTag = new ProjectTag;
+            $projectTag->project_id=$projectId;
+            $projectTag->tag_id=$tag;
+            $projectTag->save();
+        }
 
         $data= DB::table('projects')->get();
         return view('admin.content-management',['data'=>$data]);

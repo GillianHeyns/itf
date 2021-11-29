@@ -49,7 +49,7 @@
                                 <label for="tag"
                                        class="col-md-4 col-form-label text-md-right">Selecteer een tag: </label>
                                 <div class="col-md-6">
-                                    <select name="tags" id="tags">
+                                    <select name="tags[]" id="tags" multiple="multiple">
                                         @foreach($tags as $tag)
                                             <option value="{{ $tag -> id }}">{{ $tag -> tag_naam }}</option>
                                         @endforeach
@@ -86,4 +86,21 @@
     </div>
 @endsection
 
-@section('navigation-fixed', 'fixed-bottom')
+<style>
+    body {
+        position: relative;
+    }
+
+    body::after {
+        content: '';
+        display: block;
+        height: 50px; /* Set same as footer's height */
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+    }
+</style>

@@ -72,7 +72,7 @@ Route::get('contact', 'ContactController@show');
 Route::post('contact', 'ContactController@sendEmail');
 
 Route::view('faciliteiten', 'faciliteiten');
-Route::view('projecten', 'projecten');
+Route::get('projecten', 'ProjectViewController@showProjecten');
 Route::view('dagopleiding', 'dagopleiding');
 Route::view('wes', 'wes');
 Route::view('acs', 'acs');
