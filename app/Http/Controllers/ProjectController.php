@@ -20,45 +20,44 @@ class ProjectController extends Controller
 //        return view('admin.content-management');
     }
 
-    function save(Request $req){
+    function save(Request $req)
+    {
         $this->validate($req, [
-            'file'=>'required',
-            'file.*'=> 'mimes:jpeg,jpg,png,gif,svg|max:2048'
+            'file' => 'required',
+            'file.*' => 'mimes:jpeg,jpg,png,gif,svg|max:2048'
         ]);
 
-        $photolink=array();
+        $photolink = array();
 
         $project = new Project;
-        $project->titel= $req->titel;
-        $project->beschrijving= $req->beschrijving;
+        $project->titel = $req->titel;
+        $project->beschrijving = $req->beschrijving;
         $project->save();
         $projectId = $project->id;
 
         $teller = 0;
-        foreach ($req->file('file') as $file){
+        foreach ($req->file('file') as $file) {
             $teller += 1;
             $imageName = time() . '-' . $teller . '.' . $file->extension();
-            $file->move(public_path('uploads/projects/'.$projectId. '-'.$req->titel),$imageName);
-            $photolink[]= 'uploads/projects/' . $imageName;
+            $file->move(public_path('uploads/projects/' . $projectId . '-' . $req->titel), $imageName);
+            $photolink[] = 'uploads/projects/' . $imageName;
         }
 
-
-
-        $photo= new Photo;
-        $photo->foto_link=json_encode($photolink, JSON_UNESCAPED_SLASHES);
-        $photo->project_id=$projectId;
+        $photo = new Photo;
+        $photo->foto_link = json_encode($photolink, JSON_UNESCAPED_SLASHES);
+        $photo->project_id = $projectId;
         $photo->save();
 
-        foreach($req->tags as $tag){
+        foreach ($req->tags as $tag) {
             //$projectTags[] = $tag;
             $projectTag = new ProjectTag;
-            $projectTag->project_id=$projectId;
-            $projectTag->tag_id=$tag;
+            $projectTag->project_id = $projectId;
+            $projectTag->tag_id = $tag;
             $projectTag->save();
         }
 
-        $data= DB::table('projects')->get();
-        return view('admin.content-management',['data'=>$data]);
+        $data = DB::table('projects')->get();
+        return view('admin.content-management', ['data' => $data]);
     }
 
     // Detail Page: http://itf.test/admin/cms/{id}
@@ -87,11 +86,20 @@ class ProjectController extends Controller
 
     public function delete($id)
     {
-        DB::delete('delete from projects where id = ?',[$id]);
+        $project = DB::table('projects')->where('id', $id)->first();
+        $titel = $project->titel;
+
+        if (\File::exists(public_path('/uploads/projects/') . $id . '-' . $titel)) {
+            \File::deleteDirectory(public_path('/uploads/projects/') . $id . '-' . $titel);
+        } else {
+//            dd('File does not exists.');
+        }
+        DB::delete('delete from projects where id = ?', [$id]);
         return redirect('/admin/cms');
     }
 
-    public function showlisttags(){
+    public function showlisttags()
+    {
         $tags = DB::table('tags')->get();
         return view('admin.nieuw-project', ['tags' => $tags]);
     }

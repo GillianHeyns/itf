@@ -45,10 +45,10 @@
                         <thead>
                         <tr>
                             <th class="text-center card-body text-bold border-top pt-2 pb-2" scope="col"
-                                style="width: 4rem;">#
+                                style="width: 65px;">#
                             </th>
                             <th class="card-body text-bold border-top pt-2 pb-2" scope="col">Tag</th>
-                            <th class="card-body text-bold border-top pt-2 pb-2" scope="col"></th>
+                            <th class="card-body text-bold border-top pt-2 pb-2" scope="col" style="width: 65px;"></th>
                         </tr>
                         </thead>
                         <tbody>

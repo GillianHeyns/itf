@@ -16,7 +16,7 @@
                             <div class="form-group row">
                                 <label for="naam" class="col-md-4 col-form-label text-md-right">Tag: </label>
                                 <div class="col-md-6">
-                                    <input type="text" id="naam" name="naam"
+                                    <input required type="text" id="naam" name="naam"
                                            class="form-control @error('naam') is-invalid @enderror">
                                 </div>
                             </div>
