@@ -40,7 +40,7 @@
         <div class="row portfolio-container">
 {{--            TEST --}}
             @foreach($data as $project)
-                <div class="col-lg-4 col-sm-6 mb-4 filter-ai filter-hackathon">
+                <div class="col-lg-4 col-sm-6 mb-4 filter-{{strtolower($project->tag_naam)}}">
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-toggle="modal" href="#portfolioModal{{$project->id}}">
                             <div class="portfolio-hover">
@@ -50,7 +50,7 @@
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">{{$project->titel}}</div>
-                            <div class="portfolio-caption-subheading text-muted">TAG</div>
+                            <div class="portfolio-caption-subheading text-muted">{{$project->tag_naam}}</div>
                         </div>
                     </div>
                 </div>
