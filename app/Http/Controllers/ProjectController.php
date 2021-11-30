@@ -7,6 +7,7 @@ use App\Project;
 use App\ProjectTag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -90,11 +91,12 @@ class ProjectController extends Controller
         $project = DB::table('projects')->where('id', $id)->first();
         $titel = $project->titel;
 
-        if (\File::exists(public_path('/uploads/projects/') . $id . '-' . $titel)) {
-            \File::deleteDirectory(public_path('/uploads/projects/') . $id . '-' . $titel);
-        } else {
-//            dd('File does not exists.');
+        $dir = public_path('/uploads/projects/'. $id . '-' . $titel);
+        if (\File::exists($dir)) {
+            \File::deleteDirectory($dir);
+            rmdir($dir);
         }
+
         DB::delete('delete from projects where id = ?', [$id]);
         return redirect('/admin/cms');
     }
