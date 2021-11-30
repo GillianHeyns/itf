@@ -9,33 +9,37 @@ use App\Photo;
 
 class ProjectViewController extends Controller
 {
-    public function showProjecten(){
-        $data = DB::table('projects')
+    public function showProjecten()
+    {
+        $tags = DB::table('tags')
+            ->get();
+
+        $dataproject = DB::table('projects')
+            ->get();
+
+        $datatag = DB::table('projects')
             //Inner Join
-            ->join('project_tags','projects.id','=','project_tags.project_id')
-            ->join('tags','project_tags.project_id','=','tags.id')
+            ->orderBy('titel')
+            ->join('project_tags', 'projects.id', '=', 'project_tags.project_id')
+            ->join('tags', 'project_tags.project_id', '=', 'tags.id')
             ->get();
 
 //        $data = DB::table('projects')->get();
 ////        $imagesEnc = DB::table('photos')->get();
 ////        $images = json_decode($imagesEnc);
-        return view('projecten', ['data' => $data]);
+        return view('projecten', ['tags' => $tags], ['dataproject' => $dataproject], ['datatag' => $datatag]);
     }
 
 
-    public function innerJoinClause(){
-        $projects = DB::table('projects')
-            //Inner
-            ->join('project_tags','projects.id','=','project_tags.project_id')
-            ->join('tags','project_tags.project_id','=','tags.id')
-//            ->select('projects.titel','project_tags.project_id')
+    public function testing()
+    {
+        $datatag = DB::table('projects')
+            //Inner Join
+            ->orderBy('titel')
+            ->join('project_tags', 'projects.id', '=', 'project_tags.project_id')
+            ->join('tags', 'project_tags.project_id', '=', 'tags.id')
             ->get();
-
-        //Left-Right
-//            ->rightJoin('project_tags', 'projects.id', '=', 'project_tags.project_id')
-////            ->select('projects.titel','project_tags.project_id')
-//            ->get();
-        return $projects;
+        return $datatag;
     }
 
 }

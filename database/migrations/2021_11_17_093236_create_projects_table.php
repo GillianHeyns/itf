@@ -59,6 +59,18 @@ Hoewel de technologie nieuw was, was het team eerstejaars toch sterk genoeg om e
                     //'file_path' => "testURL3",
 //                    'content_block_id' => 3
                 ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'titel' => 'Smart Policing – Smart Interaction',
+                    'beschrijving' => 'Hoe brengen we de politie en de burger terug dichter bij elkaar? Dit was de opdracht die een team 2ITF studenten aannam op de ‘Smart Policing’ hackathon. Puttend uit hun eigen leefwereld en ervaring kozen ze ervoor om een app te ontwikkelen waardoor jongeren op een laagdrempelige manier problemen kunnen doorgeven aan de politie.
+
+Thema’s als seksueel misbruik, pesten of drugsmisbruik werden niet uit de weg gegaan, want ambitieus als ze zijn wilden onze studenten net die moeilijke eerste stap bij deze topics vergemakkelijken.
+
+Hun knappe teamwerk en de app genaamd ‘Okay’ viel op bij de jury en bezorgde dit team de eerste prijs in de discipline.',
+                    //'file_path' => "testURL3",
+//                    'content_block_id' => 3
+                ],
             ]
         );
     }

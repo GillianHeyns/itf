@@ -71,7 +71,7 @@ Route::get('contact', 'ContactController@show');
 Route::post('contact', 'ContactController@sendEmail');
 
 Route::view('faciliteiten', 'faciliteiten');
-//Route::get('projecten', 'ProjectViewController@innerJoinClause');
+//Route::get('projecten', 'ProjectViewController@testing');
 Route::get('projecten', 'ProjectViewController@showProjecten');
 Route::view('dagopleiding', 'dagopleiding');
 Route::view('wes', 'wes');
