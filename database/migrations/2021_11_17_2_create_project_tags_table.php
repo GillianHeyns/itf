@@ -63,6 +63,18 @@ class CreateProjectTagsTable extends Migration
                     'project_id' => 4,
                     'tag_id' => 2
                 ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'project_id' => 5,
+                    'tag_id' => 6
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'project_id' => 5,
+                    'tag_id' => 4
+                ],
             ]
         );
     }
