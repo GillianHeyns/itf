@@ -37448,37 +37448,55 @@ $('#overlay').click(function () {
 
 // filter projecten
 $(function () {
-  $("li:contains('ALL')").click(function () {
-    $('div[class*="filter"]').show();
-  });
-  $("li:contains('APP')").click(function () {
+  $("li").on("click", function () {
+    var text = $(this).text();
     $('div[class*="filter"]').hide();
-    $(".filter-app").show();
-  });
-  $("li:contains('IOT')").click(function () {
-    $('div[class*="filter"]').hide();
-    $(".filter-iot").show();
-  });
-  $("li:contains('DI')").click(function () {
-    $('div[class*="filter"]').hide();
-    $(".filter-di").show();
-  });
-  $("li:contains('CCS')").click(function () {
-    $('div[class*="filter"]').hide();
-    $(".filter-ccs").show();
-  });
-  $("li:contains('AI')").click(function () {
-    $('div[class*="filter"]').hide();
-    $(".filter-ai").show();
-  });
-  $("li:contains('HACKATHON')").click(function () {
-    $('div[class*="filter"]').hide();
-    $(".filter-hackathon").show();
-  });
-  $("li:contains('OTHER')").click(function () {
-    $('div[class*="filter"]').hide();
-    $(".filter-other").show();
-  });
+
+    if (text === "ALL") {
+      $('div[class*="filter"]').show();
+    } else $(".filter-" + text.toLowerCase()).show();
+  }); // $("li:contains('ALL')").click(function () {
+  //     $('div[class*="filter"]').show();
+  // });
+  // var text = "AI";
+  // console.log(text);
+  // $("li:contains('" + text + "')").click(function () {
+  //     // console.log(text);
+  //     // console.log(".filter-" + text.toLowerCase());
+  //     $('div[class*="filter"]').hide();
+  //     $(".filter-" + text.toLowerCase()).show();
+  // });
+  // $("li:contains('ALL')").click(function(){
+  //     $('div[class*="filter"]').show();
+  // });
+  // $("li:contains('APP')").click(function(){
+  //     $('div[class*="filter"]').hide();
+  //     $(".filter-app").show();
+  // });
+  // $("li:contains('IOT')").click(function(){
+  //     $('div[class*="filter"]').hide();
+  //     $(".filter-iot").show();
+  // });
+  // $("li:contains('DI')").click(function(){
+  //     $('div[class*="filter"]').hide();
+  //     $(".filter-di").show();
+  // });
+  // $("li:contains('CCS')").click(function(){
+  //     $('div[class*="filter"]').hide();
+  //     $(".filter-ccs").show();
+  // });
+  // $("li:contains('AI')").click(function(){
+  //     $('div[class*="filter"]').hide();
+  //     $(".filter-ai").show();
+  // });
+  // $("li:contains('HACKATHON')").click(function(){
+  //     $('div[class*="filter"]').hide();
+  //     $(".filter-hackathon").show();
+  // });
+  // $("li:contains('OTHER')").click(function(){
+  //     $('div[class*="filter"]').hide();
+  //     $(".filter-other").show();
+  // });
 });
 
 /***/ }),
