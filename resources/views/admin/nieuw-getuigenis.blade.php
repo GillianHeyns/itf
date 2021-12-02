@@ -41,7 +41,7 @@
                                 <label for="tekst"
                                        class="col-md-4 col-form-label text-md-right">Tekst: </label>
                                 <div class="col-md-6">
-                                    <textarea required type="text" id="tekst" name="tekst"
+                                    <textarea required type="text" id="tekst" name="tekst" style="height: 165px;"
                                               class="form-control @error('tekst') is-invalid @enderror"></textarea>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
                                 <label for="tag"
                                        class="col-md-4 col-form-label text-md-right">Selecteer een tag: </label>
                                 <div class="col-md-6">
-                                    <select required name="tags[]" id="tags" multiple="multiple">
+                                    <select required name="tags[]" id="tags" multiple="multiple" style="height: 165px;">
                                         @foreach($tags as $tag)
                                             <option value="{{ $tag -> id }}">{{ $tag -> tag_naam }}</option>
                                         @endforeach

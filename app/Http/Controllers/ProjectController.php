@@ -58,8 +58,7 @@ class ProjectController extends Controller
             $projectTag->save();
         }
 
-        $data = DB::table('projects')->get();
-        return view('admin.content-management', ['data' => $data]);
+        return redirect('/admin/cms');
     }
 
     // Detail Page: http://itf.test/admin/cms/{id}
@@ -96,7 +95,6 @@ class ProjectController extends Controller
             \File::deleteDirectory($dir);
             rmdir($dir);
         }
-
         DB::delete('delete from projects where id = ?', [$id]);
         return redirect('/admin/cms');
     }

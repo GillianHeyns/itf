@@ -23,7 +23,6 @@ class TestimonyController extends Controller
         ]);
 
         $imageName = $req->naam . '.' . $req->file('file')->extension();
-//        $imageName=time().'.'.$req->file('file')->extension();
         $req->file('file')->move(public_path('uploads/testimonies'), $imageName);
 
         $testimony = new Testimony();
@@ -49,41 +48,54 @@ class TestimonyController extends Controller
             $testimonyTag->save();
         }
 
-        $data = DB::table('testimonies')->get();
-        return view('admin.cms-testimonies', ['data' => $data]);
+        return redirect('/admin/cms-testimonies');
     }
 
     public function edit($id)
     {
-        $testimony = DB::table('testimonies')->where('id', $id)->get();
-//        $testimony = DB::table('testimonies')->where('id', $id)->get();
-        return view('admin.edit-getuigenis', ['testimony' => $testimony]);
+        $testimony = DB::table('testimonies')
+            ->where('testimonies.id', $id)
+            ->join('photos', 'testimonies.id', '=', 'photos.testimony_id')
+//            ->join('testimony_tags', 'testimonies.id', '=', 'testimony_tags.testimony_id')
+            ->get();
+
+        $tags = DB::table('tags')
+            ->get();
+
+//        return $testimony;
+        return view('admin.edit-getuigenis', ['testimony' => $testimony], ['tags' => $tags]);
     }
 
     public function update(Request $req, $id)
     {
-//        $req->validate([
-//            'file'=>'required|image|mimes:jpeg,png,pg,gif,svg|max:2048',
-//        ]);
-//
-//        $imageName=time().'.'.$req->file('file')->extension();
-//        $req->file('file')->move(public_path('uploads/testimonies'),$imageName);
-
         $testimony = Testimony::find($id);
-        $testimony->testimony_studentnaam = $req->naam;
+//        $testimony->testimony_studentnaam = $req->naam;
         $testimony->testimony_studierichting = $req->studierichting;
         $testimony->testimony_jaar = $req->jaar;
         $testimony->testimony_tekst = $req->tekst;
-//        $testimony->file_path='/storage/uploads/testimonies/'.$imageName;
+        $testimonyId = $testimony->id;
         $testimony->save();
 
-//        $testimonyId = $testimony->id;
+//        if (($req->file) != NULL) {
+//            $testimony = DB::table('testimonies')->where('id', $id)->first();
+//            $file_path = $testimony->file_path;
 //
-//        $photo = new Photo;
-//        $photo->foto_link='/storage/uploads/testimonies/'.$imageName;
-//        $photo->foto_beschrijving=$req->foto_beschrijving;
-//        $photo->testimony_id=$testimonyId;
-//        $photo->save();
+//            if (\File::exists(public_path($file_path))) {
+//                \File::delete(public_path($file_path));
+//            }
+//
+//        }
+
+        if (($req->tags) != NULL) {
+            DB::delete('delete from testimony_tags where testimony_id = ?', [$testimonyId]);
+
+            foreach ($req->tags as $tag) {
+                $testimonyTag = new TestimonyTag;
+                $testimonyTag->testimony_id = $testimonyId;
+                $testimonyTag->tag_id = $tag;
+                $testimonyTag->save();
+            }
+        }
 
         return redirect('/admin/cms-testimonies');
     }
@@ -101,8 +113,6 @@ class TestimonyController extends Controller
 
         if (\File::exists(public_path($file_path))) {
             \File::delete(public_path($file_path));
-        } else {
-            dd('File does not exists.');
         }
         DB::delete('delete from testimonies where id = ?', [$id]);
         return redirect('/admin/cms-testimonies');
