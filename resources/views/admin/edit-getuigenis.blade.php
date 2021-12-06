@@ -53,15 +53,19 @@
                                 </div>
                                 <div class="form-group row">
                                     <label for="tag"
-                                           class="col-md-4 col-form-label text-md-right">Selecteer een tag: </label>
+                                           class="col-md-4 col-form-label text-md-right">Tags: </label>
                                     <div class="col-md-6">
-{{--                                            @foreach($tags as $tag)--}}
-{{--                                                <input disabled value="{{ $tag -> id }}:{{ $tag -> tag_naam }}"--}}
-{{--                                                       type="text"--}}
-{{--                                                       id="selectedtag"--}}
-{{--                                                       name="selectedtag"--}}
-{{--                                                       class="mt-1 mb-1 form-control @error('naam') is-invalid @enderror">--}}
-{{--                                            @endforeach--}}
+                                        <div style="padding-left: 10px; padding-right: 10px;"
+                                             class="row justify-content-start">
+                                            @foreach($testimony->testimony_tags as $tag)
+                                                <input style="width: 100px;"
+                                                       disabled value="{{ $tag -> tag_naam }}"
+                                                       type="text"
+                                                       id="selectedtag"
+                                                       name="selectedtag"
+                                                       class="m-1 form-control @error('naam') is-invalid @enderror">
+                                            @endforeach
+                                        </div>
                                         <select name="tags[]" id="tags" multiple="multiple" style="height: 165px;">
                                             @foreach($tags as $tag)
                                                 <option value="{{ $tag -> id }}">{{ $tag -> tag_naam }}</option>
@@ -74,7 +78,8 @@
                                            class="col-md-4 col-form-label text-md-right">Foto: </label>
                                     <div class="col-md-6">
                                         <figure>
-                                            <img style="border: 2px solid #eee;width: 400px;" src="{{ $testimony->file_path}}"
+                                            <img style="border: 2px solid #eee;width: 400px;border-radius: 0.25rem;"
+                                                 src="{{ $testimony->file_path}}"
                                                  alt="Foto van {{ $testimony->testimony_studentnaam}}">
                                             <figcaption>Getuigenis {{ $testimony->testimony_studentnaam}}
                                                 ({{ $testimony->testimony_jaar}})

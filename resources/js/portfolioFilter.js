@@ -1,6 +1,6 @@
 // filter projecten
 $(function () {
-    $("li").on("click", function () {
+    $("#portfolio-filters li").on("click", function () {
         var text = $(this).text();
         $('div[class*="filter"]').hide();
         if (text === "ALL") {

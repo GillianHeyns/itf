@@ -53,10 +53,11 @@ class TestimonyController extends Controller
 
     public function edit($id)
     {
-        $testimony = DB::table('testimonies')
+        $testimony = Testimony::with(['photos', 'testimony_tags' => function ($query) {
+            $query
+                ->join('tags', 'testimony_tags.tag_id', '=', 'tags.id');
+        }])
             ->where('testimonies.id', $id)
-            ->join('photos', 'testimonies.id', '=', 'photos.testimony_id')
-//            ->join('testimony_tags', 'testimonies.id', '=', 'testimony_tags.testimony_id')
             ->get();
 
         $tags = DB::table('tags')
@@ -68,7 +69,15 @@ class TestimonyController extends Controller
 
     public function update(Request $req, $id)
     {
+        if (($req->file) != NULL) {
+            $req->validate([
+                'file' => 'required|image|mimes:jpeg,png,pg,gif,svg|max:2048',
+            ]);
+        }
+
+        //testimony wijzigen
         $testimony = Testimony::find($id);
+        //naam niet wijzigen
 //        $testimony->testimony_studentnaam = $req->naam;
         $testimony->testimony_studierichting = $req->studierichting;
         $testimony->testimony_jaar = $req->jaar;
@@ -76,16 +85,25 @@ class TestimonyController extends Controller
         $testimonyId = $testimony->id;
         $testimony->save();
 
-//        if (($req->file) != NULL) {
-//            $testimony = DB::table('testimonies')->where('id', $id)->first();
-//            $file_path = $testimony->file_path;
-//
-//            if (\File::exists(public_path($file_path))) {
-//                \File::delete(public_path($file_path));
-//            }
-//
-//        }
+        if (($req->file) != NULL) {
+//            $req->validate([
+//                'file' => 'required|image|mimes:jpeg,png,pg,gif,svg|max:2048',
+//            ]);
 
+            $photo = Photo::find($testimonyId);
+            $imageName = $photo->foto_link;
+//            dd($foto_link);
+            $req->file('file')->move(public_path('uploads/testimonies'), $imageName);
+
+
+//            $photo = new Photo;
+//            $photo->foto_link = '/uploads/testimonies/' . $imageName;
+            $photo->foto_beschrijving = $req->foto_beschrijving;
+            $photo->testimony_id = $testimonyId;
+            $photo->save();
+        }
+
+        //tags wijzigen
         if (($req->tags) != NULL) {
             DB::delete('delete from testimony_tags where testimony_id = ?', [$testimonyId]);
 
