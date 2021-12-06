@@ -6,11 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Photo extends Model
 {
-    public function project(){
-        return $this->belongsTo('App\Project'); // a photo belongs to a Project
+    public function projects()
+    {
+        return $this->belongsTo('App\Project')->withDefault(); // a projectTag belongs to a Project
+    }
+
+    public function testimonies()
+    {
+        return $this->belongsTo('App\Testimony')->withDefault(); // a projectTag belongs to a Testimony
     }
 
     protected $table = 'photos';
-
-    public $timestamps =true;
+    public $timestamps = true;
 }

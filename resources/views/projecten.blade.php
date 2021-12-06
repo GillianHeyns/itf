@@ -35,15 +35,8 @@
         <div class="row portfolio-container">
             {{--            TEST --}}
             @foreach($dataproject as $project)
-                <div class="col-lg-4 col-sm-6 mb-4 filter-ai filter-hackathon filter-buiten_categorie filter-moeilijk
-{{--                                @foreach($datatag as $tag)--}}
-                {{--                    filter-{{strtolower($project->tag_naam)}}--}}
-                {{--                @endforeach--}}
-
-                {{--                @foreach($datatag as $tag)--}}
-                {{--                    filter-{{strtolower($project->tag_naam)}}--}}
-                {{--                @endforeach--}}
-                    ">
+                <div
+                    class="col-lg-4 col-sm-6 mb-4 @foreach($project->project_tags as $tag)filter-{{strtolower($tag->tag_naam)}} @endforeach">
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-toggle="modal" href="#portfolioModal{{$project->id}}">
                             <div class="portfolio-hover">
@@ -56,7 +49,18 @@
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">{{$project->titel}}</div>
                             <div class="portfolio-caption-subheading text-muted">
-                                {{--                                {{$project->tag_naam}}--}}
+                                {{--                                @foreach($project->photos as $photo)--}}
+                                {{--                                    foto {{$photo->id}} met link: {{$photo->foto_link}}--}}
+                                {{--                                    <script>--}}
+                                {{--                                        var links = $photo->foto_link;--}}
+                                {{--                                        console.log(first);--}}
+                                {{--                                    </script>--}}
+                                {{--                                @endforeach--}}
+                                <p>Project {{$project->id}} :
+                                    @foreach($project->project_tags as $tag)
+                                        {{$tag->tag_id}}.{{$tag->tag_naam}}
+                                    @endforeach
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -79,7 +83,10 @@
                                             <!-- Project Details Go Here-->
                                             <h2 class="text-uppercase">{{$project->titel}}</h2>
                                             <p class="item-intro text-muted">
-                                                TAGS
+                                                @foreach($project->project_tags as $tag)
+                                                    - {{strtoupper($tag->tag_naam)}}
+                                                @endforeach
+                                                -
                                             </p>
                                             <img class="img-fluid d-block mx-auto"
                                                  src="/uploads/projects/{{$project->id}}-{{$project->titel}}/{{$project->titel}}-1.jpg"

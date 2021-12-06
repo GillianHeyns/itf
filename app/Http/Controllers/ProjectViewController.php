@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Project;
-use App\Photo;
+use function Doctrine\Common\Cache\Psr6\get;
 
 class ProjectViewController extends Controller
 {
@@ -14,32 +13,36 @@ class ProjectViewController extends Controller
         $tags = DB::table('tags')
             ->get();
 
-        $dataproject = DB::table('projects')
-            ->get();
-
-        $datatag = DB::table('projects')
-            //Inner Join
-            ->orderBy('titel')
-            ->join('project_tags', 'projects.id', '=', 'project_tags.project_id')
-            ->join('tags', 'project_tags.project_id', '=', 'tags.id')
+        $dataproject = Project::with(['photos', 'project_tags' => function ($query) {
+            $query
+                ->join('tags', 'project_tags.tag_id', '=', 'tags.id');
+        }])
             ->get();
 
 //        $data = DB::table('projects')->get();
 ////        $imagesEnc = DB::table('photos')->get();
 ////        $images = json_decode($imagesEnc);
-        return view('projecten', ['tags' => $tags], ['dataproject' => $dataproject], ['datatag' => $datatag]);
+        return view('projecten', ['tags' => $tags], ['dataproject' => $dataproject]);
     }
 
 
     public function testing()
     {
-        $datatag = DB::table('projects')
-            //Inner Join
-            ->orderBy('titel')
-            ->join('project_tags', 'projects.id', '=', 'project_tags.project_id')
-            ->join('tags', 'project_tags.project_id', '=', 'tags.id')
+        $projects = Project::with(['photos', 'project_tags' => function ($query) {
+            $query
+                ->join('tags', 'project_tags.tag_id', '=', 'tags.id');
+        }])
             ->get();
-        return $datatag;
+
+//        $projects = Project::with(['photos', 'project_tags' => function ($query) {
+//            $query
+////                ->select(['id', 'project_id', 'tag_id'])
+//                ->join('tags', 'project_tags.tag_id', '=', 'tags.id');
+////                ->on('tags.id', '=', 'project_tags.tag_id');
+//        }])
+//            ->get();
+
+        return $projects;
     }
 
 }

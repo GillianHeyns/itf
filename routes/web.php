@@ -24,6 +24,8 @@ Route::get('contact', function () {
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::redirect('/', '/admin/cms');
+    //TESTING
+    Route::get('test', 'ProjectViewController@testing');
 
     //CONTROLLERS
     //Project
@@ -71,7 +73,6 @@ Route::get('contact', 'ContactController@show');
 Route::post('contact', 'ContactController@sendEmail');
 
 Route::view('faciliteiten', 'faciliteiten');
-//Route::get('projecten', 'ProjectViewController@testing');
 Route::get('projecten', 'ProjectViewController@showProjecten');
 Route::view('dagopleiding', 'dagopleiding');
 Route::view('wes', 'wes');
