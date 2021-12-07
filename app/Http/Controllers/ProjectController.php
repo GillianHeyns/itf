@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Photo;
 use App\Project;
 use App\ProjectTag;
+use App\Testimony;
+use App\TestimonyTag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -47,6 +49,7 @@ class ProjectController extends Controller
 
         $photo = new Photo;
         $photo->foto_link = json_encode($photolink, JSON_UNESCAPED_SLASHES);
+        $photo->foto_beschrijving = $req->fotobeschrijving;
         $photo->project_id = $projectId;
         $photo->save();
 
@@ -62,21 +65,71 @@ class ProjectController extends Controller
     }
 
     // Detail Page: http://itf.test/admin/cms/{id}
-    public function show($id)
-    {
-//        $project = Project::with('id')->findOrFail($id);
-//        $result = compact('project');
-//        Json::dump($result);
-        return view('admin.edit-project', ['id' => $id]);
-    }
-
     public function edit($id)
     {
-//        $project = Project($id);
-//        $project->titel = $req->titel;
-//        $project->beschrijving = $req->beschrijving;
-//        $project->file_path = json_encode($photo, JSON_UNESCAPED_SLASHES);
-//        $project->save();
+        $project = Project::with(['photos', 'project_tags' => function ($query) {
+            $query
+                ->join('tags', 'project_tags.tag_id', '=', 'tags.id');
+        }])
+            ->where('projects.id', $id)
+            ->get();
+
+        $tags = DB::table('tags')
+            ->get();
+
+        return view('admin.edit-project', ['project' => $project], ['tags' => $tags]);
+    }
+
+    public function update(Request $req, $id)
+    {
+//        if (($req->file) != NULL) {
+//            $this->validate($req, [
+//                'file' => 'required',
+//                'file.*' => 'mimes:jpeg,jpg,png,gif,svg|max:2048'
+//            ]);
+//
+//            $photolink = array();
+//        }
+
+        //project wijzigen
+        $project = Project::find($id);
+        //titel niet wijzigen
+        //$project->titel = $req->titel;
+        $project->beschrijving = $req->beschrijving;
+        $project->save();
+
+        $projectId = $project->id;
+
+//        if (($req->file) != NULL) {
+//            $teller = 0;
+//            foreach ($req->file('file') as $file) {
+//                $teller += 1;
+//                $imageName = $req->titel . '-' . $teller . '.' . $file->extension();
+////            $imageName = time() . '-' . $teller . '.' . $file->extension();
+//                $file->move(public_path('uploads/projects/' . $projectId . '-' . $req->titel), $imageName);
+//                $photolink[] = 'uploads/projects/' . $imageName;
+//            }
+//
+//            $photo = new Photo;
+//            $photo->foto_link = json_encode($photolink, JSON_UNESCAPED_SLASHES);
+//            $photo->foto_beschrijving = $req->fotobeschrijving;
+//            $photo->project_id = $projectId;
+//            $photo->save();
+//        }
+
+        //tags wijzigen
+        if (($req->tags) != NULL) {
+            DB::delete('delete from project_tags where project_id = ?', [$projectId]);
+
+            foreach ($req->tags as $tag) {
+                $projectTag = new ProjectTag;
+                $projectTag->project_id = $projectId;
+                $projectTag->tag_id = $tag;
+                $projectTag->save();
+            }
+        }
+
+        return redirect('/admin/cms');
     }
 
     public function showdelete($id)
@@ -90,7 +143,7 @@ class ProjectController extends Controller
         $project = DB::table('projects')->where('id', $id)->first();
         $titel = $project->titel;
 
-        $dir = public_path('/uploads/projects/'. $id . '-' . $titel);
+        $dir = public_path('/uploads/projects/' . $id . '-' . $titel);
         if (\File::exists($dir)) {
             \File::deleteDirectory($dir);
             rmdir($dir);

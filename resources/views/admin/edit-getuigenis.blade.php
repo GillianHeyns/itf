@@ -83,7 +83,7 @@
                                                  alt="Foto van {{ $testimony->testimony_studentnaam}}">
                                             <figcaption>Getuigenis {{ $testimony->testimony_studentnaam}}
                                                 ({{ $testimony->testimony_jaar}})
-                                                - {{ $testimony->foto_beschrijving}}</figcaption>
+                                                - @foreach($testimony->photos as $photo){{ $photo -> foto_beschrijving }}@endforeach</figcaption>
                                         </figure>
                                         <input value="" type="file" id="file" name="file">
                                     </div>
@@ -93,7 +93,7 @@
                                            class="col-md-4 col-form-label text-md-right">Foto beschrijving: </label>
                                     <div class="col-md-6">
                                     <textarea type="text" id="foto_beschrijving" name="foto_beschrijving"
-                                              class="form-control @error('foto_beschrijving') is-invalid @enderror">{{ $testimony->foto_beschrijving}}</textarea>
+                                              class="form-control @error('foto_beschrijving') is-invalid @enderror">@foreach($testimony->photos as $photo){{ $photo -> foto_beschrijving }}@endforeach</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-0">
