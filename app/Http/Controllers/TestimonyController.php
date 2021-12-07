@@ -78,27 +78,26 @@ class TestimonyController extends Controller
         //testimony wijzigen
         $testimony = Testimony::find($id);
         //naam niet wijzigen
-//        $testimony->testimony_studentnaam = $req->naam;
+        //$testimony->testimony_studentnaam = $req->naam;
         $testimony->testimony_studierichting = $req->studierichting;
         $testimony->testimony_jaar = $req->jaar;
         $testimony->testimony_tekst = $req->tekst;
         $testimonyId = $testimony->id;
         $testimony->save();
 
+        //studentennaam ophalen
+        $photo = Testimony::find($testimonyId);
+        $studentnaam=$photo->testimony_studentnaam;
+
+        //nieuwe foto extensie ophalen
         if (($req->file) != NULL) {
-//            $req->validate([
-//                'file' => 'required|image|mimes:jpeg,png,pg,gif,svg|max:2048',
-//            ]);
+            $file = $req->file('file');
+            $extensie =$file->extension();
+            $req->file('file')->move(public_path('uploads/testimonies'), $studentnaam.'.'.$extensie);
 
-            $photo = Photo::find($testimonyId);
-            $imageName = $photo->foto_link;
-//            dd($foto_link);
-            $req->file('file')->move(public_path('uploads/testimonies'), $imageName);
-
-
-//            $photo = new Photo;
-//            $photo->foto_link = '/uploads/testimonies/' . $imageName;
+            $photo = Photo::find($id);
             $photo->foto_beschrijving = $req->foto_beschrijving;
+            $photo->foto_link='/uploads/testimonies/'.$studentnaam.'.'.$extensie;
             $photo->testimony_id = $testimonyId;
             $photo->save();
         }

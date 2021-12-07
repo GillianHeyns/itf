@@ -13,7 +13,7 @@
                         <div
                             class="card-header">{{ __('Edit getuigenis') }} {{ $testimony->id }}{{ __(':') }} {{ $testimony->testimony_studentnaam}}</div>
                         <div class="card-body">
-                            <form action="{{ $testimony->id }}/confirm" method="post">
+                            <form action="{{ $testimony->id }}/confirm" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group row">
                                     <label for="naam"
@@ -93,7 +93,7 @@
                                            class="col-md-4 col-form-label text-md-right">Foto beschrijving: </label>
                                     <div class="col-md-6">
                                     <textarea type="text" id="foto_beschrijving" name="foto_beschrijving"
-                                              class="form-control @error('foto_beschrijving') is-invalid @enderror">{{ $testimony->foto_beschrijving}}</textarea>
+                                              class="form-control @error('foto_beschrijving') is-invalid @enderror">@foreach($testimony->photos as $photo){{ $photo -> foto_beschrijving }}@endforeach</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-0">
