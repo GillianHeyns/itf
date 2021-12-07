@@ -13,7 +13,7 @@
                         <div
                             class="card-header">{{ __('Edit getuigenis') }} {{ $testimony->id }}{{ __(':') }} {{ $testimony->testimony_studentnaam}}</div>
                         <div class="card-body">
-                            <form action="{{ $testimony->id }}/confirm" method="post">
+                            <form action="{{ $testimony->id }}/confirm" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group row">
                                     <label for="naam"
