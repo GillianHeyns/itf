@@ -57,13 +57,23 @@
                                            class="col-md-4 col-form-label text-md-right">Foto: </label>
                                     <div class="col-md-6">
                                         <figure>
-                                            <img style="border: 2px solid #eee;width: 400px;border-radius: 0.25rem;"
-                                                 src="{{ $project->file_path}}"
-                                                 alt="Foto van {{ $project->titel}}">
-                                            <figcaption>Project {{ $project->titel}}
-                                                - @foreach($project->photos as $photo){{ $photo -> foto_beschrijving }}@endforeach</figcaption>
+                                            <img
+                                                onerror="this.onerror=null; this.src='/uploads/projects/unknownproject.jpg'"
+                                                style="border: 2px solid #eee;width: 400px;border-radius: 0.25rem;"
+                                                src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[0],2,-1)}}@endforeach"
+                                                alt="Foto 1 van {{ $project->titel}}">
+                                            <figcaption>Foto 1 van project "{{$project->titel}}"</figcaption>
                                         </figure>
-                                        <input value="" type="file" id="file" name="file">
+                                        <figure>
+                                            <img onerror="this.onerror=null; this.style='visibility: hidden;'"
+                                                 style="border: 2px solid #eee;width: 400px;border-radius: 0.25rem;"
+                                                 src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[1],1,-2)}}@endforeach"
+                                                 alt="Foto 2 van {{ $project->titel}}">
+                                            <figcaption>Foto 2 van project "{{$project->titel}}"</figcaption>
+                                        </figure>
+
+                                        {{--                                        <input value="" multiple="multiple" type="file" id="file" name="file[]">--}}
+                                        <input value="" multiple="multiple" type="file" id="file" name="file[]">
                                     </div>
                                 </div>
                                 <div class="form-group row">

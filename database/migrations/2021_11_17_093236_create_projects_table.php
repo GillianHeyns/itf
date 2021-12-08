@@ -36,16 +36,18 @@ class CreateProjectsTable extends Migration
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
-                    'titel' => 'Afvalsorteermachine',
-                    'beschrijving' => 'Het belang van afvalsortering',
+                    'titel' => 'Too-Gather afvalsorteermachine',
+                    'beschrijving' => 'We kregen via de Efteling de opdracht om een afvalscheidingstechniek te ontwikkelen voor Holle Bolle Gijs. Deze opdracht is in het kader van een wedstrijd en in samenwerking met ICE Cube, het beste prototype wordt werkelijk uitgevoerd in het pretpark.
+
+Het afval komt langs de mond van Holle Bolle Gijs binnen en het valt op een transportband. daarna detecteert een sensor het afval en wordt er een foto gemaakt en naar de cloud gestuurd. Het afval wordt herkend, en het sorteermechanisme gaat het afval in de juiste afvalcontainer deponeren.',
                     //'file_path' => "testURL2",
 //                    'content_block_id' => 2
                 ],
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
-                    'titel' => 'GitLab',
-                    'beschrijving' => 'GitLab voor KCE',
+                    'titel' => 'GitLab for KCE',
+                    'beschrijving' => 'De studenten van Digital Innovation kregen de opdracht een GitLab op te zetten voor KCE. Dit zou de werking van hun project ten goede komen.',
                     //'file_path' => "testURL3",
 //                    'content_block_id' => 3
                 ],

@@ -29,23 +29,21 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="file"
-                                       class="col-md-4 col-form-label text-md-right">Foto: </label>
-                                <div class="col-md-6">
-
-                                    <input required multiple="multiple" type="file" id="file" name="file[]">
-
-                                </div>
-                            </div>
-                            <div class="form-group row">
                                 <label for="tag"
                                        class="col-md-4 col-form-label text-md-right">Selecteer een tag of meerdere tags: </label>
                                 <div class="col-md-6">
                                     <select required name="tags[]" id="tags" multiple="multiple" style="height: 165px;">
                                         @foreach($tags as $tag)
-                                        <option value="{{ $tag -> id }}">{{ $tag -> tag_naam }}</option>
+                                            <option value="{{ $tag -> id }}">{{ $tag -> tag_naam }}</option>
                                         @endforeach
                                     </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="file"
+                                       class="col-md-4 col-form-label text-md-right">Foto: </label>
+                                <div class="col-md-6">
+                                    <input required multiple="multiple" type="file" id="file" name="file[]">
                                 </div>
                             </div>
                             <div class="form-group row">

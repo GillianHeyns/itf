@@ -42,25 +42,34 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid"
-                                 src="/uploads/projects/{{$project->id}}-{{$project->titel}}/{{$project->titel}}-1.jpg"
-                                 alt='Foto van project "{{$project->titel}}"'/>
+
+
+                            <img onerror="this.onerror=null; this.src='/uploads/projects/unknownproject.jpg'"
+                                 class="img-fluid"
+                                 src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[0],2,-1)}}@endforeach"
+                                 alt='@foreach($project->photos as $photo){{$photo->foto_beschrijving}}@endforeach'/>
+                            <script>
+                                var ary = ['first', 'second', 'third', 'fourth', 'fifth'];
+                                // alert(ary[0])
+                            </script>
+
+
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">{{$project->titel}}</div>
                             <div class="portfolio-caption-subheading text-muted">
-                                {{--                                @foreach($project->photos as $photo)--}}
-                                {{--                                    foto {{$photo->id}} met link: {{$photo->foto_link}}--}}
-                                {{--                                    <script>--}}
-                                {{--                                        var links = $photo->foto_link;--}}
-                                {{--                                        console.log(first);--}}
-                                {{--                                    </script>--}}
-                                {{--                                @endforeach--}}
-                                <p>Project {{$project->id}} :
-                                    @foreach($project->project_tags as $tag)
-                                        {{$tag->tag_id}}.{{$tag->tag_naam}}
+                                <p>Categorie:<br>@foreach($project->project_tags as $tag)
+                                        - {{strtoupper($tag->tag_naam)}}
                                     @endforeach
+                                    -
                                 </p>
+                            </div>
+                            <div class="portfolio-caption-subheading">
+                                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal{{$project->id}}">
+                                    <button class="col-md-12 btn btn-outline-dark">
+                                        Meer info
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -88,10 +97,24 @@
                                                 @endforeach
                                                 -
                                             </p>
-                                            <img class="img-fluid d-block mx-auto"
-                                                 src="/uploads/projects/{{$project->id}}-{{$project->titel}}/{{$project->titel}}-1.jpg"
-                                                 alt='Foto van project "{{$project->titel}}"'/>
+                                            <img
+                                                onerror="this.onerror=null; this.src='/uploads/projects/unknownproject.jpg'"
+                                                style="border: 2px solid #eee;border-radius: 0.25rem;"
+                                                class="img-fluid d-block mx-auto"
+                                                src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[0],2,-1)}}@endforeach"
+                                                alt='Foto 1 van project "{{$project->titel}}"'/>
                                             <p>{{$project->beschrijving}}</p>
+                                            <img onerror="this.onerror=null; this.style='visibility: hidden;'"
+                                                 style="border: 2px solid #eee;border-radius: 0.25rem;"
+                                                 class="img-fluid d-block mx-auto"
+                                                 src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[1],1,-2)}}@endforeach"
+                                                 alt='Foto 2 van project "{{$project->titel}}"'/>
+
+{{--                                            <img onerror="this.onerror=null; this.style='visibility: hidden;'"--}}
+{{--                                                 style="border: 2px solid #eee;border-radius: 0.25rem;"--}}
+{{--                                                 class="img-fluid d-block mx-auto"--}}
+{{--                                                 src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[2],1,-2)}}@endforeach"--}}
+{{--                                                 alt='Foto 3 van project "{{$project->titel}}"'/>--}}
 
                                             <button class="btn btn-outline-dark" data-dismiss="modal" type="button">
                                                 <i class="fas fa-times mr-1"></i>

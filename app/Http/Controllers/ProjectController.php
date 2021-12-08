@@ -82,40 +82,42 @@ class ProjectController extends Controller
 
     public function update(Request $req, $id)
     {
-//        if (($req->file) != NULL) {
-//            $this->validate($req, [
+        if (($req->file) != NULL) {
+            $this->validate($req, [
 //                'file' => 'required',
-//                'file.*' => 'mimes:jpeg,jpg,png,gif,svg|max:2048'
-//            ]);
-//
-//            $photolink = array();
-//        }
+                'file.*' => 'required|image|mimes:jpeg,png,pg,gif,svg|max:2048',
+            ]);
+            $photolink = array();
+        }
 
         //project wijzigen
         $project = Project::find($id);
         //titel niet wijzigen
         //$project->titel = $req->titel;
         $project->beschrijving = $req->beschrijving;
+        $projectId = $project->id;
         $project->save();
 
-        $projectId = $project->id;
+        //projectnaam ophalen
+        $photo = Project::find($projectId);
+        $projectnaam = $photo->testimony_studentnaam;
 
-//        if (($req->file) != NULL) {
-//            $teller = 0;
-//            foreach ($req->file('file') as $file) {
-//                $teller += 1;
-//                $imageName = $req->titel . '-' . $teller . '.' . $file->extension();
-////            $imageName = time() . '-' . $teller . '.' . $file->extension();
-//                $file->move(public_path('uploads/projects/' . $projectId . '-' . $req->titel), $imageName);
-//                $photolink[] = 'uploads/projects/' . $imageName;
-//            }
-//
-//            $photo = new Photo;
-//            $photo->foto_link = json_encode($photolink, JSON_UNESCAPED_SLASHES);
-//            $photo->foto_beschrijving = $req->fotobeschrijving;
-//            $photo->project_id = $projectId;
-//            $photo->save();
-//        }
+        //nieuwe foto extensie ophalen
+        if (($req->file) != NULL) {
+            $teller = 0;
+            foreach ($req->file('file') as $file) {
+                $teller += 1;
+                $imageName = $projectnaam . '-' . $teller . '.' . $file->extension();
+                $file->move(public_path('uploads/projects/' . $projectId . '-' . $projectnaam), $imageName);
+                $photolink[] = 'uploads/projects/' . $imageName;
+            }
+
+            $photo = Photo::find($id);
+            $photo->foto_link = json_encode($photolink, JSON_UNESCAPED_SLASHES);
+            $photo->foto_beschrijving = $req->fotobeschrijving;
+            $photo->project_id = $projectId;
+            $photo->save();
+        }
 
         //tags wijzigen
         if (($req->tags) != NULL) {
