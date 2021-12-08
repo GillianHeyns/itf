@@ -63,7 +63,6 @@ class TestimonyController extends Controller
         $tags = DB::table('tags')
             ->get();
 
-//        return $testimony;
         return view('admin.edit-getuigenis', ['testimony' => $testimony], ['tags' => $tags]);
     }
 

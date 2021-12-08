@@ -64,7 +64,7 @@ class ProjectViewController extends Controller
             ->get();
         $images = json_decode($imagesEnc);
 
-        return $testimonies;
+        return $projects;
     }
 
 }
