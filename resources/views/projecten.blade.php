@@ -20,7 +20,6 @@
             <h2>PROJECTEN BACHELOR</h2>
             <p>Portfolio</p>
         </div>
-
         {{--        sorteer module --}}
         <div class="row justify-content-center" id="sort">
             <ul id="portfolio-filters">
@@ -29,9 +28,6 @@
                 @endforeach
             </ul>
         </div>
-
-        {{--        filter-app, filter-iot, filter-di, filter-ccs, filter-ai, filter-hackathon, filter-other--}}
-
         <div class="row portfolio-container">
             {{--            TEST --}}
             @foreach($dataproject as $project)
@@ -42,18 +38,11 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-
-
-                            <img onerror="this.onerror=null; this.src='/uploads/projects/unknownproject.jpg'"
+                            <img
+                                onerror="this.onerror=null; this.src='/uploads/projects/unknownproject.jpg'"
                                  class="img-fluid"
                                  src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[0],2,-1)}}@endforeach"
                                  alt='@foreach($project->photos as $photo){{$photo->foto_beschrijving}}@endforeach'/>
-                            <script>
-                                var ary = ['first', 'second', 'third', 'fourth', 'fifth'];
-                                // alert(ary[0])
-                            </script>
-
-
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">{{$project->titel}}</div>
@@ -104,18 +93,34 @@
                                                 src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[0],2,-1)}}@endforeach"
                                                 alt='Foto 1 van project "{{$project->titel}}"'/>
                                             <p>{{$project->beschrijving}}</p>
-                                            <img onerror="this.onerror=null; this.style='visibility: hidden;'"
+                                            <img
+                                                onerror="this.onerror=null; this.style='visibility: hidden; margin:0;'"
                                                  style="border: 2px solid #eee;border-radius: 0.25rem;"
                                                  class="img-fluid d-block mx-auto"
-                                                 src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[1],1,-2)}}@endforeach"
+                                                 src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[1],1,-1)}}@endforeach"
                                                  alt='Foto 2 van project "{{$project->titel}}"'/>
-
-{{--                                            <img onerror="this.onerror=null; this.style='visibility: hidden;'"--}}
-{{--                                                 style="border: 2px solid #eee;border-radius: 0.25rem;"--}}
-{{--                                                 class="img-fluid d-block mx-auto"--}}
-{{--                                                 src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[2],1,-2)}}@endforeach"--}}
-{{--                                                 alt='Foto 3 van project "{{$project->titel}}"'/>--}}
-
+                                            <img
+                                                onerror="this.onerror=null; this.style='visibility: hidden; margin:0;'"
+                                                 style="border: 2px solid #eee;border-radius: 0.25rem;"
+                                                 class="img-fluid d-block mx-auto"
+                                                 src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[2],1,-1)}}@endforeach"
+                                                 alt='Foto 3 van project "{{$project->titel}}"'/>
+                                            <img
+                                                onerror="this.onerror=null; this.style='visibility: hidden; margin:0;'"
+                                                 style="border: 2px solid #eee;border-radius: 0.25rem;"
+                                                 class="img-fluid d-block mx-auto"
+                                                 src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[3],1,-1)}}@endforeach"
+                                                 alt='Foto 4 van project "{{$project->titel}}"'/>
+                                            <img
+                                                onerror="this.onerror=null; this.style='visibility: hidden; margin:0;'"
+                                                 style="border: 2px solid #eee;border-radius: 0.25rem;"
+                                                 class="img-fluid d-block mx-auto"
+                                                 src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[4],1,-1)}}@endforeach"
+                                                 alt='Foto 5 van project "{{$project->titel}}"'/>
+                                            <p>
+                                                <a href="{{$project->hyperlink}}"
+                                                   target="_blank">{{$project->hyperlink_naam}}</a>
+                                            </p>
                                             <button class="btn btn-outline-dark" data-dismiss="modal" type="button">
                                                 <i class="fas fa-times mr-1"></i>
                                                 Sluiten

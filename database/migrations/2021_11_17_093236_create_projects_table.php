@@ -19,6 +19,8 @@ class CreateProjectsTable extends Migration
             $table->timestamps();
             $table->string('titel');
             $table->longText('beschrijving')->nullable();
+            $table->string('hyperlink')->nullable();
+            $table->string('hyperlink_naam')->nullable();
 //            $table->foreignId('content_block_id');
 //            $table->foreign('content_block_id')->references('id')->on('content_blocks')->onDelete('cascade')->onUpdate('cascade');
         });
@@ -31,6 +33,8 @@ class CreateProjectsTable extends Migration
                     'updated_at' => Carbon::now(),
                     'titel' => 'Website IT Factory',
                     'beschrijving' => 'Studenten Digital Innovation kregen de opdracht om op 3 weken tijd een volledig nieuwe website te ontwikkelen. De opdracht was niet enkel om een website te bouwen maar ook om nieuwe zaken bij te leren. Zo leerden ze onder andere werken met Laravel, php, jquery,… Daarnaast zijn ze nog volop bezig om een bot te installeren die ze later kunnen gebruiken in de website.',
+                    'hyperlink' => '/',
+                    'hyperlink_naam' => 'www.weareitfactory.be',
 //                    'content_block_id' => 1
                 ],
                 [
@@ -40,17 +44,17 @@ class CreateProjectsTable extends Migration
                     'beschrijving' => 'We kregen via de Efteling de opdracht om een afvalscheidingstechniek te ontwikkelen voor Holle Bolle Gijs. Deze opdracht is in het kader van een wedstrijd en in samenwerking met ICE Cube, het beste prototype wordt werkelijk uitgevoerd in het pretpark.
 
 Het afval komt langs de mond van Holle Bolle Gijs binnen en het valt op een transportband. daarna detecteert een sensor het afval en wordt er een foto gemaakt en naar de cloud gestuurd. Het afval wordt herkend, en het sorteermechanisme gaat het afval in de juiste afvalcontainer deponeren.',
-                    //'file_path' => "testURL2",
-//                    'content_block_id' => 2
+                    'hyperlink' => 'https://youtu.be/cR5753F4i8E',
+                    'hyperlink_naam' => 'YouTube demo'
                 ],
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     'titel' => 'GitLab for KCE',
                     'beschrijving' => 'De studenten van Digital Innovation kregen de opdracht een GitLab op te zetten voor KCE. Dit zou de werking van hun project ten goede komen.',
-                    //'file_path' => "testURL3",
-//                    'content_block_id' => 3
-                ],
+                    'hyperlink' => '',
+                    'hyperlink_naam' => ''
+                    ],
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
@@ -58,8 +62,8 @@ Het afval komt langs de mond van Holle Bolle Gijs binnen en het valt op een tran
                     'beschrijving' => 'De opdracht kon niet meer visionair zijn. Tussen 30 januari en 1 Februari 2020 deed een groep 1ITF studenten mee aan de hackathon Patiënt zero. De opdracht: zoek online naar datasets over ziektes en verspreidingspatronen en tracht te achterhalen waar de ziekte uiteindelijk begonnen is. Gezien de huidige corona pandemie kon dit geen actuelere opdracht zijn...
 
 Hoewel de technologie nieuw was, was het team eerstejaars toch sterk genoeg om een mooie 2de plaats in de wacht te slepen!',
-                    //'file_path' => "testURL3",
-//                    'content_block_id' => 3
+                    'hyperlink' => '',
+                    'hyperlink_naam' => ''
                 ],
                 [
                     'created_at' => Carbon::now(),
@@ -70,8 +74,8 @@ Hoewel de technologie nieuw was, was het team eerstejaars toch sterk genoeg om e
 Thema’s als seksueel misbruik, pesten of drugsmisbruik werden niet uit de weg gegaan, want ambitieus als ze zijn wilden onze studenten net die moeilijke eerste stap bij deze topics vergemakkelijken.
 
 Hun knappe teamwerk en de app genaamd ‘Okay’ viel op bij de jury en bezorgde dit team de eerste prijs in de discipline.',
-                    //'file_path' => "testURL3",
-//                    'content_block_id' => 3
+                    'hyperlink' => 'https://www.youtube.com/watch?v=VSPfp9yZDUY',
+                    'hyperlink_naam' => 'Pitch'
                 ],
             ]
         );

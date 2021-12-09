@@ -29,23 +29,27 @@ class ProjectViewController extends Controller
 
     public function testing()
     {
-        $projects = Project::with(['photos', 'project_tags' => function ($query) {
-            $query
-                ->join('tags', 'project_tags.tag_id', '=', 'tags.id');
-        }])
-            ->get();
+//        $projects = Project::with(['photos', 'project_tags' => function ($query) {
+//            $query
+//                ->join('tags', 'project_tags.tag_id', '=', 'tags.id');
+//        }])
+//            ->get();
+
+
+
+
 
 //        $testimonies = Testimony::with(['photos', 'testimony_tags' => function ($query) {
 //            $query
 //                ->join('tags', 'testimony_tags.tag_id', '=', 'tags.id');
 //        }])
 //            ->get();
-        $testimonies = Testimony::with(['photos', 'testimony_tags' => function ($query) {
-            $query
-                ->join('tags', 'testimony_tags.tag_id', '=', 'tags.id');
-        }])
-//            ->where('testimonies.id', $id)
-            ->get();
+//        $testimonies = Testimony::with(['photos', 'testimony_tags' => function ($query) {
+//            $query
+//                ->join('tags', 'testimony_tags.tag_id', '=', 'tags.id');
+//        }])
+////            ->where('testimonies.id', $id)
+//            ->get();
 
 
 
@@ -57,14 +61,17 @@ class ProjectViewController extends Controller
 //        }])
 //            ->get();
 
-        $imagesEnc = Project::with(['photos', 'project_tags' => function ($query) {
-            $query
-                ->join('tags', 'project_tags.tag_id', '=', 'tags.id');
-        }])
-            ->get();
-        $images = json_decode($imagesEnc);
+//        $imagesEnc = Project::with(['photos', 'project_tags' => function ($query) {
+//            $query
+//                ->join('tags', 'project_tags.tag_id', '=', 'tags.id');
+//        }])
+//            ->get();
+//        $images = json_decode($imagesEnc);
 
-        return $projects;
+        $photos = DB::table('photos')
+            ->get();
+
+        return $photos;
     }
 
 }

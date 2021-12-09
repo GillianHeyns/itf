@@ -31,6 +31,24 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <label for="hyperlink"
+                                           class="col-md-4 col-form-label text-md-right">Hyperlink: </label>
+                                    <div class="col-md-6">
+                                        <input value="{{ $project->hyperlink}}" type="text" id="hyperlink"
+                                               name="hyperlink"
+                                               class="form-control @error('hyperlink') is-invalid @enderror">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="hyperlink_naam" class="col-md-4 col-form-label text-md-right">Hyperlink
+                                        naam: </label>
+                                    <div class="col-md-6">
+                                        <input value="{{ $project->hyperlink_naam}}" type="text" id="hyperlink_naam"
+                                               name="hyperlink_naam"
+                                               class="form-control @error('hyperlink_naam') is-invalid @enderror">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label for="tag"
                                            class="col-md-4 col-form-label text-md-right">Tags: </label>
                                     <div class="col-md-6">
@@ -54,7 +72,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <label for="file"
-                                           class="col-md-4 col-form-label text-md-right">Foto: </label>
+                                           class="col-md-4 col-form-label text-md-right">Foto's: </label>
                                     <div class="col-md-6">
                                         <figure>
                                             <img
@@ -65,23 +83,47 @@
                                             <figcaption>Foto 1 van project "{{$project->titel}}"</figcaption>
                                         </figure>
                                         <figure>
-                                            <img onerror="this.onerror=null; this.style='visibility: hidden;'"
-                                                 style="border: 2px solid #eee;width: 400px;border-radius: 0.25rem;"
-                                                 src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[1],1,-2)}}@endforeach"
-                                                 alt="Foto 2 van {{ $project->titel}}">
+                                            <img
+                                                onerror="this.onerror=null; this.src='/uploads/projects/unknownproject.jpg'"
+                                                style="border: 2px solid #eee;width: 400px;border-radius: 0.25rem;"
+                                                src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[1],1,-1)}}@endforeach"
+                                                alt="Foto 2 van {{ $project->titel}}">
                                             <figcaption>Foto 2 van project "{{$project->titel}}"</figcaption>
                                         </figure>
-
-                                        {{--                                        <input value="" multiple="multiple" type="file" id="file" name="file[]">--}}
-                                        <input value="" multiple="multiple" type="file" id="file" name="file[]">
+                                        <figure>
+                                            <img
+                                                onerror="this.onerror=null; this.src='/uploads/projects/unknownproject.jpg'"
+                                                style="border: 2px solid #eee;width: 400px;border-radius: 0.25rem;"
+                                                src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[2],1,-1)}}@endforeach"
+                                                alt="Foto 3 van {{ $project->titel}}">
+                                            <figcaption>Foto 3 van project "{{$project->titel}}"</figcaption>
+                                        </figure>
+                                        <figure>
+                                            <img
+                                                onerror="this.onerror=null; this.src='/uploads/projects/unknownproject.jpg'"
+                                                style="border: 2px solid #eee;width: 400px;border-radius: 0.25rem;"
+                                                src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[3],1,-1)}}@endforeach"
+                                                alt="Foto 4 van {{ $project->titel}}">
+                                            <figcaption>Foto 4 van project "{{$project->titel}}"</figcaption>
+                                        </figure>
+                                        <figure>
+                                            <img
+                                                onerror="this.onerror=null; this.src='/uploads/projects/unknownproject.jpg'"
+                                                style="border: 2px solid #eee;width: 400px;border-radius: 0.25rem;"
+                                                src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[4],1,-1)}}@endforeach"
+                                                alt="Foto 5 van {{ $project->titel}}">
+                                            <figcaption>Foto 5 van project "{{$project->titel}}"</figcaption>
+                                        </figure>
+                                        <input multiple="multiple" type="file" id="file" name="file[]">
+{{--                                        <input value="" multiple="multiple" type="file" id="file" name="file[]">--}}
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="fotobeschrijving"
+                                    <label for="foto_beschrijving"
                                            class="col-md-4 col-form-label text-md-right">Foto beschrijving: </label>
                                     <div class="col-md-6">
-                                    <textarea type="text" id="fotobeschrijving" name="fotobeschrijving"
-                                              class="form-control @error('fotobeschrijving') is-invalid @enderror">@foreach($project->photos as $photo){{ $photo -> foto_beschrijving }}@endforeach</textarea>
+                                    <textarea type="text" id="foto_beschrijving" name="foto_beschrijving"
+                                              class="form-control @error('foto_beschrijving') is-invalid @enderror">@foreach($project->photos as $photo){{ $photo -> foto_beschrijving }}@endforeach</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-0">

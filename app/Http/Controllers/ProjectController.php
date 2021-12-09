@@ -35,6 +35,8 @@ class ProjectController extends Controller
         $project = new Project;
         $project->titel = $req->titel;
         $project->beschrijving = $req->beschrijving;
+        $project->hyperlink = $req->hyperlink;
+        $project->hyperlink_naam = $req->hyperlink_naam;
         $project->save();
         $projectId = $project->id;
 
@@ -44,17 +46,18 @@ class ProjectController extends Controller
             $imageName = $req->titel . '-' . $teller . '.' . $file->extension();
 //            $imageName = time() . '-' . $teller . '.' . $file->extension();
             $file->move(public_path('uploads/projects/' . $projectId . '-' . $req->titel), $imageName);
-            $photolink[] = 'uploads/projects/' . $imageName;
+            $photolink[] = 'uploads/projects/' . $projectId . '-' . $req->titel . '/' . $imageName;
         }
+        //Minstens 5 foto's
+        array_push($photolink, "", "", "", "", "");
 
         $photo = new Photo;
         $photo->foto_link = json_encode($photolink, JSON_UNESCAPED_SLASHES);
-        $photo->foto_beschrijving = $req->fotobeschrijving;
+        $photo->foto_beschrijving = $req->foto_beschrijving;
         $photo->project_id = $projectId;
         $photo->save();
 
         foreach ($req->tags as $tag) {
-            //$projectTags[] = $tag;
             $projectTag = new ProjectTag;
             $projectTag->project_id = $projectId;
             $projectTag->tag_id = $tag;
@@ -85,9 +88,8 @@ class ProjectController extends Controller
         if (($req->file) != NULL) {
             $this->validate($req, [
 //                'file' => 'required',
-                'file.*' => 'required|image|mimes:jpeg,png,pg,gif,svg|max:2048',
+//                'file.*' => 'mimes:jpeg,jpg,png,gif,svg|max:2048'
             ]);
-            $photolink = array();
         }
 
         //project wijzigen
@@ -95,26 +97,64 @@ class ProjectController extends Controller
         //titel niet wijzigen
         //$project->titel = $req->titel;
         $project->beschrijving = $req->beschrijving;
+        $project->hyperlink = $req->hyperlink;
+        $project->hyperlink_naam = $req->hyperlink_naam;
         $projectId = $project->id;
         $project->save();
 
         //projectnaam ophalen
-        $photo = Project::find($projectId);
-        $projectnaam = $photo->testimony_studentnaam;
+        $project = Project::find($projectId);
+        $projectnaam = $project->titel;
+        //fotoId ophalen
+        $photo = DB::table('photos')
+            ->where('photos.project_id', $projectId)
+            ->get("id");
+        $photoId = intval(substr($photo, 7, -2));
 
         //nieuwe foto extensie ophalen
-        if (($req->file) != NULL) {
-            $teller = 0;
-            foreach ($req->file('file') as $file) {
-                $teller += 1;
-                $imageName = $projectnaam . '-' . $teller . '.' . $file->extension();
-                $file->move(public_path('uploads/projects/' . $projectId . '-' . $projectnaam), $imageName);
-                $photolink[] = 'uploads/projects/' . $imageName;
-            }
+        if (($req->file) != NULL or ($req->foto_beschrijving) != NULL) {
+            //opvragen foto_link
+//            $photolinkquery = DB::table('photos')
+//                ->where('photos.project_id', $projectId)
+//                ->get("foto_link");
+//            $photolink = substr($photolinkquery, 15, -3);;
 
-            $photo = Photo::find($id);
-            $photo->foto_link = json_encode($photolink, JSON_UNESCAPED_SLASHES);
-            $photo->foto_beschrijving = $req->fotobeschrijving;
+            $photo = Photo::find($photoId);
+            $photo->foto_beschrijving = $req->foto_beschrijving;
+
+            $teller = 0;
+            $files = $req->file('file');
+//            if (is_array($files) || is_object($files)) {
+            foreach ($files as $file) {
+                $teller += 1;
+                $extensie = $file->extension();
+                dd($extensie);
+
+                $imageName = $projectnaam . '-' . $teller . '.' . $extensie;
+                $file->move(public_path('uploads/projects/' . $projectId . '-' . $projectnaam), $imageName);
+                $photolink[] = 'uploads/projects/' . $projectId . '-' . $projectnaam . '/' . $imageName;
+
+                //Minstens 5 foto's -> 5 lege invoegen
+                array_push($photolink, "", "", "", "", "");
+                $photo->foto_link = json_encode($photolink, JSON_UNESCAPED_SLASHES);
+            }
+//            }
+
+//            $teller = 0;
+//            foreach ($req->file('file') as $file) {
+//                $teller += 1;
+//                $file = $req->file('file');
+//                $extensie = $file->extension();
+//
+//                $imageName = $projectnaam . '-' . $teller . '.' . $extensie;
+//                $file->move(public_path('uploads/projects/' . $projectId . '-' . $projectnaam), $imageName);
+//                $photolink[] = 'uploads/projects/' . $projectId . '-' . $projectnaam . '/' . $imageName;
+//
+//                //Minstens 5 foto's -> 5 lege invoegen
+//                array_push($photolink, "", "", "", "", "");
+//                $photo->foto_link = json_encode($photolink, JSON_UNESCAPED_SLASHES);
+//            }
+
             $photo->project_id = $projectId;
             $photo->save();
         }

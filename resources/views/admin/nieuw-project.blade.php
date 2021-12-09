@@ -29,6 +29,20 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label for="hyperlink" class="col-md-4 col-form-label text-md-right">Hyperlink: </label>
+                                <div class="col-md-6">
+                                    <input type="text" id="hyperlink" name="hyperlink"
+                                           class="form-control @error('hyperlink') is-invalid @enderror">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="hyperlink_naam" class="col-md-4 col-form-label text-md-right">Hyperlink naam: </label>
+                                <div class="col-md-6">
+                                    <input type="text" id="hyperlink_naam" name="hyperlink_naam"
+                                           class="form-control @error('hyperlink_naam') is-invalid @enderror">
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="tag"
                                        class="col-md-4 col-form-label text-md-right">Selecteer een tag of meerdere tags: </label>
                                 <div class="col-md-6">
@@ -41,17 +55,17 @@
                             </div>
                             <div class="form-group row">
                                 <label for="file"
-                                       class="col-md-4 col-form-label text-md-right">Foto: </label>
+                                       class="col-md-4 col-form-label text-md-right">Foto's: </label>
                                 <div class="col-md-6">
                                     <input required multiple="multiple" type="file" id="file" name="file[]">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="fotobeschrijving"
+                                <label for="foto_beschrijving"
                                        class="col-md-4 col-form-label text-md-right">Foto beschrijving: </label>
                                 <div class="col-md-6">
-                                    <textarea required type="text" id="fotobeschrijving" name="fotobeschrijving"
-                                              class="form-control @error('fotobeschrijving') is-invalid @enderror"></textarea>
+                                    <textarea required type="text" id="foto_beschrijving" name="foto_beschrijving"
+                                              class="form-control @error('foto_beschrijving') is-invalid @enderror"></textarea>
                                 </div>
                             </div>
                             <div class="form-group row mb-0">
