@@ -85,12 +85,17 @@ class TestimonyController extends Controller
         $testimony->save();
 
         //studentennaam ophalen
-        $photo = Testimony::find($testimonyId);
-        $studentnaam = $photo->testimony_studentnaam;
+        $testimony = Testimony::find($testimonyId);
+        $studentnaam = $testimony->testimony_studentnaam;
+        //fotoId ophalen
+        $photo = DB::table('photos')
+            ->where('photos.testimony_id', $testimonyId)
+            ->get("id");
+        $photoId = intval(substr($photo, 7, -2));
 
         //nieuwe foto extensie ophalen
         if (($req->file) != NULL or ($req->foto_beschrijving) != NULL) {
-            $photo = Photo::find($id);
+            $photo = Photo::find($photoId);
             $photo->foto_beschrijving = $req->foto_beschrijving;
             if (($req->file) != NULL) {
                 $file = $req->file('file');

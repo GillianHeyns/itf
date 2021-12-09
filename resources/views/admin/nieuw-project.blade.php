@@ -61,11 +61,11 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="fotobeschrijving"
+                                <label for="foto_beschrijving"
                                        class="col-md-4 col-form-label text-md-right">Foto beschrijving: </label>
                                 <div class="col-md-6">
-                                    <textarea required type="text" id="fotobeschrijving" name="fotobeschrijving"
-                                              class="form-control @error('fotobeschrijving') is-invalid @enderror"></textarea>
+                                    <textarea required type="text" id="foto_beschrijving" name="foto_beschrijving"
+                                              class="form-control @error('foto_beschrijving') is-invalid @enderror"></textarea>
                                 </div>
                             </div>
                             <div class="form-group row mb-0">
