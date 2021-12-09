@@ -17,7 +17,7 @@ class CreatePhotosTable extends Migration
         Schema::create('photos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('foto_link');
+            $table->longText('foto_link');
             $table->string('foto_beschrijving')->nullable();
 
             //$table->foreignId('content_block_id');
@@ -83,7 +83,7 @@ class CreatePhotosTable extends Migration
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
-                    'foto_link' => '["uploads/projects/1-Website IT Factory/Website IT Factory-1.jpg","uploads/projects/1-Website IT Factory/Website IT Factory-2.jpg"]',
+                    'foto_link' => '["uploads/projects/1-Website IT Factory/Website IT Factory-1.jpg","uploads/projects/1-Website IT Factory/Website IT Factory-2.jpg","","","","",""]',
                     'foto_beschrijving' => "Foto's over het project van de IT Factory website",
                     'project_id' => 1,
                     'testimony_id' => NULL,
@@ -91,7 +91,7 @@ class CreatePhotosTable extends Migration
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
-                    'foto_link' => '["uploads/projects/2-Too-Gather afvalsorteermachine/Too-Gather afvalsorteermachine-1.png","uploads/projects/2-Too-Gather afvalsorteermachine/Too-Gather afvalsorteermachine-2.png"]',
+                    'foto_link' => '["uploads/projects/2-Too-Gather afvalsorteermachine/Too-Gather afvalsorteermachine-1.png","uploads/projects/2-Too-Gather afvalsorteermachine/Too-Gather afvalsorteermachine-2.png","","","","",""]',
                     'foto_beschrijving' => "Foto's over het project van project Too-Gather, Afvalsorteermachine",
                     'project_id' => 2,
                     'testimony_id' => NULL,
@@ -99,7 +99,7 @@ class CreatePhotosTable extends Migration
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
-                    'foto_link' => '["uploads/projects/3-GitLab for KCE/GitLab for KCE-1.jpg","uploads/projects/3-GitLab for KCE/GitLab for KCE-2.jpg"]',
+                    'foto_link' => '["uploads/projects/3-GitLab for KCE/GitLab for KCE-1.jpg","uploads/projects/3-GitLab for KCE/GitLab for KCE-2.jpg","","","","",""]',
                     'foto_beschrijving' => "Foto's over het project GitLab voor KCE",
                     'project_id' => 3,
                     'testimony_id' => NULL,
@@ -107,7 +107,7 @@ class CreatePhotosTable extends Migration
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
-                    'foto_link' => '["uploads/projects/4-Patient Zero/Patient Zero-1.jpg","uploads/projects/4-Patient Zero/Patient Zero-2.jpg"]',
+                    'foto_link' => '["uploads/projects/4-Patient Zero/Patient Zero-1.jpg","uploads/projects/4-Patient Zero/Patient Zero-2.jpg","","","","",""]',
                     'foto_beschrijving' => "Foto's over het project van Patient Zero",
                     'project_id' => 4,
                     'testimony_id' => NULL,
@@ -115,7 +115,7 @@ class CreatePhotosTable extends Migration
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
-                    'foto_link' => '["uploads/projects/5-Smart Policing - Smart Interaction/Smart Policing - Smart Interaction-1.jpg","uploads/projects/5-Smart Policing - Smart Interaction/Smart Policing - Smart Interaction-2.jpg"]',
+                    'foto_link' => '["uploads/projects/5-Smart Policing - Smart Interaction/Smart Policing - Smart Interaction-1.jpg","uploads/projects/5-Smart Policing - Smart Interaction/Smart Policing - Smart Interaction-2.jpg","uploads/projects/5-Smart Policing - Smart Interaction/Smart Policing - Smart Interaction-3.jpg","uploads/projects/5-Smart Policing - Smart Interaction/Smart Policing - Smart Interaction-4.jpg","uploads/projects/5-Smart Policing - Smart Interaction/Smart Policing - Smart Interaction-5.jpg",""]',
                     'foto_beschrijving' => "Foto's over het project van Smart Policing - Smart Interaction",
                     'project_id' => 5,
                     'testimony_id' => NULL,
