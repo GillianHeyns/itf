@@ -87,8 +87,8 @@ class ProjectController extends Controller
     {
         if (($req->file) != NULL) {
             $this->validate($req, [
-//                'file' => 'required',
-//                'file.*' => 'mimes:jpeg,jpg,png,gif,svg|max:2048'
+                'file' => 'required',
+                'file.*' => 'mimes:jpeg,jpg,png,gif,svg|max:2048'
             ]);
         }
 
@@ -113,53 +113,35 @@ class ProjectController extends Controller
 
         //nieuwe foto extensie ophalen
         if (($req->file) != NULL or ($req->foto_beschrijving) != NULL) {
-            //opvragen foto_link
-//            $photolinkquery = DB::table('photos')
-//                ->where('photos.project_id', $projectId)
-//                ->get("foto_link");
-//            $photolink = substr($photolinkquery, 15, -3);;
-
             $photo = Photo::find($photoId);
             $photo->foto_beschrijving = $req->foto_beschrijving;
-
-            $teller = 0;
-            $files = $req->file('file');
-//            if (is_array($files) || is_object($files)) {
-            foreach ($files as $file) {
-                $teller += 1;
-                $extensie = $file->extension();
-                dd($extensie);
-
-                $imageName = $projectnaam . '-' . $teller . '.' . $extensie;
-                $file->move(public_path('uploads/projects/' . $projectId . '-' . $projectnaam), $imageName);
-                $photolink[] = 'uploads/projects/' . $projectId . '-' . $projectnaam . '/' . $imageName;
-
+            if (($req->file) != NULL) {
+                $photolink = array();
+                $files = array_filter($_FILES['file']['name']);
+                $total = count($_FILES['file']['name']);
+                // Loop through each file
+                for ($i = 1; $i < $total + 1; $i++) {
+                    $extensie = pathinfo($files[$i - 1], PATHINFO_EXTENSION);
+                    $imageName = $projectnaam . '-' . $i . '.' . $extensie;
+                    $photolink[] = 'uploads/projects/' . $projectId . '-' . $projectnaam . '/' . $imageName;
+                    //Get the temp file path
+                    $tmpFilePath = $_FILES['file']['tmp_name'][$i - 1];
+                    //Make sure we have a file path
+                    if ($tmpFilePath != "") {
+                        //Setup our new file path
+                        $newFilePath = "uploads/projects/" . $projectId . '-' . $projectnaam . '/' . $imageName;
+                        move_uploaded_file($tmpFilePath, $newFilePath);
+                    }
+                }
                 //Minstens 5 foto's -> 5 lege invoegen
                 array_push($photolink, "", "", "", "", "");
                 $photo->foto_link = json_encode($photolink, JSON_UNESCAPED_SLASHES);
             }
-//            }
-
-//            $teller = 0;
-//            foreach ($req->file('file') as $file) {
-//                $teller += 1;
-//                $file = $req->file('file');
-//                $extensie = $file->extension();
-//
-//                $imageName = $projectnaam . '-' . $teller . '.' . $extensie;
-//                $file->move(public_path('uploads/projects/' . $projectId . '-' . $projectnaam), $imageName);
-//                $photolink[] = 'uploads/projects/' . $projectId . '-' . $projectnaam . '/' . $imageName;
-//
-//                //Minstens 5 foto's -> 5 lege invoegen
-//                array_push($photolink, "", "", "", "", "");
-//                $photo->foto_link = json_encode($photolink, JSON_UNESCAPED_SLASHES);
-//            }
-
             $photo->project_id = $projectId;
             $photo->save();
         }
 
-        //tags wijzigen
+//tags wijzigen
         if (($req->tags) != NULL) {
             DB::delete('delete from project_tags where project_id = ?', [$projectId]);
 
@@ -174,13 +156,15 @@ class ProjectController extends Controller
         return redirect('/admin/cms');
     }
 
-    public function showdelete($id)
+    public
+    function showdelete($id)
     {
         $project = DB::table('projects')->where('id', $id)->get();
         return view('admin.delete-project', ['project' => $project]);
     }
 
-    public function delete($id)
+    public
+    function delete($id)
     {
         $project = DB::table('projects')->where('id', $id)->first();
         $titel = $project->titel;
@@ -194,7 +178,8 @@ class ProjectController extends Controller
         return redirect('/admin/cms');
     }
 
-    public function showlisttags()
+    public
+    function showlisttags()
     {
         $tags = DB::table('tags')->get();
         return view('admin.nieuw-project', ['tags' => $tags]);

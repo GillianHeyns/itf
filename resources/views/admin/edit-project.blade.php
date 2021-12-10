@@ -13,7 +13,7 @@
                         <div
                             class="card-header">{{ __('Edit project') }} {{ $project->id }}{{ __(':') }} {{ $project->titel}}</div>
                         <div class="card-body">
-                            <form action="{{ $project->id }}/confirm" method="post">
+                            <form action="{{ $project->id }}/confirm" method="post" enctype='multipart/form-data'>
                                 @csrf
                                 <div class="form-group row">
                                     <label for="titel" class="col-md-4 col-form-label text-md-right">Titel: </label>
@@ -114,8 +114,7 @@
                                                 alt="Foto 5 van {{ $project->titel}}">
                                             <figcaption>Foto 5 van project "{{$project->titel}}"</figcaption>
                                         </figure>
-                                        <input multiple="multiple" type="file" id="file" name="file[]">
-{{--                                        <input value="" multiple="multiple" type="file" id="file" name="file[]">--}}
+                                        <input multiple type="file" id="file" name="file[]">
                                     </div>
                                 </div>
                                 <div class="form-group row">

@@ -83,7 +83,7 @@ class CreatePhotosTable extends Migration
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
-                    'foto_link' => '["uploads/projects/1-Website IT Factory/Website IT Factory-1.jpg","uploads/projects/1-Website IT Factory/Website IT Factory-2.jpg","","","","",""]',
+                    'foto_link' => '["uploads/projects/1-Website IT Factory/Website IT Factory-1.jpg","uploads/projects/1-Website IT Factory/Website IT Factory-2.jpg","uploads/projects/1-Website IT Factory/Website IT Factory-3.jpg","","","",""]',
                     'foto_beschrijving' => "Foto's over het project van de IT Factory website",
                     'project_id' => 1,
                     'testimony_id' => NULL,
