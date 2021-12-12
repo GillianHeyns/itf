@@ -23,6 +23,7 @@ class CreateTestimoniesTable extends Migration
             $table->string('testimony_studierichting')->nullable();
             $table->year('testimony_jaar')->nullable();
             $table->string('file_path')->nullable();
+            $table->boolean('homepage')->nullable();
 
 //            $table->foreignId('content_block_id');
 //            $table->foreign('content_block_id')->references('id')->on('content_blocks')->onDelete('cascade')->onUpdate('cascade');
@@ -39,6 +40,7 @@ class CreateTestimoniesTable extends Migration
                     'testimony_studierichting' => "3 DI",
                     'testimony_jaar' => "2021",
                     'file_path' => "/uploads/testimonies/Gillian Heyns.jpg",
+                    'homepage' => false,
 //                    'content_block_id' => 1
                 ],
                 [
@@ -49,6 +51,7 @@ class CreateTestimoniesTable extends Migration
                     'testimony_studierichting' => "3 DI",
                     'testimony_jaar' => "2021",
                     'file_path' => "/uploads/testimonies/Jonas Van Hove.jpg",
+                    'homepage' => false,
 //                    'content_block_id' => 1
                 ],
                 [
@@ -59,6 +62,7 @@ class CreateTestimoniesTable extends Migration
                     'testimony_studierichting' => "3 DI",
                     'testimony_jaar' => "2021",
                     'file_path' => "/uploads/testimonies/Axl Kesters.jpg",
+                    'homepage' => false,
 //                    'content_block_id' => 1
                 ],
                 [
@@ -69,6 +73,7 @@ class CreateTestimoniesTable extends Migration
                     'testimony_studierichting' => "2 DI",
                     'testimony_jaar' => "2020",
                     'file_path' => "/uploads/testimonies/Tobias Geyskens.jpg",
+                    'homepage' => false,
 //                    'content_block_id' => 1
                 ],
                 [
@@ -79,6 +84,7 @@ class CreateTestimoniesTable extends Migration
                     'testimony_studierichting' => "2 CCS",
                     'testimony_jaar' => "2020",
                     'file_path' => "/uploads/testimonies/Alex Coulon.jpg",
+                    'homepage' => false,
 //                    'content_block_id' => 1
                 ],
                 [
@@ -89,6 +95,7 @@ class CreateTestimoniesTable extends Migration
                     'testimony_studierichting' => "Test",
                     'testimony_jaar' => "2000",
                     'file_path' => "/uploads/testimonies/Anonym.jpg",
+                    'homepage' => false,
 //                    'content_block_id' => 1
                 ],
             ]

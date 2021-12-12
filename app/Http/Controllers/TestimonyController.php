@@ -30,6 +30,7 @@ class TestimonyController extends Controller
         $testimony->testimony_studierichting = $req->studierichting;
         $testimony->testimony_jaar = $req->jaar;
         $testimony->testimony_tekst = $req->tekst;
+        $testimony->homepage = $req->homepage;
         $testimony->file_path = '/uploads/testimonies/' . $imageName;
         $testimony->save();
         $testimonyId = $testimony->id;
@@ -81,6 +82,7 @@ class TestimonyController extends Controller
         $testimony->testimony_studierichting = $req->studierichting;
         $testimony->testimony_jaar = $req->jaar;
         $testimony->testimony_tekst = $req->tekst;
+        $testimony->homepage = $req->homepage;
         $testimonyId = $testimony->id;
         $testimony->save();
 

@@ -96,6 +96,18 @@
                                               class="form-control @error('foto_beschrijving') is-invalid @enderror">@foreach($testimony->photos as $photo){{ $photo -> foto_beschrijving }}@endforeach</textarea>
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-6">
+                                        <input type="hidden" name="homepage" value="0">
+                                        <input value="1" type="checkbox" id="homepage"
+                                               name="homepage"
+                                               @if(($testimony->homepage) === 1)
+                                               checked
+                                            @endif>
+                                        <label for="homepage"> Tonen op hoofdpagina</label>
+                                    </div>
+                                </div>
                                 <div class="form-group row mb-0">
                                     <div class="col-md-4 offset-md-6">
                                         <button type="submit" class="col-md-12 btn btn-primary">
