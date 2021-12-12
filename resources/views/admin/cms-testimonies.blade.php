@@ -63,9 +63,11 @@
                                 </td>
                                 <td class="d-flex justify-content-between">{{$testimony->testimony_studierichting}}
                                     <span>
-{{--                                        {{$testimony->homepage}}--}}
                                         @if(($testimony->homepage) === 1)
                                             <i style="color: #999;" class="fas fa-home"></i>
+                                        @endif
+                                        @if(($testimony->homepage_EN) === 1)
+                                            <i style="color: #999;" class="fa fa-globe"></i>
                                         @endif
                                     </span>
 

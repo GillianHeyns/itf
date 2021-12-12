@@ -108,6 +108,18 @@
                                         <label for="homepage"> Tonen op hoofdpagina</label>
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-6">
+                                        <input type="hidden" name="homepage_EN" value="0">
+                                        <input value="1" type="checkbox" id="homepage_EN"
+                                               name="homepage_EN"
+                                               @if(($testimony->homepage_EN) === 1)
+                                               checked
+                                            @endif>
+                                        <label for="homepage_EN"> Tonen op hoofdpagina [EN]</label>
+                                    </div>
+                                </div>
                                 <div class="form-group row mb-0">
                                     <div class="col-md-4 offset-md-6">
                                         <button type="submit" class="col-md-12 btn btn-primary">

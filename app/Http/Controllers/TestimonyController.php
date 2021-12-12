@@ -83,6 +83,7 @@ class TestimonyController extends Controller
         $testimony->testimony_jaar = $req->jaar;
         $testimony->testimony_tekst = $req->tekst;
         $testimony->homepage = $req->homepage;
+        $testimony->homepage_EN = $req->homepage_EN;
         $testimonyId = $testimony->id;
         $testimony->save();
 
