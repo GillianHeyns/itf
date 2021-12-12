@@ -172,119 +172,108 @@
 @endsection
 
 {{--Projecten--}}
-{{--Project 1--}}
-@section('foto_project_1')
-    <img class="img-fluid" src="/assets/img/portfolio/iot_iotessentials1.jpg" alt="IOT essentials"/>
-@endsection
-@section('titel_project_1')
-    <div class="portfolio-caption-heading">Internet of Things Essentials</div>
-@endsection
+{{--Projecten--}}
+@section('filter')iot @endsection
+@section('projecten')
+    @foreach($data as $project)
+        <!-- Modal {{$project->titel}}-->
+        <div
+            class="col-lg-4 col-sm-6 mb-4 @foreach($project->project_tags as $tag)filter-{{strtolower($tag->tag_naam)}} @endforeach">
+            <div class="portfolio-item">
+                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal{{$project->id}}">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                    </div>
+                    <img
+                        onerror="this.onerror=null; this.src='/uploads/projects/unknownproject.jpg'"
+                        class="img-fluid"
+                        src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[0],2,-1)}}@endforeach"
+                        alt='@foreach($project->photos as $photo){{$photo->foto_beschrijving}}@endforeach'/>
+                </a>
+                <div class="portfolio-caption">
+                    <div class="portfolio-caption-heading">{{$project->titel}}</div>
+                    <div class="portfolio-caption-subheading text-muted">
+                    </div>
+                    <div class="portfolio-caption-subheading">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal{{$project->id}}">
+                            <button class="col-md-12 btn btn-outline-dark">
+                                Meer info
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
 
-@section('inhoud_titel_1')
-    <h2 class="text-uppercase">Internet of Things Essentials</h2>
-@endsection
-
-@section('inhoud_tag_1')
-    <p class="item-intro text-muted">Internet of Things</p>
-@endsection
-
-@section('inhoud_foto_1')
-    <img class="img-fluid d-block mx-auto"
-         src="/assets/img/portfolio/iot_iotessentials2.jpg" alt="IOT essentials"/>
-@endsection
-
-@section('inhoud_tekst_1')
-    <p>Voor het vak ‘Internet of Things Essentials’ werden de 1ITF studenten
-        uitgedaagd om een echt werkende lift te bouwen.
-        Student Victor nam deze uitdaging met volle overtuiging aan besloot ‘the
-        extra mile’ te gaan.</p>
-    <p>Met software en hardware werd hij ondersteund door de school, maar bij de
-        liftconstructie mocht hij zijn fantasie de vrije loop laten en hij koos voor
-        een huisgemaakte 3D print!</p>
-@endsection
-
-@section('inhoud_link_1')
-    <li><a href="https://www.youtube.com/watch?v=U1kIyyfba1s" target="_blank">Youtube
-            pitch</a></li>
-@endsection
-
-
-
-
-{{--Project 2--}}
-@section('foto_project_2')
-    <img class="img-fluid" src="/assets/img/portfolio/iot_keuzeprojectiot1.jpg" alt="Keuzeproject IOT"/>
-@endsection
-
-@section('titel_project_2')
-    <div class="portfolio-caption-heading">Keuzeproject Internet of Things</div>
-@endsection
-
-
-@section('inhoud_titel_2')
-    <h2 class="text-uppercase">Keuzeproject Internet of Things</h2>
-@endsection
-
-@section('inhoud_tag_2')
-    <p class="item-intro text-muted">Keuzeprojecten, Internet of Things</p>
-@endsection
-
-@section('inhoud_foto_2')
-    <img class="img-fluid d-block mx-auto"
-         src="/assets/img/portfolio/iot_keuzeprojectiot2.jpg" alt="IOT keuzeproject"/>
-@endsection
-
-@section('inhoud_tekst_2')
-    <p>Niet goed weten wat je later wil doen en toch beginnen studeren, dat kan
-        gewoon aan de IT Factory. Om je te helpen kiezen worden er in het eerste
-        jaar Keuzeprojecten ingericht. </p>
-    <p>Student Alex koos als project het thema Internet of Things en werd uitgedaagd
-        eigen afstandsbediening te maken voor een beamer.</p>
-    <p>Hij ging aan de slag met een Raspberry Pi, infrarood zender en ontvanger en
-        een zelfgemaakt dashboard om zo de beamer te laten werken niet met de
-        meegeleverde afstandsbediening, maar door zijn eigen computer en
-        smartphone! </p>
-@endsection
-
-@section('inhoud_link_2')
-    <li><a href="https://www.youtube.com/watch?v=3dlmfCI99bQ" target="_blank">Youtube
-            demo</a></li>
-@endsection
-
-
-
-{{--Project 3--}}
-@section('foto_project_3')
-    <img class="img-fluid" src="/assets/img/portfolio/iot_KNX1.jpg" alt="IOT KNX"/>
-@endsection
-@section('titel_project_3')
-    <div class="portfolio-caption-heading">Project KNX Smart Home</div>
-@endsection
-
-@section('inhoud_titel_3')
-    <h2 class="text-uppercase">Project KNX Smart Home</h2>
-@endsection
-
-@section('inhoud_tag_3')
-    <p class="item-intro text-muted">Internet of Things</p>
-@endsection
-
-@section('inhoud_foto_3')
-    <img class="img-fluid d-block mx-auto"
-         src="/assets/img/portfolio/iot_KNX2.jpg" alt="IOT KNX"/>
-@endsection
-
-@section('inhoud_tekst_3')
-    <p>Voor het vak KNX Smart Home kreeg 3ITF student Maarten de opdracht om een
-        project te maken met de Gira X1 module. Hij koos ervoor een app te maken om
-        app te maken die je kan gebruiken om je eigen ‘smart home’ aan te
-        sturen.</p>
-    <p>Wie droomt er niet van om op afstand je volledige huis te kunnen besturen en
-        te zorgen dat alles piekfijn in orde is tegen dat je thuiskomt ! </p>
-@endsection
-
-@section('inhoud_link_3')
-
+    <!-- Portfolio Modals-->
+    @foreach($data as $project)
+        <!-- Modal {{$project->titel}}-->
+        <div class="portfolio-modal modal fade" id="portfolioModal{{$project->id}}" tabindex="-1" role="dialog"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="/assets/img/cancel.svg"
+                                                                       alt="Close modal"/></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">{{$project->titel}}</h2>
+                                    <p class="item-intro text-muted">
+                                        @foreach($project->project_tags as $tag)
+                                            - {{strtoupper($tag->tag_naam)}}
+                                        @endforeach
+                                        -
+                                    </p>
+                                    <img
+                                        onerror="this.onerror=null; this.src='/uploads/projects/unknownproject.jpg'"
+                                        style="border: 2px solid #eee;border-radius: 0.25rem;"
+                                        class="img-fluid d-block mx-auto"
+                                        src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[0],2,-1)}}@endforeach"
+                                        alt='Foto 1 van project "{{$project->titel}}"'/>
+                                    <p>{{$project->beschrijving}}</p>
+                                    <img
+                                        onerror="this.onerror=null; this.style='visibility: hidden; margin:0;'"
+                                        style="border: 2px solid #eee;border-radius: 0.25rem;"
+                                        class="img-fluid d-block mx-auto"
+                                        src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[1],1,-1)}}@endforeach"
+                                        alt='Foto 2 van project "{{$project->titel}}"'/>
+                                    <img
+                                        onerror="this.onerror=null; this.style='visibility: hidden; margin:0;'"
+                                        style="border: 2px solid #eee;border-radius: 0.25rem;"
+                                        class="img-fluid d-block mx-auto"
+                                        src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[2],1,-1)}}@endforeach"
+                                        alt='Foto 3 van project "{{$project->titel}}"'/>
+                                    <img
+                                        onerror="this.onerror=null; this.style='visibility: hidden; margin:0;'"
+                                        style="border: 2px solid #eee;border-radius: 0.25rem;"
+                                        class="img-fluid d-block mx-auto"
+                                        src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[3],1,-1)}}@endforeach"
+                                        alt='Foto 4 van project "{{$project->titel}}"'/>
+                                    <img
+                                        onerror="this.onerror=null; this.style='visibility: hidden; margin:0;'"
+                                        style="border: 2px solid #eee;border-radius: 0.25rem;"
+                                        class="img-fluid d-block mx-auto"
+                                        src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[4],1,-1)}}@endforeach"
+                                        alt='Foto 5 van project "{{$project->titel}}"'/>
+                                    <p>
+                                        <a href="{{$project->hyperlink}}"
+                                           target="_blank">{{$project->hyperlink_naam}}</a>
+                                    </p>
+                                    <button class="btn btn-outline-dark" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Sluiten
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
 @endsection
 
 {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>--}}

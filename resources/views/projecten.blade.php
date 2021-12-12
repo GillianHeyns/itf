@@ -29,7 +29,6 @@
             </ul>
         </div>
         <div class="row portfolio-container">
-            {{--            TEST --}}
             @foreach($dataproject as $project)
                 <div
                     class="col-lg-4 col-sm-6 mb-4 @foreach($project->project_tags as $tag)filter-{{strtolower($tag->tag_naam)}} @endforeach">
