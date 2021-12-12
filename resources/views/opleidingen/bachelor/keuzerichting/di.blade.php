@@ -62,219 +62,139 @@
             allowfullscreen></iframe>
 @endsection
 
-{{--Testimonials--}}
-@section('testimonial_1')
-    In de afstudeerrichting Digital Innovation krijgen we heel veel mogelijkheden om samen te werken met verschillende
-    IT-bedrijven en partners. Zo leren we de jobs al een beetje kennen waardoor we later zeker weten wat we willen doen.
+{{--Getuigenissen--}}
+@section('testimonies')
+    @foreach($testimonies as $count => $testimony)
+        <!-- Quote {{$count+1}}-->
+        <div class="carousel-item @if ($count === 0) active @endif">
+            <div class="quote">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <p><i class="fas fa-quote-left"></i>
+                            {{$testimony->testimony_tekst}}
+                            <i class="fas fa-quote-right"></i></p>
+                        <p>
+                            {{$testimony->testimony_studentnaam}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
 @endsection
-@section('naam_1')
-    Gillian Heyns - 2 DI
-@endsection
-@section('foto_1')
-    <li data-target="#quote-carousel" data-slide-to="0" class="active"><img
-            class="img-fluid"
-            src="/assets/img/testimonials/gillian.jpg"
-            alt="Gillian Heyns">
-    </li>
-@endsection
-
-@section("CI-2")
-    class="carousel-item"
-@endsection
-@section('testimonial_2')
-    Als student met functie beperking was een hoge school geen makkelijke keuze. De ITFactory was mijn keuze en hier heb
-    ik nooit spijt van gehad. Van dag één heb ik alle nodige hulp gekregen van medestudenten en docenten om het voor mij
-    zo aangenaam mogelijk te maken!
-@endsection
-@section('naam_2')
-    Axl Kesters - 2 DI
-@endsection
-@section('foto_2')
-    <li data-target="#quote-carousel" data-slide-to="1"><img
-            class="img-fluid"
-            src="/assets/img/testimonials/axl.jpg"
-            alt="Axl Kesters">
-    </li>
-@endsection
-
-@section("CI-3")
-    class="carousel-item"
-@endsection
-@section('testimonial_3')
-    Digital Innovation is dé richting voor mensen die graag projectmatig bijleren. Je hebt zelf de keuze waar je je
-    focus legt, zowel bij de vakken die je volgt als de projecten die je doet gedurende het semester. Heb je een
-    hands-on-mentaliteit? Overweeg dan zeker deze richting!
-@endsection
-@section('naam_3')
-    Jonas Van Hove - 2 DI
-@endsection
-@section('foto_3')
-    <li data-target="#quote-carousel" data-slide-to="2"><img
-            class="img-fluid"
-            src="/assets/img/testimonials/jonas.jpg"
-            alt="Jonas Van Hove">
-    </li>
-@endsection
-
-@section("CI-4")
-    class="carousel-item"
-@endsection
-@section('testimonial_4')
-    DI laat me toe om als student met een brede interesse in IT toch vakken van de verschillende
-    richtingen te volgen. Via het projectwerk leer ik ook alle stappen kennen die een project doorloopt, vanaf het
-    opstellen van de verwachting van de klant tot oplevering van het eindresultaat. Het uitwerken van projecten heeft me
-    ook al toegelaten om contacten te leggen binnen de bedrijfswereld. Een echte aanrader dus voor degene die al eens
-    willen proeven hoe het er aan toe gaat in het echte bedrijfsleven.
-@endsection
-@section('naam_4')
-    Tobias Geyskens - 2 DI
-@endsection
-@section('foto_4')
-    <li data-target="#quote-carousel" data-slide-to="3"><img
-            class="img-fluid"
-            src="/assets/img/testimonials/tobias.jpg"
-            alt="Tobias Geyskens">
-    </li>
-@endsection
-
-@section("CI-5")
-    style="display: none;"
-@endsection
-
-@section("CI-6")
-    style="display:none"
+@section('photos')
+    @foreach($testimonies as $count => $testimony)
+        <li data-target="#quote-carousel" data-slide-to="{{$count}}" class="@if ($count === 0) active @endif"><img
+                class="img-fluid"
+                src="{{$testimony->file_path}}"
+                alt="@foreach($testimony->photos as $photo){{$photo->foto_beschrijving}}@endforeach">
+        </li>
+    @endforeach
 @endsection
 
 {{--Projecten--}}
-{{--Project 1--}}
-@section('foto_project_1')
-    <img class="img-fluid" src="/assets/img/portfolio/di_datacenterautomatisation1.jpg" alt="Datacenter automatisation"/>
+@section('filter')di @endsection
+@section('projects')
+    @foreach($data as $project)
+        <!-- Modal {{$project->titel}}-->
+        <div
+            class="col-lg-4 col-sm-6 mb-4 @foreach($project->project_tags as $tag)filter-{{strtolower($tag->tag_naam)}} @endforeach">
+            <div class="portfolio-item">
+                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal{{$project->id}}">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                    </div>
+                    <img
+                        onerror="this.onerror=null; this.src='/uploads/projects/unknownproject.jpg'"
+                        class="img-fluid"
+                        src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[0],2,-1)}}@endforeach"
+                        alt='@foreach($project->photos as $photo){{$photo->foto_beschrijving}}@endforeach'/>
+                </a>
+                <div class="portfolio-caption">
+                    <div class="portfolio-caption-heading">{{$project->titel}}</div>
+                    <div class="portfolio-caption-subheading text-muted">
+                    </div>
+                    <div class="portfolio-caption-subheading">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal{{$project->id}}">
+                            <button class="col-md-12 btn btn-outline-dark">
+                                Meer info
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+
+    <!-- Portfolio Modals-->
+    @foreach($data as $project)
+        <!-- Modal {{$project->titel}}-->
+        <div class="portfolio-modal modal fade" id="portfolioModal{{$project->id}}" tabindex="-1" role="dialog"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="/assets/img/cancel.svg"
+                                                                       alt="Close modal"/></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">{{$project->titel}}</h2>
+                                    <p class="item-intro text-muted">
+                                        @foreach($project->project_tags as $tag)
+                                            - {{strtoupper($tag->tag_naam)}}
+                                        @endforeach
+                                        -
+                                    </p>
+                                    <img
+                                        onerror="this.onerror=null; this.src='/uploads/projects/unknownproject.jpg'"
+                                        style="border: 2px solid #eee;border-radius: 0.25rem;"
+                                        class="img-fluid d-block mx-auto"
+                                        src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[0],2,-1)}}@endforeach"
+                                        alt='Foto 1 van project "{{$project->titel}}"'/>
+                                    <p>{{$project->beschrijving}}</p>
+                                    <img
+                                        onerror="this.onerror=null; this.style='visibility: hidden; margin:0;'"
+                                        style="border: 2px solid #eee;border-radius: 0.25rem;"
+                                        class="img-fluid d-block mx-auto"
+                                        src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[1],1,-1)}}@endforeach"
+                                        alt='Foto 2 van project "{{$project->titel}}"'/>
+                                    <img
+                                        onerror="this.onerror=null; this.style='visibility: hidden; margin:0;'"
+                                        style="border: 2px solid #eee;border-radius: 0.25rem;"
+                                        class="img-fluid d-block mx-auto"
+                                        src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[2],1,-1)}}@endforeach"
+                                        alt='Foto 3 van project "{{$project->titel}}"'/>
+                                    <img
+                                        onerror="this.onerror=null; this.style='visibility: hidden; margin:0;'"
+                                        style="border: 2px solid #eee;border-radius: 0.25rem;"
+                                        class="img-fluid d-block mx-auto"
+                                        src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[3],1,-1)}}@endforeach"
+                                        alt='Foto 4 van project "{{$project->titel}}"'/>
+                                    <img
+                                        onerror="this.onerror=null; this.style='visibility: hidden; margin:0;'"
+                                        style="border: 2px solid #eee;border-radius: 0.25rem;"
+                                        class="img-fluid d-block mx-auto"
+                                        src="/@foreach($project->photos as $photo){{substr(explode(',',$photo->foto_link)[4],1,-1)}}@endforeach"
+                                        alt='Foto 5 van project "{{$project->titel}}"'/>
+                                    <p>
+                                        <a href="{{$project->hyperlink}}"
+                                           target="_blank">{{$project->hyperlink_naam}}</a>
+                                    </p>
+                                    <button class="btn btn-outline-dark" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Sluiten
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
 @endsection
-@section('titel_project_1')
-    <div class="portfolio-caption-heading">Datacenter automatisation</div>
-@endsection
-
-@section('inhoud_titel_1')
-    <h2 class="text-uppercase">Datacenter automatisation</h2>
-@endsection
-
-@section('inhoud_tag_1')
-    <p class="item-intro text-muted">Digital Innovation, Cloud & Cyber
-        Security</p>
-@endsection
-
-@section('inhoud_foto_1')
-    <img class="img-fluid d-block mx-auto"
-         src="/assets/img/portfolio/di_datacenterautomatisation2.jpg" alt="Datacenter automatisation"/>
-@endsection
-
-@section('inhoud_tekst_1')
-    <p>Een datacenter automatiseren, hoe begin je daaraan? 2ITF Student Wout mocht
-        het uitzoeken voor een echte klant. Hij kreeg de volledige
-        verantwoordelijkheid vanaf de projectplanning tot de uiteindelijke
-        uitwerking.</p>
-    <p>Een knappe uitwerking met onder meer een webapplicatie en Power Shell scripts
-        zorgt ervoor dat de klant tegenwoordig in een paar minuten een container kan
-        aanmaken op hun datacenter, waar dit vroeger al snel een paar uur in beslag
-        nam! </p>
-@endsection
-
-@section('inhoud_link_1')
-
-@endsection
-
-
-
-
-{{--Project 2--}}
-@section('foto_project_2')
-    <img class="img-fluid" src="/assets/img/portfolio/di_projectportaal1.jpg" alt="DI project portaal"/>
-@endsection
-
-@section('titel_project_2')
-    <div class="portfolio-caption-heading">Digital Innovation Project Portaal</div>
-@endsection
-
-
-@section('inhoud_titel_2')
-    <h2 class="text-uppercase">Digital Innovation Project Portaal</h2>
-@endsection
-
-@section('inhoud_tag_2')
-    <p class="item-intro text-muted">Digital Innovation</p>
-@endsection
-
-@section('inhoud_foto_2')
-    <img class="img-fluid d-block mx-auto"
-         src="/assets/img/portfolio/di_projectportaal2.jpg" alt="DI project portaal"/>
-@endsection
-
-@section('inhoud_tekst_2')
-    <p>Studenten Thibault en Yannick kregen van hun docent Digital Innovation de
-        opdracht een portaalapp te ontwikkelen om bedrijven en studenten aan elkaar
-        te koppelen.</p>
-    <p>Ze kozen om de app te maken in Angular met een NodeJS backend. De studenten
-        namen ook de hele projectbegeleiding voor hun rekening. Zelfstandigheid,
-        nieuwe technologieën en een goede samenwerking overheerste in dit
-        project. </p>
-    <p>Een mooi project dat de komende jaren veel gebruikt gaat worden! </p>
-@endsection
-
-@section('inhoud_link_2')
-
-@endsection
-
-
-
-{{--Project 3--}}
-@section('foto_project_3')
-    <img class="img-fluid" src="/assets/img/portfolio/di_websiteitfactory1.jpg" alt="website IT Factory"/>
-@endsection
-@section('titel_project_3')
-    <div class="portfolio-caption-heading">Website IT Factory</div>
-@endsection
-
-@section('inhoud_titel_3')
-    <h2 class="text-uppercase">Website IT Factory</h2>
-@endsection
-
-@section('inhoud_tag_3')
-    <p class="item-intro text-muted">Digital Innovation, Application development</p>
-@endsection
-
-@section('inhoud_foto_3')
-    <img class="img-fluid d-block mx-auto"
-         src="/assets/img/portfolio/di_websiteitfactory1.jpg" alt="Website IT Factory"/>
-@endsection
-
-@section('inhoud_tekst_3')
-    <p>Studenten Digital Innovation kregen de opdracht om op 3 weken tijd een
-        volledig nieuwe website te ontwikkelen. De opdracht was niet enkel om een
-        website te bouwen maar ook om nieuwe zaken bij te leren. Zo leerden ze onder
-        andere werken met Laravel, php, jquery,… Daarnaast zijn ze nog volop bezig
-        om een bot te installeren die ze later kunnen gebruiken in de website. </p>
-@endsection
-
-@section('inhoud_link_3')
-    <li><a href="/" target="_blank">www.weareitfactory.be</a>
-    </li>
-@endsection
-
-{{--@section('testimonial_5')--}}
-{{--    Digital Innovation is dé richting voor mensen die graag projectmatig bijleren. Je hebt zelf de keuze waar je je--}}
-{{--    focus legt, zowel bij de vakken die je volgt als de projecten die je doet gedurende het semester. Heb je een--}}
-{{--    hands-on-mentaliteit? Overweeg dan zeker deze richting!--}}
-{{--@endsection--}}
-{{--@section('naam_5')--}}
-{{--    Jonas Van Hove - 2 DI--}}
-{{--@endsection--}}
-{{--@section('foto_5')--}}
-{{--    <li data-target="#quote-carousel" data-slide-to="4"><img--}}
-{{--            class="img-fluid"--}}
-{{--            src="/assets/img/testimonials/jonas.jpg"--}}
-{{--            alt="Jonas Van Hove">--}}
-{{--    </li>--}}
-{{--@endsection--}}
 
 {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>--}}
 {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>--}}

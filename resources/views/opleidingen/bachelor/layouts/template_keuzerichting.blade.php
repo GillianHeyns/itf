@@ -31,7 +31,7 @@
 
         <div class="container">
             <div class="row bigSize">
-                <div class="col-xl-12 col-md-6">
+                <div class="col-12">
                     @yield('promofilm_keuzerichting')
                 </div>
             </div>
@@ -46,105 +46,12 @@
                         <div class="carousel slide" data-ride="carousel" id="quote-carousel">
                             <!-- Carousel Slides / Quotes -->
                             <div class="carousel-inner text-center text-faded" role="listbox">
-                                <!-- Quote 1 -->
-                                <div class="carousel-item active">
-                                    <div class="quote">
-                                        <div class="row">
-                                            <div class="col-md-8 col-md-offset-2">
-                                                <p><i class="fas fa-quote-left"></i>
-                                                    @yield('testimonial_1', 'Jyle has helped us develop a professional and beautiful website which showcases our organization very well.')
-                                                    <i class="fas fa-quote-right"></i></p>
-                                                <p>
-                                                    @yield('naam_1', 'Axl Kesters')
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Quote 2 -->
-                                <div @yield("CI-2")>
-                                    <div class="quote">
-                                        <div class="row">
-                                            <div class="col-md-8 col-md-offset-2">
-                                                <p><i class="fas fa-quote-left"></i>
-                                                    @yield('testimonial_2', 'Jyle has helped us develop a professional and beautiful website which showcases our organization very well.')
-                                                    <i class="fas fa-quote-right"></i></p>
-                                                <p>
-                                                    @yield('naam_2', 'Axl Kesters')
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Quote 3 -->
-                                <div @yield("CI-3")>
-                                    <div class="quote">
-                                        <div class="row">
-                                            <div class="col-md-8 col-md-offset-2">
-                                                <p><i class="fas fa-quote-left"></i>
-                                                    @yield('testimonial_3', 'Jyle has helped us develop a professional and beautiful website which showcases our organization very well.')
-                                                    <i class="fas fa-quote-right"></i></p>
-                                                <p>
-                                                    @yield('naam_3', 'Axl Kesters')
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Quote 4 -->
-                                <div @yield("CI-4")>
-                                    <div class="quote">
-                                        <div class="row">
-                                            <div class="col-md-8 col-md-offset-2">
-                                                <p><i class="fas fa-quote-left"></i>
-                                                    @yield('testimonial_4','Jyle has helped us develop a professional and beautiful website which showcases our organization very well.')
-                                                    <i class="fas fa-quote-right"></i></p>
-                                                <p>
-                                                    @yield('naam_4','Axl Kesters')
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Quote 5 -->
-                                <div @yield("CI-5")>
-                                    <div class="quote">
-                                        <div class="row">
-                                            <div class="col-md-8 col-md-offset-2">
-                                                <p><i class="fas fa-quote-left"></i>
-                                                    @yield('testimonial_5')
-                                                    <i class="fas fa-quote-right"></i></p>
-                                                <p>
-                                                    @yield('naam_5')
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Quote 6 -->
-                                <div @yield("CI-6")>
-                                    <div class="quote">
-                                        <div class="row">
-                                            <div class="col-md-8 col-md-offset-2">
-                                                <p><i class="fas fa-quote-left"></i>
-                                                    @yield('testimonial_6')
-                                                    <i class="fas fa-quote-right"></i></p>
-                                                <p>
-                                                    @yield('naam_6')
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @yield('testimonies')
                             </div>
+
                             <!-- Bottom Carousel Indicators -->
                             <ol class="carousel-indicators">
-                                @yield('foto_1')
-                                @yield('foto_2')
-                                @yield('foto_3')
-                                @yield('foto_4')
-                                @yield('foto_5')
-                                @yield('foto_6')
+                                @yield('photos')
                             </ol>
 
                             <!-- Carousel Buttons Next/Prev -->
@@ -166,56 +73,20 @@
 <section class="onderkant">
     <div class="container">
         <div class="section-title">
-            <h2>Voorbeelden</h2>
-            <p>Projecten</p>
+            <h2>Projecten</h2>
+            <p>Portfolio</p>
         </div>
 
 
         <!-- Portfolio Grid-->
-        <section class="page-section bg-light" id="portfolio">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                @yield('foto_project_1')
-                            </a>
-                            <div class="portfolio-caption">
-                                @yield('titel_project_1')
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4" @yield("actief_project_2")>
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                @yield('foto_project_2')
-                            </a>
-                            <div class="portfolio-caption">
-                                @yield('titel_project_2')
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4" @yield("actief_project_3")>
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                @yield('foto_project_3')
-                            </a>
-                            <div class="portfolio-caption">
-                                @yield('titel_project_3')
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <script>
+            $(document).ready(function () {
+                $('div[class*="filter"]').hide();
+                $(".filter-@yield('filter')").show();
+            });
+        </script>
+        <section class="page-section bg-light row portfolio-container" id="portfolio">
+            @yield('projects')
         </section>
 
     </div>

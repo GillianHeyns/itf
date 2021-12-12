@@ -79,12 +79,11 @@ Route::view('wes', 'wes');
 Route::view('acs', 'acs');
 
 //Routes naar verschillende keuzerichtingen binnen de bachelor opleiding
-Route::view('dagopleiding/app', 'opleidingen.bachelor.keuzerichting.app');
-Route::view('dagopleiding/ai', 'opleidingen.bachelor.keuzerichting.ai');
-Route::view('dagopleiding/ccs', 'opleidingen.bachelor.keuzerichting.ccs');
-Route::get('dagopleiding/di', 'Testimony_DI_ViewController@showTestimonies');
-//Route::view('dagopleiding/di', 'opleidingen.bachelor.keuzerichting.di');
-Route::view('dagopleiding/iot', 'opleidingen.bachelor.keuzerichting.iot');
+Route::view('dagopleiding/app', 'KeuzerichtingAPPController@show');
+Route::view('dagopleiding/ai', 'KeuzerichtingAIController@show');
+Route::view('dagopleiding/ccs', 'KeuzerichtingCCSController@show');
+Route::get('dagopleiding/di', 'KeuzerichtingDIController@show');
+Route::get('dagopleiding/iot', 'KeuzerichtingIOTController@show');
 
 Route::view('wes/app', 'opleidingen.werkenEnStuderen.keuzerichting.app');
 Route::view('wes/ccs', 'opleidingen.werkenEnStuderen.keuzerichting.ccs');

@@ -29,49 +29,21 @@ class ProjectViewController extends Controller
 
     public function testing()
     {
-//        $projects = Project::with(['photos', 'project_tags' => function ($query) {
-//            $query
-//                ->join('tags', 'project_tags.tag_id', '=', 'tags.id');
-//        }])
-//            ->get();
-
-
-
-
-
-//        $testimonies = Testimony::with(['photos', 'testimony_tags' => function ($query) {
-//            $query
-//                ->join('tags', 'testimony_tags.tag_id', '=', 'tags.id');
-//        }])
-//            ->get();
-//        $testimonies = Testimony::with(['photos', 'testimony_tags' => function ($query) {
-//            $query
-//                ->join('tags', 'testimony_tags.tag_id', '=', 'tags.id');
-//        }])
-////            ->where('testimonies.id', $id)
-//            ->get();
-
-
-
-//        $projects = Project::with(['photos', 'project_tags' => function ($query) {
-//            $query
-////                ->select(['id', 'project_id', 'tag_id'])
-//                ->join('tags', 'project_tags.tag_id', '=', 'tags.id');
-////                ->on('tags.id', '=', 'project_tags.tag_id');
-//        }])
-//            ->get();
-
-//        $imagesEnc = Project::with(['photos', 'project_tags' => function ($query) {
-//            $query
-//                ->join('tags', 'project_tags.tag_id', '=', 'tags.id');
-//        }])
-//            ->get();
-//        $images = json_decode($imagesEnc);
-
-        $photos = DB::table('photos')
+        $testimonies = Testimony::with(['photos', 'testimony_tags' => function ($query) {
+            $query
+                ->join('tags', 'testimony_tags.tag_id', '=', 'tags.id');
+        }])
             ->get();
 
-        return $photos;
+        $testimonies = Testimony::with(['photos', 'testimony_tags' => function ($query) {
+            $query
+                ->join('tags', 'testimony_tags.tag_id', '=', 'tags.id');
+        }])
+            ->where('testimony_studierichting', '2 DI')
+            ->orWhere('testimony_studierichting', '3 DI')
+            ->get();
+
+        return $testimonies;
     }
 
 }
