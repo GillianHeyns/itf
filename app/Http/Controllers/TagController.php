@@ -18,6 +18,7 @@ class TagController extends Controller
     {
         $tag = new Tag();
         $tag->tag_naam = $req->naam;
+        $tag->projecttag = $req->projecttag;
         $tag->save();
 
         $data = DB::table('tags')->get();
@@ -34,6 +35,7 @@ class TagController extends Controller
     {
         $tag = Tag::find($id);
         $tag->tag_naam = $req->naam;
+        $tag->projecttag = $req->projecttag;
         $tag->save();
 
         return redirect('/admin/cms-tags');

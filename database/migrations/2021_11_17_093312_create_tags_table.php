@@ -18,6 +18,7 @@ class CreateTagsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('tag_naam');
+            $table->boolean('projecttag');
         });
 
         DB::table('tags')->insert(
@@ -26,56 +27,67 @@ class CreateTagsTable extends Migration
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     'tag_naam' => 'All',
+                    'projecttag' => true,
                 ],
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     'tag_naam' => 'APP',
+                    'projecttag' => true,
                 ],
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     'tag_naam' => 'AI',
+                    'projecttag' => true,
                 ],
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     'tag_naam' => 'CCS',
+                    'projecttag' => true,
                 ],
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     'tag_naam' => 'DI',
+                    'projecttag' => true,
                 ],
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     'tag_naam' => 'Hackathon',
+                    'projecttag' => true,
                 ],
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     'tag_naam' => 'IOT',
+                    'projecttag' => true,
                 ],
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     'tag_naam' => 'Other',
+                    'projecttag' => true,
                 ],
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     'tag_naam' => 'ITF',
+                    'projecttag' => false,
                 ],
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     'tag_naam' => 'ACS',
+                    'projecttag' => false,
                 ],
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     'tag_naam' => 'Alumnus',
+                    'projecttag' => false,
                 ],
             ]
         );

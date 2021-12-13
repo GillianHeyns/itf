@@ -89,7 +89,7 @@ class CreateTestimoniesTable extends Migration
                     'testimony_studierichting' => "2 CCS",
                     'testimony_jaar' => "2020",
                     'file_path' => "/uploads/testimonies/Alex Coulon.jpg",
-                    'homepage' => false,
+                    'homepage' => true,
                     'homepage_EN' => false,
 //                    'content_block_id' => 1
                 ],
@@ -101,7 +101,7 @@ class CreateTestimoniesTable extends Migration
                     'testimony_studierichting' => "3 APP",
                     'testimony_jaar' => "2020",
                     'file_path' => "/uploads/testimonies/Babette Geerkens.jpg",
-                    'homepage' => false,
+                    'homepage' => true,
                     'homepage_EN' => false,
 //                    'content_block_id' => 1
                 ],
@@ -113,7 +113,7 @@ class CreateTestimoniesTable extends Migration
                     'testimony_studierichting' => "1 ITF",
                     'testimony_jaar' => "2020",
                     'file_path' => "/uploads/testimonies/Bram Bleux.jpg",
-                    'homepage' => false,
+                    'homepage' => true,
                     'homepage_EN' => false,
 //                    'content_block_id' => 1
                 ],
@@ -125,7 +125,7 @@ class CreateTestimoniesTable extends Migration
                     'testimony_studierichting' => "2 CCS",
                     'testimony_jaar' => "2020",
                     'file_path' => "/uploads/testimonies/Bram Geudens.jpg",
-                    'homepage' => false,
+                    'homepage' => true,
                     'homepage_EN' => false,
 //                    'content_block_id' => 1
                 ],
@@ -162,7 +162,7 @@ class CreateTestimoniesTable extends Migration
                     'testimony_jaar' => "2020",
                     'file_path' => "/uploads/testimonies/Ehran Lenaerts.jpg",
                     'homepage' => false,
-                    'homepage_EN' => false,
+                    'homepage_EN' => true,
 //                    'content_block_id' => 1
                 ],
                 [
@@ -174,7 +174,7 @@ class CreateTestimoniesTable extends Migration
                     'testimony_jaar' => "2020",
                     'file_path' => "/uploads/testimonies/Giedre Zalaite.jpg",
                     'homepage' => false,
-                    'homepage_EN' => false,
+                    'homepage_EN' => true,
 //                    'content_block_id' => 1
                 ],
                                 [
@@ -197,7 +197,7 @@ class CreateTestimoniesTable extends Migration
                     'testimony_studierichting' => "Alumnus",
                     'testimony_jaar' => "2020",
                     'file_path' => "/uploads/testimonies/Jorn Snoeks.jpg",
-                    'homepage' => false,
+                    'homepage' => true,
                     'homepage_EN' => false,
 //                    'content_block_id' => 1
                 ],
@@ -281,7 +281,7 @@ class CreateTestimoniesTable extends Migration
                     'testimony_studierichting' => "1 ITF",
                     'testimony_jaar' => "2020",
                     'file_path' => "/uploads/testimonies/Robbe Eyckmans.jpg",
-                    'homepage' => false,
+                    'homepage' => true,
                     'homepage_EN' => false,
 //                    'content_block_id' => 1
                 ],
@@ -293,7 +293,7 @@ class CreateTestimoniesTable extends Migration
                     'testimony_studierichting' => "2 IOT",
                     'testimony_jaar' => "2020",
                     'file_path' => "/uploads/testimonies/Robin Van de Velde.jpg",
-                    'homepage' => false,
+                    'homepage' => true,
                     'homepage_EN' => false,
 //                    'content_block_id' => 1
                 ],
@@ -306,7 +306,7 @@ class CreateTestimoniesTable extends Migration
                     'testimony_jaar' => "2020",
                     'file_path' => "/uploads/testimonies/Rustem Kamalidenov.jpg",
                     'homepage' => false,
-                    'homepage_EN' => false,
+                    'homepage_EN' => true,
 //                    'content_block_id' => 1
                 ],
                 [

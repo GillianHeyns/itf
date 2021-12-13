@@ -22,6 +22,18 @@
                                                class="form-control @error('naam') is-invalid @enderror">
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-6">
+                                        <input type="hidden" name="projecttag" value="0">
+                                        <input value="1" type="checkbox" id="projecttag"
+                                               name="projecttag"
+                                               @if(($tag->projecttag) === 1)
+                                               checked
+                                            @endif>
+                                        <label for="projecttag"> Tonen op projectpagina</label>
+                                    </div>
+                                </div>
                                 <div class="form-group d-flex justify-content-end">
                                     <div class="col-md-4">
                                         <a role="button" href="/admin/cms-tags" class="col-md-12 btn btn-danger">
@@ -30,7 +42,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <button type="submit" class="col-md-12 m-0 btn btn-success">
-                                            {{ __('Save') }}
+                                            {{ __('Wijzig') }}
                                         </button>
                                     </div>
                                 </div>

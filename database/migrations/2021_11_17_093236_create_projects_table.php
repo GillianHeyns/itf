@@ -54,7 +54,7 @@ Het afval komt langs de mond van Holle Bolle Gijs binnen en het valt op een tran
                     'beschrijving' => 'De studenten van Digital Innovation kregen de opdracht een GitLab op te zetten voor KCE. Dit zou de werking van hun project ten goede komen.',
                     'hyperlink' => '',
                     'hyperlink_naam' => ''
-                    ],
+                ],
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
@@ -246,6 +246,18 @@ Collega Christel gaf student Ward en zijn team de opdracht een applicatie te bou
 Het team leverde niet enkel een beheersfunctionaliteit op, maar ook een user managementsysteem, instelbare user profiles en een heus foto-beheer systeem! ',
                     'hyperlink' => '',
                     'hyperlink_naam' => ''
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'titel' => 'Smart Policing - Smart Selection & Training',
+                    'beschrijving' => 'Hoe vind je de beste mensen voor de job ? Een team studenten uit 3ITF deed mee aan de Smart Policing hackathon en bedacht een online ‘Capture-the-flag’ platform dat de Federal Computer Crime Unit kan gebruiken voor training en aanwerving van nieuwe krachten.
+
+Door een reeks van IT en Cyber Security gerelateerde puzzels te doorlopen kunnen medewerkers en potentiële kandidaten hun kennis demonstreren en aanscherpen.
+
+Smart recruitment in een online wereld!',
+                    'hyperlink' => 'https://fccu.sinners.be/',
+                    'hyperlink_naam' => 'www.fccu.sinners.be/'
                 ],
             ]
         );

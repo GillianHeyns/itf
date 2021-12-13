@@ -12,6 +12,7 @@ class ProjectViewController extends Controller
     public function showProjecten()
     {
         $tags = DB::table('tags')
+            ->where("projecttag","=",1)
             ->get();
 
         $dataproject = Project::with(['photos', 'project_tags' => function ($query) {

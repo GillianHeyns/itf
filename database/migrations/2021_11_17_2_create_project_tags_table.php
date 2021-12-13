@@ -43,6 +43,12 @@ class CreateProjectTagsTable extends Migration
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     'project_id' => 2,
+                    'tag_id' => 3
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'project_id' => 2,
                     'tag_id' => 5
                 ],
                 [
@@ -61,7 +67,7 @@ class CreateProjectTagsTable extends Migration
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     'project_id' => 4,
-                    'tag_id' => 2
+                    'tag_id' => 3
                 ],
                 [
                     'created_at' => Carbon::now(),
@@ -97,14 +103,20 @@ class CreateProjectTagsTable extends Migration
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     'project_id' => 8,
-                    'tag_id' => 5
+                    'tag_id' => 4
                 ],
                 [
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
                 'project_id' => 9,
                 'tag_id' => 8
-            ],
+                ],
+                [
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'project_id' => 9,
+                'tag_id' => 2
+                ],
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
@@ -171,7 +183,18 @@ class CreateProjectTagsTable extends Migration
                     'project_id' => 20,
                     'tag_id' => 2
                 ],
-
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'project_id' => 21,
+                    'tag_id' => 4
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'project_id' => 21,
+                    'tag_id' => 6
+                ],
             ]
         );
     }
