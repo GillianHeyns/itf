@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Testimony;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,23 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $testimonies = Testimony::with(['photos', 'testimony_tags' => function ($query) {
+            $query
+                ->join('tags', 'testimony_tags.tag_id', '=', 'tags.id');
+        }])
+            ->where('homepage', true)
+            ->get();
+        return view('home', ['testimonies' => $testimonies]);
+    }
+
+    public function index_en()
+    {
+        $testimonies = Testimony::with(['photos', 'testimony_tags' => function ($query) {
+            $query
+                ->join('tags', 'testimony_tags.tag_id', '=', 'tags.id');
+        }])
+            ->where('homepage_EN', true)
+            ->get();
+        return view('acs', ['testimonies' => $testimonies]);
     }
 }

@@ -75,6 +75,7 @@
                             <i class="fas fa-quote-right"></i></p>
                         <p>
                             {{$testimony->testimony_studentnaam}}
+                            - {{$testimony->testimony_studierichting}} ({{$testimony->testimony_jaar}})
                         </p>
                     </div>
                 </div>

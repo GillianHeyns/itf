@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 Route::redirect('home', '/');
 Route::get('logout', 'Auth\LoginController@logout');
-Route::view('/', 'home');
+Route::get('/', 'HomeController@index');
 
 Route::get('contact', function () {
     return 'Contact info';
@@ -76,7 +76,7 @@ Route::view('faciliteiten', 'faciliteiten');
 Route::get('projecten', 'ProjectViewController@showProjecten');
 Route::view('dagopleiding', 'dagopleiding');
 Route::view('wes', 'wes');
-Route::view('acs', 'acs');
+Route::get('acs', 'HomeController@index_en');
 
 //Routes naar verschillende keuzerichtingen binnen de bachelor opleiding
 Route::view('dagopleiding/app', 'KeuzerichtingAPPController@show');
