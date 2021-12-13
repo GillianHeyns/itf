@@ -57,6 +57,144 @@ class CreateTestimonyTagsTable extends Migration
                     'tag_id' => 4,
                     'testimony_id' => 5
                 ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 2,
+                    'testimony_id' => 6
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 9,
+                    'testimony_id' => 7
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 4,
+                    'testimony_id' => 8
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 11,
+                    'testimony_id' => 9
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 2,
+                    'testimony_id' => 10
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 10,
+                    'testimony_id' => 11
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 10,
+                    'testimony_id' => 12
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 7,
+                    'testimony_id' => 13
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 11,
+                    'testimony_id' => 14
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 11,
+                    'testimony_id' => 15
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 3,
+                    'testimony_id' => 16
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 11,
+                    'testimony_id' => 17
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 2,
+                    'testimony_id' => 18
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 3,
+                    'testimony_id' => 19
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 7,
+                    'testimony_id' => 20
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 9,
+                    'testimony_id' => 21
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 7,
+                    'testimony_id' => 22
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 10,
+                    'testimony_id' => 23
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 7,
+                    'testimony_id' => 24
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 2,
+                    'testimony_id' => 25
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 2,
+                    'testimony_id' => 26
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 4,
+                    'testimony_id' => 27
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 11,
+                    'testimony_id' => 28
+                ],
             ]
         );
     }

@@ -62,6 +62,21 @@ class CreateTagsTable extends Migration
                     'updated_at' => Carbon::now(),
                     'tag_naam' => 'Other',
                 ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_naam' => 'ITF',
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_naam' => 'ACS',
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_naam' => 'Alumnus',
+                ],
             ]
         );
     }
