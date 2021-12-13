@@ -75,6 +75,103 @@ class CreateProjectTagsTable extends Migration
                     'project_id' => 5,
                     'tag_id' => 4
                 ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'project_id' => 6,
+                    'tag_id' => 5
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'project_id' => 7,
+                    'tag_id' => 5
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'project_id' => 8,
+                    'tag_id' => 5
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'project_id' => 8,
+                    'tag_id' => 5
+                ],
+                [
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'project_id' => 9,
+                'tag_id' => 8
+            ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'project_id' => 10,
+                    'tag_id' => 7
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'project_id' => 11,
+                    'tag_id' => 7
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'project_id' => 12,
+                    'tag_id' => 8
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'project_id' => 13,
+                    'tag_id' => 5
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'project_id' => 14,
+                    'tag_id' => 7
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'project_id' => 15,
+                    'tag_id' => 8
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'project_id' => 16,
+                    'tag_id' => 8
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'project_id' => 17,
+                    'tag_id' => 2
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'project_id' => 18,
+                    'tag_id' => 2
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'project_id' => 19,
+                    'tag_id' => 4
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'project_id' => 20,
+                    'tag_id' => 2
+                ],
+
             ]
         );
     }
