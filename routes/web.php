@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 Route::redirect('home', '/');
 Route::get('logout', 'Auth\LoginController@logout');
-Route::view('/', 'home');
+Route::get('/', 'HomeController@index');
 
 Route::get('contact', function () {
     return 'Contact info';
@@ -25,7 +25,7 @@ Route::get('contact', function () {
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::redirect('/', '/admin/cms');
     //TESTING
-    Route::get('test', 'ProjectViewController@testing');
+//    Route::get('test', 'HomeController@testing');
 
     //CONTROLLERS
     //Project
@@ -76,12 +76,12 @@ Route::view('faciliteiten', 'faciliteiten');
 Route::get('projecten', 'ProjectViewController@showProjecten');
 Route::view('dagopleiding', 'dagopleiding');
 Route::view('wes', 'wes');
-Route::view('acs', 'acs');
+Route::get('acs', 'HomeController@index_en');
 
 //Routes naar verschillende keuzerichtingen binnen de bachelor opleiding
-Route::view('dagopleiding/app', 'KeuzerichtingAPPController@show');
-Route::view('dagopleiding/ai', 'KeuzerichtingAIController@show');
-Route::view('dagopleiding/ccs', 'KeuzerichtingCCSController@show');
+Route::get('dagopleiding/app', 'KeuzerichtingAPPController@show');
+Route::get('dagopleiding/ai', 'KeuzerichtingAIController@show');
+Route::get('dagopleiding/ccs', 'KeuzerichtingCCSController@show');
 Route::get('dagopleiding/di', 'KeuzerichtingDIController@show');
 Route::get('dagopleiding/iot', 'KeuzerichtingIOTController@show');
 

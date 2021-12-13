@@ -155,164 +155,36 @@
                     <div class="carousel slide" data-ride="carousel" id="quote-carousel">
                         <!-- Carousel Slides / Quotes -->
                         <div class="carousel-inner text-center text-faded" role="listbox">
-                            <!-- Quote 1 -->
-                            <div class="carousel-item active">
-                                <div class="quote">
-                                    <div class="row">
-                                        <div class="col-md-8 col-md-offset-2">
-                                            <p><i class="fas fa-quote-left"></i> Sinds de eerste dagen in de ITfactory
-                                                voel
-                                                ik me hier al welkom, het is meer dan een studierichting. Het is een
-                                                vriendengroep, een leergroep en na de schooluren zelfs je game groep.
-                                                Binnen
-                                                de ITfactory ben je niet 1 van de vele studenten, je bent jezelf, je
-                                                word
-                                                herkend & erkend. <i
-                                                    class="fas fa-quote-right"></i></p>
-                                            <p>Alex Coulon - 2 CCS</p>
+                        @foreach($testimonies as $count => $testimony)
+                            <!-- Quote {{$count+1}}-->
+                                <div class="carousel-item @if ($count === 0) active @endif">
+                                    <div class="quote">
+                                        <div class="row">
+                                            <div class="col-md-8 col-md-offset-2">
+                                                <p><i class="fas fa-quote-left"></i>
+                                                    {{$testimony->testimony_tekst}}
+                                                    <i class="fas fa-quote-right"></i></p>
+                                                <p>
+                                                    {{$testimony->testimony_studentnaam}}
+                                                    - {{$testimony->testimony_studierichting}}
+                                                    ({{$testimony->testimony_jaar}})
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- Quote 2 -->
-                            <div class="carousel-item">
-                                <div class="quote">
-                                    <div class="row">
-                                        <div class="col-md-8 col-md-offset-2">
-                                            <p><i class="fas fa-quote-left"></i>
-                                                Een Discord talk meenemen (of geven), of discussies over technologie;
-                                                alles
-                                                is welkom en mogelijk, waardoor ik zelfs nu na mijn studententijd trots
-                                                ben
-                                                om deel te nemen aan de ITF-community. De docenten zijn meer collega dan
-                                                docent!
-
-
-                                                <i class="fas fa-quote-right"></i></p>
-                                            <p>Jorn Snoeks - Alumnus</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Quote 3 -->
-                            <div class="carousel-item">
-                                <div class="quote">
-                                    <div class="row">
-                                        <div class="col-md-8 col-md-offset-2">
-                                            <p><i class="fas fa-quote-left"></i>Een interessante richting om te
-                                                studeren,
-                                                het is tof om meer te weten te komen over al die onderdelen in IoT en
-                                                het
-                                                automatiseren in KNX. Naast KNX zijn er nog vele andere toffe en
-                                                interessante
-                                                vakken. De IT Factory, een echte aanrader!
-                                                <i class="fas fa-quote-right"></i></p>
-                                            <p>Robin Van de Velde - 2 IOT</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Quote 4 -->
-                            <div class="carousel-item">
-                                <div class="quote">
-                                    <div class="row">
-                                        <div class="col-md-8 col-md-offset-2">
-                                            <p><i class="fas fa-quote-left"></i>
-
-
-                                                Kiezen voor de IT Factory is een van mijn beste beslissingen ooit
-                                                geweest.
-                                                Er
-                                                worden veel activiteiten naast de lessen georganiseerd, wat de teamgeest
-                                                alleen
-                                                maar bevorderd. De docenten zijn zeer behulpzaam en staan altijd ter
-                                                beschikking
-                                                indien je hulp nodig hebt.
-                                                <i class="fas fa-quote-right"></i></p>
-                                            <p>Bram Bleux - 1 ITF</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Quote 5 -->
-                            <div class="carousel-item">
-                                <div class="quote">
-                                    <div class="row">
-                                        <div class="col-md-8 col-md-offset-2">
-                                            <p><i class="fas fa-quote-left"></i>I adore the ambiance at college. Every
-                                                single person I come across is so passionate and driven. The school
-                                                itself is very
-                                                innovative and always on the go to make arrangement. Everything is
-                                                always
-                                                running smoothly. The IT Factory is a perfect choice!
-                                                <i class="fas fa-quote-right"></i></p>
-                                            <p>Babette Geerkens - 3 APP</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Quote 6 -->
-                            <div class="carousel-item">
-                                <div class="quote">
-                                    <div class="row">
-                                        <div class="col-md-8 col-md-offset-2">
-                                            <p><i class="fas fa-quote-left"></i>De IT-Factory is voor mij ideaal. Ik heb
-                                                mezelf van dag 1 welkom gevoeld. De relatie student docent is super
-                                                goed. We kunnen altijd terecht op discord voor technische en minder
-                                                technische vragen. We kunnen altijd rekenen op student en docenten voor
-                                                ondersteuning.
-                                                <i class="fas fa-quote-right"></i></p>
-                                            <p>Bram Geudens - 2 CCS</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Quote 7 -->
-                            <div class="carousel-item">
-                                <div class="quote">
-                                    <div class="row">
-                                        <div class="col-md-8 col-md-offset-2">
-                                            <p><i class="fas fa-quote-left"></i>Vanaf het eerste moment wist ik het ...
-                                                . Het is toch waar wat ze zeggen. Dit is meer dan een studierichting,
-                                                iedereen is zich zelf en helpt elkaar graag verder. Ik voel me hier
-                                                helemaal op mijn thuis en geniet elke dag.
-                                                <i class="fas fa-quote-right"></i></p>
-                                            <p>Robbe Eyckmans - 1 ITF</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                         <!-- Bottom Carousel Indicators -->
                         <ol class="carousel-indicators">
-                            <li data-target="#quote-carousel" data-slide-to="0" class="active"><img class="img-fluid"
-                                                                                                    src="/assets/img/testimonials/alex.jpg"
-                                                                                                    alt="Alex Coulon">
-                            </li>
-                            <li data-target="#quote-carousel" data-slide-to="1"><img class="img-fluid"
-                                                                                     src="/assets/img/testimonials/jorn.jpg"
-                                                                                     alt="Jorn Snoeks">
-                            </li>
-                            <li data-target="#quote-carousel" data-slide-to="2"><img class="img-fluid"
-                                                                                     src="/assets/img/testimonials/robin.jpg"
-                                                                                     alt="Robin Van De Velde">
-                            </li>
-                            <li data-target="#quote-carousel" data-slide-to="3"><img class="img-fluid"
-                                                                                     src="/assets/img/testimonials/bram.jpg"
-                                                                                     alt="Bram Bleux">
-                            </li>
-                            <li data-target="#quote-carousel" data-slide-to="4"><img class="img-fluid"
-                                                                                     src="/assets/img/testimonials/babette.jpg"
-                                                                                     alt="Babette Geerkens">
-                            </li>
-                            <li data-target="#quote-carousel" data-slide-to="5"><img class="img-fluid"
-                                                                                     src="/assets/img/testimonials/bram_geudens.jpg"
-                                                                                     alt="Bram Geudens">
-                            </li>
-                            <li data-target="#quote-carousel" data-slide-to="6"><img class="img-fluid"
-                                                                                     src="/assets/img/testimonials/robbe_eyckmans.jpg"
-                                                                                     alt="Robbe Eyckmans">
-                            </li>
+                            @foreach($testimonies as $count => $testimony)
+                                <li data-target="#quote-carousel" data-slide-to="{{$count}}"
+                                    class="@if ($count === 0) active @endif"><img
+                                        class="img-fluid"
+                                        src="{{$testimony->file_path}}"
+                                        alt="@foreach($testimony->photos as $photo){{$photo->foto_beschrijving}}@endforeach">
+                                </li>
+                            @endforeach
                         </ol>
 
                         <!-- Carousel Buttons Next/Prev -->

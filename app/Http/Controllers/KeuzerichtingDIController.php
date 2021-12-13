@@ -19,12 +19,11 @@ class KeuzerichtingDIController extends Controller
 
         $testimonies = Testimony::with(['photos', 'testimony_tags' => function ($query) {
             $query
-                ->join('tags', 'testimony_tags.tag_id', '=', 'tags.id');
+                ->join('tags', 'testimony_tags.tag_id', '=', 'tags.id')
+                ->where('tag_naam', "DI");
         }])
-            ->where('testimony_studierichting', '2 DI')
-            ->orWhere('testimony_studierichting', '3 DI')
-            ->get();
-
+            ->get()
+            ->where("testimony_tags", "!=", "[]");
         return view('opleidingen.bachelor.keuzerichting.di', ['data' => $data], ['testimonies' => $testimonies]);
     }
 }

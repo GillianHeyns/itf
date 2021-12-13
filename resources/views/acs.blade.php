@@ -126,155 +126,36 @@
                     <div class="carousel slide" data-ride="carousel" id="quote-carousel">
                         <!-- Carousel Slides / Quotes -->
                         <div class="carousel-inner text-center text-faded" role="listbox">
-                            <!-- Quote 1 -->
-                            <div class="carousel-item active">
-                                <div class="quote">
-                                    <div class="row">
-                                        <div class="col-md-8 col-md-offset-2">
-                                            <p><i class="fas fa-quote-left"></i> Interesting courses with plenty of
-                                                projects that allow to experience more practical side of subjects.
-                                                Teachers, as well as fellow students, are there to help or just talk
-                                                about common hobbies and side projects. A great possibility to
-                                                participate in AI project to get a better understanding of what it's
-                                                about and how subjects are associated with AI. <i
-                                                    class="fas fa-quote-right"></i></p>
-                                            <p>Giedre Zalaite - 1 ACS</p>
+                        @foreach($testimonies as $count => $testimony)
+                            <!-- Quote {{$count+1}}-->
+                                <div class="carousel-item @if ($count === 0) active @endif">
+                                    <div class="quote">
+                                        <div class="row">
+                                            <div class="col-md-8 col-md-offset-2">
+                                                <p><i class="fas fa-quote-left"></i>
+                                                    {{$testimony->testimony_tekst}}
+                                                    <i class="fas fa-quote-right"></i></p>
+                                                <p>
+                                                    {{$testimony->testimony_studentnaam}}
+                                                    - {{$testimony->testimony_studierichting}}
+                                                    ({{$testimony->testimony_jaar}})
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- Quote 2 -->
-                            <div class="carousel-item">
-                                <div class="quote">
-                                    <div class="row">
-                                        <div class="col-md-8 col-md-offset-2">
-                                            <p><i class="fas fa-quote-left"></i>
-                                                There were many interesting courses in the IT Factory from Thomas More
-                                                but the AI one stood thanks to its incredible potential for the future.
-                                                Combine this with great teachers and a large array of tools and bright
-                                                minds I can say that the IT factory, and the AI course in specific, is
-                                                an awesome education that will surely interest many.
-                                                <i class="fas fa-quote-right"></i></p>
-                                            <p>Ehran Lenaerts - 1 ACS</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Quote 3 -->
-                            <div class="carousel-item">
-                                <div class="quote">
-                                    <div class="row">
-                                        <div class="col-md-8 col-md-offset-2">
-                                            <p><i class="fas fa-quote-left"></i>Despite the challenges of COVID-19 the
-                                                university has overall done a good job of making such drastic change to
-                                                online learning. The lectures are interactive, fun and
-                                                interesting.Teachers always do their best to provide a good, in-depth
-                                                explanations, and a personal feedback for every student. Individual
-                                                projects teach you how to work independently , developing your
-                                                creativity and your practical skills. I’m very happy with first year AI
-                                                ACS program of ThomasMore Hogeschool !
-                                                <i class="fas fa-quote-right"></i></p>
-                                            <p>Rustem Kamalidenov – 1 ACS</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Quote 4 -->
-                            <div class="carousel-item">
-                                <div class="quote">
-                                    <div class="row">
-                                        <div class="col-md-8 col-md-offset-2">
-                                            <p><i class="fas fa-quote-left"></i>
-                                                I visited IT Factory and they provided me elaborate information
-                                                regarding the Computer Science course. I had various conversations with
-                                                lecturers of the IT Factory and thereafter paid a visit to the open day
-                                                of Thomas More. That was the day I made my final decision and decided to
-                                                enroll myself into this course
-                                                <i class="fas fa-quote-right"></i></p>
-                                            <p>Mattia Andronico - Alumnus</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{--                            <!-- Quote 5 -->--}}
-                            {{--                            <div class="carousel-item">--}}
-                            {{--                                <div class="quote">--}}
-                            {{--                                    <div class="row">--}}
-                            {{--                                        <div class="col-md-8 col-md-offset-2">--}}
-                            {{--                                            <p><i class="fas fa-quote-left"></i>I adore the ambiance at college. Every--}}
-                            {{--                                                single person I come across is so passionate and driven. The school--}}
-                            {{--                                                itself is very--}}
-                            {{--                                                innovative and always on the go to make arrangement. Everything is--}}
-                            {{--                                                always--}}
-                            {{--                                                running smoothly. The IT Factory is a perfect choice!--}}
-                            {{--                                                <i class="fas fa-quote-right"></i></p>--}}
-                            {{--                                            <p>Babette Geerkens - 3 APP</p>--}}
-                            {{--                                        </div>--}}
-                            {{--                                    </div>--}}
-                            {{--                                </div>--}}
-                            {{--                            </div>--}}
-                            {{--                            <!-- Quote 6 -->--}}
-                            {{--                            <div class="carousel-item">--}}
-                            {{--                                <div class="quote">--}}
-                            {{--                                    <div class="row">--}}
-                            {{--                                        <div class="col-md-8 col-md-offset-2">--}}
-                            {{--                                            <p><i class="fas fa-quote-left"></i>De IT-Factory is voor mij ideaal. Ik heb--}}
-                            {{--                                                mezelf van dag 1 welkom gevoeld. De relatie student docent is super--}}
-                            {{--                                                goed. We kunnen altijd terecht op discord voor technische en minder--}}
-                            {{--                                                technische vragen. We kunnen altijd rekenen op student en docenten voor--}}
-                            {{--                                                ondersteuning.--}}
-                            {{--                                                <i class="fas fa-quote-right"></i></p>--}}
-                            {{--                                            <p>Bram Geudens - 2 CCS</p>--}}
-                            {{--                                        </div>--}}
-                            {{--                                    </div>--}}
-                            {{--                                </div>--}}
-                            {{--                            </div>--}}
-                            {{--                            <!-- Quote 7 -->--}}
-                            {{--                            <div class="carousel-item">--}}
-                            {{--                                <div class="quote">--}}
-                            {{--                                    <div class="row">--}}
-                            {{--                                        <div class="col-md-8 col-md-offset-2">--}}
-                            {{--                                            <p><i class="fas fa-quote-left"></i>Vanaf het eerste moment wist ik het ...--}}
-                            {{--                                                . Het is toch waar wat ze zeggen. Dit is meer dan een studierichting,--}}
-                            {{--                                                iedereen is zich zelf en helpt elkaar graag verder. Ik voel me hier--}}
-                            {{--                                                helemaal op mijn thuis en geniet elke dag.--}}
-                            {{--                                                <i class="fas fa-quote-right"></i></p>--}}
-                            {{--                                            <p>Robbe Eyckmans - 1 ITF</p>--}}
-                            {{--                                        </div>--}}
-                            {{--                                    </div>--}}
-                            {{--                                </div>--}}
-                            {{--                            </div>--}}
+                            @endforeach
                         </div>
                         <!-- Bottom Carousel Indicators -->
                         <ol class="carousel-indicators">
-                            <li data-target="#quote-carousel" data-slide-to="0" class="active"><img class="img-fluid"
-                                                                                                    src="/assets/img/testimonials/giedre.jpg"
-                                                                                                    alt="Giedre Zalaite">
-                            </li>
-                            <li data-target="#quote-carousel" data-slide-to="1"><img class="img-fluid"
-                                                                                     src="/assets/img/testimonials/ehran.jpg"
-                                                                                     alt="Ehran Lenaerts">
-                            </li>
-                            <li data-target="#quote-carousel" data-slide-to="2"><img class="img-fluid"
-                                                                                     src="/assets/img/testimonials/rustem.jpg"
-                                                                                     alt="Rustem Kamalidenov">
-                            </li>
-                            <li data-target="#quote-carousel" data-slide-to="3"><img class="img-fluid"
-                                                                                     src="/assets/img/testimonials/mattia.jpg"
-                                                                                     alt="Mattia Andronico">
-                            {{--                            </li>--}}
-                            {{--                            <li data-target="#quote-carousel" data-slide-to="4"><img class="img-fluid"--}}
-                            {{--                                                                                     src="/assets/img/testimonials/babette.jpg"--}}
-                            {{--                                                                                     alt="Babette Geerkens">--}}
-                            {{--                            </li>--}}
-                            {{--                            <li data-target="#quote-carousel" data-slide-to="5"><img class="img-fluid"--}}
-                            {{--                                                                                     src="/assets/img/testimonials/bram_geudens.jpg"--}}
-                            {{--                                                                                     alt="Bram Geudens">--}}
-                            {{--                            </li>--}}
-                            {{--                            <li data-target="#quote-carousel" data-slide-to="6"><img class="img-fluid"--}}
-                            {{--                                                                                     src="/assets/img/testimonials/robbe_eyckmans.jpg"--}}
-                            {{--                                                                                     alt="Robbe Eyckmans">--}}
-                            {{--                            </li>--}}
+                            @foreach($testimonies as $count => $testimony)
+                                <li data-target="#quote-carousel" data-slide-to="{{$count}}"
+                                    class="@if ($count === 0) active @endif"><img
+                                        class="img-fluid"
+                                        src="{{$testimony->file_path}}"
+                                        alt="@foreach($testimony->photos as $photo){{$photo->foto_beschrijving}}@endforeach">
+                                </li>
+                            @endforeach
                         </ol>
 
                         <!-- Carousel Buttons Next/Prev -->
