@@ -70,7 +70,6 @@
                                             <i style="color: #999;" class="fa fa-globe"></i>
                                         @endif
                                     </span>
-
                                 </td>
                                 <td>
                                     <a href="/admin/cms-testimonies/{{$testimony->id}}"><i class="fas fa-pen pr-2"></i></a>

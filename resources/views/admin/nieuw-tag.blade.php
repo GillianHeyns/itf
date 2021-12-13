@@ -20,6 +20,14 @@
                                            class="form-control @error('naam') is-invalid @enderror">
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-6">
+                                    <input type="hidden" name="projecttag" value="0">
+                                    <input value="1" type="checkbox" id="projecttag"
+                                           name="projecttag"> <label for="projecttag">Tonen op projectpagina</label>
+                                </div>
+                            </div>
                             <div class="form-group row mb-0">
                                 <div class="col-md-4 offset-md-6">
                                     <button type="submit" class="col-md-12 btn btn-primary">

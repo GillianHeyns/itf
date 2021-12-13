@@ -63,6 +63,12 @@ class CreateTestimonyTagsTable extends Migration
                     'tag_id' => 2,
                     'testimony_id' => 6
                 ],
+//                [
+//                    'created_at' => Carbon::now(),
+//                    'updated_at' => Carbon::now(),
+//                    'tag_id' => 3,
+//                    'testimony_id' => 6
+//                ],
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
@@ -79,6 +85,12 @@ class CreateTestimonyTagsTable extends Migration
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     'tag_id' => 11,
+                    'testimony_id' => 9
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 7,
                     'testimony_id' => 9
                 ],
                 [
@@ -114,7 +126,19 @@ class CreateTestimonyTagsTable extends Migration
                 [
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
+                    'tag_id' => 2,
+                    'testimony_id' => 14
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
                     'tag_id' => 11,
+                    'testimony_id' => 15
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 4,
                     'testimony_id' => 15
                 ],
                 [
@@ -127,6 +151,12 @@ class CreateTestimonyTagsTable extends Migration
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     'tag_id' => 11,
+                    'testimony_id' => 17
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 3,
                     'testimony_id' => 17
                 ],
                 [
@@ -193,6 +223,12 @@ class CreateTestimonyTagsTable extends Migration
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     'tag_id' => 11,
+                    'testimony_id' => 28
+                ],
+                [
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                    'tag_id' => 7,
                     'testimony_id' => 28
                 ],
             ]

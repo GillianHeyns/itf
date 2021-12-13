@@ -48,6 +48,7 @@
                                 style="width: 65px;">#
                             </th>
                             <th class="card-body text-bold border-top pt-2 pb-2" scope="col">Tag</th>
+                            <th class="card-body text-bold border-top pt-2 pb-2" scope="col"></th>
                             <th class="card-body text-bold border-top pt-2 pb-2" scope="col" style="width: 65px;"></th>
                         </tr>
                         </thead>
@@ -56,6 +57,11 @@
                             <tr>
                                 <th class="text-center font-weight-normal" scope="row">{{$tag->id}}</th>
                                 <td><a href="/admin/cms-tags/{{$tag->id}}">{{$tag->tag_naam}}</a></td>
+                                <td><span class="d-flex justify-content-end">@if(($tag->projecttag) === 1)
+                                            <i style="color: #999;" class="fas fa-box-open"></i>
+                                        @endif
+                                    </span>
+                                </td>
                                 <td>
                                     <a href="/admin/cms-tags/{{$tag->id}}"><i class="fas fa-pen pr-2"></i></a>
                                     <a href="/admin/cms-tags/delete/{{$tag->id}}"><i class="fas fa-times "></i></a>
