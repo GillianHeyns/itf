@@ -3,6 +3,7 @@
 @section('title', 'IT Factory | Contact')
 
 @section('main')
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <section class="container mt-3">
         <div class="section-title">
             <h2>CONTACT</h2>
@@ -20,7 +21,7 @@
                 {{--                @endif--}}
                 @include('shared.alert')
                 @if (!session()->has('success'))
-                    <form action="/contact" method="post">
+                    <form action="/contact" method="post" id="contact">
                         @csrf
                         {{--                    <input type="hidden" name="_token" value="cLnFgS3ecE0NMPEGYFIdpP8smScpxGn4PdQt67q7">--}}
                         <div class="form-group">
@@ -62,7 +63,8 @@
                                       minlength="10">{{ old('message') }}</textarea>
                             <div class="invalid-feedback">{{ $errors->first('message') }}</div>
                         </div>
-                        <button type="submit" class="btn btn-success">Send Message</button>
+                        <button class="btn btn-success g-recaptcha" data-sitekey="6Ldu3fAaAAAAAG-XroyenWo9hyv6FJyKR2lpwthm"
+                        data-callback="onSubmit" data-action="submit">Send Message</button>
                     </form>
                 @endif
             </div>
@@ -74,6 +76,11 @@
             </div>
         </div>
     </section>
+    <script>
+        function onSubmit(token) {
+            document.getElementById("verzenden_form").submit();
+        }
+    </script>
 @endsection
 
 <style>
