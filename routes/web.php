@@ -79,9 +79,9 @@ Route::view('wes', 'wes');
 Route::get('acs', 'HomeController@index_en');
 
 //Routes naar verschillende keuzerichtingen binnen de bachelor opleiding
-Route::view('dagopleiding/app', 'KeuzerichtingAPPController@show');
-Route::view('dagopleiding/ai', 'KeuzerichtingAIController@show');
-Route::view('dagopleiding/ccs', 'KeuzerichtingCCSController@show');
+Route::get('dagopleiding/app', 'KeuzerichtingAPPController@show');
+Route::get('dagopleiding/ai', 'KeuzerichtingAIController@show');
+Route::get('dagopleiding/ccs', 'KeuzerichtingCCSController@show');
 Route::get('dagopleiding/di', 'KeuzerichtingDIController@show');
 Route::get('dagopleiding/iot', 'KeuzerichtingIOTController@show');
 

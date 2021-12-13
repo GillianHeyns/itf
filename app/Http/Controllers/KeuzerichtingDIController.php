@@ -20,7 +20,7 @@ class KeuzerichtingDIController extends Controller
         $testimonies = Testimony::with(['photos', 'testimony_tags' => function ($query) {
             $query
                 ->join('tags', 'testimony_tags.tag_id', '=', 'tags.id')
-                ->where('tag_naam', "DI");;
+                ->where('tag_naam', "DI");
         }])
             ->get()
             ->where("testimony_tags", "!=", "[]");

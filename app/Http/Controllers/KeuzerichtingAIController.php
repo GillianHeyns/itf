@@ -18,13 +18,11 @@ class KeuzerichtingAIController extends Controller
 
         $testimonies = Testimony::with(['photos', 'testimony_tags' => function ($query) {
             $query
-                ->join('tags', 'testimony_tags.tag_id', '=', 'tags.id');
+                ->join('tags', 'testimony_tags.tag_id', '=', 'tags.id')
+                ->where('tag_naam', "AI");
         }])
-            ->where('testimony_studierichting', '1 AI')
-            ->orWhere('testimony_studierichting', '2 AI')
-            ->orWhere('testimony_studierichting', '3 AI')
-            ->get();
-
+            ->get()
+            ->where("testimony_tags", "!=", "[]");
         return view('opleidingen.bachelor.keuzerichting.ai', ['data' => $data], ['testimonies' => $testimonies]);
     }
 }
