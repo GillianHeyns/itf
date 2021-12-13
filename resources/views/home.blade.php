@@ -209,28 +209,19 @@
                 <h2>SOCIALS</h2>
                 <p>Sociale media</p>
             </div>
-
             <div class="row bigSize">
                 <div class="col-xl-12 col-md-6">
-                    <iframe id="discord" class="centerYoutube" width="100%" height="450px"
+                    <iframe style="border:none;overflow:hidden;border-radius:5px;" id="discord" class="centerYoutube mb-3" width="100%" height="450px"
                             src="https://www.youtube.com/embed/z4U2hrULu7c" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                 </div>
                 <div class="col-xl-4 col-md-6 hoogte">
-                    <script async defer crossorigin="anonymous"
-                            src="https://connect.facebook.net/nl_NL/sdk.js#xfbml=1&version=v9.0"
-                            nonce="oJ4ChA9H"></script>
-                    <div class="fb-page"
-                         data-href="https://www.facebook.com/ToegepasteInformatica.ThomasMoreBE"
-                         data-tabs="timeline"
-                         data-width="" data-height="460" data-small-header="false" data-adapt-container-width="true"
-                         data-hide-cover="false" data-show-facepile="true">
-                        <blockquote cite="https://www.facebook.com/ToegepasteInformatica.ThomasMoreBE"
-                                    class="fb-xfbml-parse-ignore"><a
-                                href="https://www.facebook.com/ToegepasteInformatica.ThomasMoreBE">IT Factory</a>
-                        </blockquote>
-                    </div>
+                    <iframe
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FToegepasteInformatica.ThomasMoreBE&tabs=timeline&width=340&height=460&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                        width="340" height="460" style="border:none;overflow:hidden;border-radius:5px;" scrolling="no"
+                        frameborder="0" allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                 </div>
                 <div class="col-xl-4 col-md-6 container">
                     <iframe class="centered frame" src="https://discord.com/widget?id=687565213943332875&theme=dark"
@@ -240,22 +231,13 @@
                     <div id="overlay"></div>
                 </div>
                 <div class="col-xl-4 col-md-6">
-                    <script async defer crossorigin="anonymous"
-                            src="https://connect.facebook.net/nl_NL/sdk.js#xfbml=1&version=v9.0"
-                            nonce="oJ4ChA9H"></script>
-                    <div class="fb-page"
-                         data-href="https://www.facebook.com/ElektronicaICT.ThomasMoreBE"
-                         data-tabs="timeline"
-                         data-width="" data-height="460" data-small-header="false" data-adapt-container-width="true"
-                         data-hide-cover="false" data-show-facepile="true">
-                        <blockquote cite="https://www.facebook.com/ElektronicaICT.ThomasMoreBE"
-                                    class="fb-xfbml-parse-ignore"><a
-                                href="https://www.facebook.com/ElektronicaICT.ThomasMoreBE">IT Factory</a>
-                        </blockquote>
-                    </div>
+                    <iframe
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FElektronicaICT.ThomasMoreBE&tabs=timeline&width=340&height=460&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                        width="340" height="460" style="border:none;overflow:hidden;border-radius:5px;" scrolling="no"
+                        frameborder="0" allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                 </div>
             </div>
-
             <div class="row smallSize">
                 <div class="container">
                     <p><a href="https://www.facebook.com/ToegepasteInformatica.ThomasMoreBE"
@@ -269,7 +251,6 @@
                                 class="fab fa-discord fa-2x"></i>Discord</a></p>
                 </div>
             </div>
-
         </div>
     </section><!-- End About Section -->
 @endsection
