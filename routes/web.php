@@ -25,7 +25,7 @@ Route::get('contact', function () {
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::redirect('/', '/admin/cms');
     //TESTING
-    Route::get('test', 'ProjectViewController@testing');
+//    Route::get('test', 'HomeController@testing');
 
     //CONTROLLERS
     //Project

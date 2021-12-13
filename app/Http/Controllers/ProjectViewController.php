@@ -19,29 +19,6 @@ class ProjectViewController extends Controller
                 ->join('tags', 'project_tags.tag_id', '=', 'tags.id');
         }])
             ->get();
-
-//        $data = DB::table('projects')->get();
-////        $imagesEnc = DB::table('photos')->get();
-////        $images = json_decode($imagesEnc);
         return view('projecten', ['tags' => $tags], ['dataproject' => $dataproject]);
     }
-
-
-    public function testing()
-    {
-//        $testimonies = Testimony::with(['photos', 'testimony_tags' => function ($query) {
-//            $query
-//                ->join('tags', 'testimony_tags.tag_id', '=', 'tags.id');
-//        }])
-//            ->get();
-
-        $testimonies = Testimony::with(['photos', 'testimony_tags' => function ($query) {
-            $query
-                ->join('tags', 'testimony_tags.tag_id', '=', 'tags.id')
-                ->where('tag_naam', "DI");;
-        }])
-            ->get();
-        return $testimonies;
-    }
-
 }

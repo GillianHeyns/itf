@@ -65,8 +65,8 @@
 {{--Getuigenissen--}}
 @section('testimonies')
     @foreach($testimonies as $count => $testimony)
-        <!-- Quote {{$count+1}}-->
-        <div class="carousel-item @if ($count === 0) active @endif">
+        <!-- Quote {{$testimony->testimony_studentnaam}}-->
+        <div class="carousel-item @if ($loop->index === 0) active @endif">
             <div class="quote">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
@@ -85,7 +85,7 @@
 @endsection
 @section('photos')
     @foreach($testimonies as $count => $testimony)
-        <li data-target="#quote-carousel" data-slide-to="{{$count}}" class="@if ($count === 0) active @endif"><img
+        <li data-target="#quote-carousel" data-slide-to="{{$loop->index}}" class="@if ($loop->index === 0) active @endif"><img
                 class="img-fluid"
                 src="{{$testimony->file_path}}"
                 alt="@foreach($testimony->photos as $photo){{$photo->foto_beschrijving}}@endforeach">
