@@ -16,7 +16,11 @@ class ProjectController extends Controller
     // Master Page: http://itf.test/admin/cms
     public function index()
     {
-        $data = DB::table('projects')->get();
+        $data = Project::with(['photos', 'project_tags' => function ($query) {
+            $query
+                ->join('tags', 'project_tags.tag_id', '=', 'tags.id');
+        }])
+            ->get();
         return view('admin.content-management', ['data' => $data]);
 
         //        return DB::table('projects')->get();

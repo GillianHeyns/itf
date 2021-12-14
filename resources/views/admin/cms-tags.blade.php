@@ -56,7 +56,8 @@
                         @foreach($data as $tag)
                             <tr>
                                 <th class="text-center font-weight-normal" scope="row">{{$tag->id}}</th>
-                                <td><a href="/admin/cms-tags/{{$tag->id}}">{{$tag->tag_naam}}</a></td>
+                                <td><a class="font-weight-bold"
+                                       href="/admin/cms-tags/{{$tag->id}}">{{$tag->tag_naam}}</a></td>
                                 <td><span class="d-flex justify-content-end">@if(($tag->projecttag) === 1)
                                             <i style="color: #999;" class="fas fa-box-open"></i>
                                         @endif
