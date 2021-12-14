@@ -44,7 +44,9 @@
                     <table class="table mb-0">
                         <thead>
                         <tr>
-                            <th class="text-center card-body text-bold border-top pt-2 pb-2" scope="col" style="width: 65px;">#</th>
+                            <th class="text-center card-body text-bold border-top pt-2 pb-2" scope="col"
+                                style="width: 65px;">#
+                            </th>
                             <th class="card-body text-bold border-top pt-2 pb-2" scope="col">Project</th>
                             <th class="card-body text-bold border-top pt-2 pb-2" scope="col">Beschrijving</th>
                             <th class="card-body text-bold border-top pt-2 pb-2" scope="col" style="width: 65px;"></th>
@@ -54,7 +56,15 @@
                         @foreach($data as $project)
                             <tr>
                                 <th class="text-center font-weight-normal" scope="row">{{$project->id}}</th>
-                                <td><a href="/admin/cms/{{$project->id}}">{{$project->titel}}</a></td>
+                                <td><a class="row font-weight-bold"
+                                       href="/admin/cms/{{$project->id}}">{{$project->titel}}</a><br>
+                                    <div class="row">
+                                        @foreach($project->project_tags as $tag)
+                                            <span
+                                                class="border border-dark" style="padding: 5px; margin-right: 3px; margin-bottom: 3px; border-radius: 5px;">{{ $tag -> tag_naam }}</span>
+                                        @endforeach
+                                    </div>
+                                </td>
                                 <td>{{$project->beschrijving}}</td>
                                 <td>
                                     <a href="/admin/cms/{{$project->id}}"><i class="fas fa-pen pr-2"></i></a>

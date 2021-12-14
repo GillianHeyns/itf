@@ -47,7 +47,9 @@
                             <th class="text-center card-body text-bold border-top pt-2 pb-2" scope="col"
                                 style="width: 65px;">#
                             </th>
-                            <th class="card-body text-bold border-top pt-2 pb-2" scope="col" style="width: 250px;">Student</th>
+                            <th class="card-body text-bold border-top pt-2 pb-2" scope="col" style="width: 250px;">
+                                Student
+                            </th>
                             <th class="card-body text-bold border-top pt-2 pb-2" scope="col">Tags</th>
                             <th class="card-body text-bold border-top pt-2 pb-2" scope="col" style="width: 150px;">
                                 Studierichting
@@ -60,13 +62,14 @@
                             <tr>
                                 <th class="text-center font-weight-normal" scope="row">{{$testimony->id}}</th>
                                 <td>
-                                    <a href="/admin/cms-testimonies/{{$testimony->id}}">{{$testimony->testimony_studentnaam}}</a>
+                                    <a class="font-weight-bold"
+                                       href="/admin/cms-testimonies/{{$testimony->id}}">{{$testimony->testimony_studentnaam}}</a>
                                 </td>
                                 <td class="">
-                                    -
-                                        @foreach($testimony->testimony_tags as $tag)
-                                        {{ $tag -> tag_naam }} -
-                                        @endforeach
+                                    @foreach($testimony->testimony_tags as $tag)
+                                        <span
+                                            class="border border-dark" style="padding: 5px; margin-right: 3px; margin-bottom: 3px; border-radius: 5px;">{{ $tag -> tag_naam }}</span>
+                                    @endforeach
                                 </td>
                                 <td class="d-flex justify-content-between">{{$testimony->testimony_studierichting}}
                                     <span>
