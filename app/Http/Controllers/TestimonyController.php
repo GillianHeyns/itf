@@ -12,7 +12,11 @@ class TestimonyController extends Controller
 {
     public function index()
     {
-        $data = DB::table('testimonies')->get();
+        $data = Testimony::with(['photos', 'testimony_tags' => function ($query) {
+            $query
+                ->join('tags', 'testimony_tags.tag_id', '=', 'tags.id');
+        }])
+            ->get();
         return view('admin.cms-testimonies', ['data' => $data]);
     }
 
