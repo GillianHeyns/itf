@@ -47,7 +47,8 @@
                             <th class="text-center card-body text-bold border-top pt-2 pb-2" scope="col"
                                 style="width: 65px;">#
                             </th>
-                            <th class="card-body text-bold border-top pt-2 pb-2" scope="col">Student</th>
+                            <th class="card-body text-bold border-top pt-2 pb-2" scope="col" style="width: 250px;">Student</th>
+                            <th class="card-body text-bold border-top pt-2 pb-2" scope="col">Tags</th>
                             <th class="card-body text-bold border-top pt-2 pb-2" scope="col" style="width: 150px;">
                                 Studierichting
                             </th>
@@ -60,6 +61,12 @@
                                 <th class="text-center font-weight-normal" scope="row">{{$testimony->id}}</th>
                                 <td>
                                     <a href="/admin/cms-testimonies/{{$testimony->id}}">{{$testimony->testimony_studentnaam}}</a>
+                                </td>
+                                <td class="">
+                                    -
+                                        @foreach($testimony->testimony_tags as $tag)
+                                        {{ $tag -> tag_naam }} -
+                                        @endforeach
                                 </td>
                                 <td class="d-flex justify-content-between">{{$testimony->testimony_studierichting}}
                                     <span>

@@ -22,6 +22,16 @@
                         </div>
                     </div>
                 </a>
+                <a href="#" style="color: black; text-decoration: none;">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="assets/img/itfactory_interactive/ITF_visual_new.jpg"
+                             alt="Card image CMS">
+                        <div class="card-body">
+                            <h5 class="card-title text-bold">DI APP</h5>
+                            <p class="card-text">Toegang tot<br>DI-APP</p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </main>
