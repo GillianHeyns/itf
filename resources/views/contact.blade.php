@@ -63,8 +63,9 @@
                                       minlength="10">{{ old('message') }}</textarea>
                             <div class="invalid-feedback">{{ $errors->first('message') }}</div>
                         </div>
-                        <button class="btn btn-success g-recaptcha" data-sitekey="6Ldu3fAaAAAAAG-XroyenWo9hyv6FJyKR2lpwthm"
+                        <button class="btn btn-success g-recaptcha" data-sitekey="6LekLLcdAAAAAAR3xtOp9kyZhruiprMDok7Uw2Wi"
                         data-callback="onSubmit" data-action="submit">Send Message</button>
+{{--                        <button type="submit" class="btn btn-success">Send Message!</button>--}}
                     </form>
                 @endif
             </div>
@@ -78,7 +79,7 @@
     </section>
     <script>
         function onSubmit(token) {
-            document.getElementById("verzenden_form").submit();
+            document.getElementById("contact").submit();
         }
     </script>
 @endsection
