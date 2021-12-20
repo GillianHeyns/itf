@@ -20,7 +20,7 @@ class ContactMail extends Mailable
      */
     public function __construct($request)
     {
-        $this->request=$request;
+        $this->request = $request;
     }
 
     /**
@@ -30,8 +30,12 @@ class ContactMail extends Mailable
      */
     public function build()
     {
+//        return $this->from('info@weareitfactory.be', 'IT Factory - Info')
+//            ->cc('info@weareitfactory.be', 'IT Factory - Info')
+//            ->subject('IT Factory - Contact Form')
+//            ->markdown('email.contact');
         return $this->from('info@weareitfactory.be', 'IT Factory - Info')
-            ->cc('info@weareitfactory.be', 'IT Factory - Info')
+            ->cc('gillian_heyns@hotmail.com', 'IT Factory - Info')
             ->subject('IT Factory - Contact Form')
             ->markdown('email.contact');
     }
